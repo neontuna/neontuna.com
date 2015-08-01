@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pixyll</title>
+    <title>Night Iron</title>
     <description>A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.</description>
-    <link>http://pixyll.com/</link>
-    <atom:link href="http://pixyll.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://nonadmin.github.io/</link>
+    <atom:link href="http://nonadmin.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>puts(Hello World!)</title>
@@ -24,8 +24,8 @@
 
 </description>
         <pubDate>Tue, 02 Jun 2015 08:03:21 -0400</pubDate>
-        <link>http://pixyll.com/blog/2015/06/02/puts(hello-world!)/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2015/06/02/puts(hello-world!)/</guid>
+        <link>http://nonadmin.github.io/blog/2015/06/02/puts(hello-world!)/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2015/06/02/puts(hello-world!)/</guid>
       </item>
     
       <item>
@@ -146,8 +146,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
-        <link>http://pixyll.com/blog/2015/02/17/monitoring-directaccess/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2015/02/17/monitoring-directaccess/</guid>
+        <link>http://nonadmin.github.io/blog/2015/02/17/monitoring-directaccess/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2015/02/17/monitoring-directaccess/</guid>
       </item>
     
       <item>
@@ -198,8 +198,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
-        <link>http://pixyll.com/blog/2014/12/29/straddling-osx-and-windows/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
+        <link>http://nonadmin.github.io/blog/2014/12/29/straddling-osx-and-windows/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2014/12/29/straddling-osx-and-windows/</guid>
       </item>
     
       <item>
@@ -217,8 +217,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
 </description>
         <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
-        <link>http://pixyll.com/blog/2014/08/25/godaddy-sucks/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2014/08/25/godaddy-sucks/</guid>
+        <link>http://nonadmin.github.io/blog/2014/08/25/godaddy-sucks/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2014/08/25/godaddy-sucks/</guid>
       </item>
     
       <item>
@@ -270,8 +270,8 @@ HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
 
 </description>
         <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
-        <link>http://pixyll.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
+        <link>http://nonadmin.github.io/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
       </item>
     
       <item>
@@ -291,8 +291,8 @@ HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
 &lt;p&gt;So that’s where I am, with half a dead tablet.  Waiting on a 40 dollar Torx set (the &lt;a href=&quot;http://www.amazon.com/gp/product/B00CSWY50O/ref=oh_details_o00_s00_i00?ie=UTF8&amp;amp;psc=1&quot;&gt;only one I could&lt;/a&gt; find with T2 and T3 heads on Amazon).  And a mSATA adapter.  Because of course the drive is mSATA.  ;)&lt;/p&gt;
 </description>
         <pubDate>Wed, 25 Jun 2014 07:29:07 -0400</pubDate>
-        <link>http://pixyll.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</guid>
+        <link>http://nonadmin.github.io/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</guid>
       </item>
     
       <item>
@@ -356,8 +356,8 @@ So, the next time you complain about your phone service, why don&#39;t you try u
 &lt;p&gt;In the meantime I have another EliteBook Folio that is randomly losing power.  So far we’ve only had a slight delay waiting on a back ordered part.  We’ll see what happens next.&lt;/p&gt;
 </description>
         <pubDate>Mon, 24 Feb 2014 06:22:32 -0500</pubDate>
-        <link>http://pixyll.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</guid>
+        <link>http://nonadmin.github.io/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</guid>
       </item>
     
       <item>
@@ -387,8 +387,8 @@ The second replacement unit and base came in. I installed both and the Nest boot
 
 </description>
         <pubDate>Wed, 14 Aug 2013 07:20:30 -0400</pubDate>
-        <link>http://pixyll.com/blog/2013/08/14/nest/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2013/08/14/nest/</guid>
+        <link>http://nonadmin.github.io/blog/2013/08/14/nest/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2013/08/14/nest/</guid>
       </item>
     
       <item>
@@ -403,8 +403,8 @@ The second replacement unit and base came in. I installed both and the Nest boot
 
 </description>
         <pubDate>Wed, 06 Mar 2013 06:15:57 -0500</pubDate>
-        <link>http://pixyll.com/blog/2013/03/06/be-careful-with-windows-dns/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2013/03/06/be-careful-with-windows-dns/</guid>
+        <link>http://nonadmin.github.io/blog/2013/03/06/be-careful-with-windows-dns/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2013/03/06/be-careful-with-windows-dns/</guid>
       </item>
     
       <item>
@@ -489,8 +489,8 @@ Almost a year later and this server is still kicking it.  My only real limiting 
 
 </description>
         <pubDate>Mon, 14 Jan 2013 06:10:32 -0500</pubDate>
-        <link>http://pixyll.com/blog/2013/01/14/building-a-home-server/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2013/01/14/building-a-home-server/</guid>
+        <link>http://nonadmin.github.io/blog/2013/01/14/building-a-home-server/</link>
+        <guid isPermaLink="true">http://nonadmin.github.io/blog/2013/01/14/building-a-home-server/</guid>
       </item>
     
   </channel>
