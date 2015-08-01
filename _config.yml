@@ -10,19 +10,19 @@ url:         "http://nonadmin.github.io"
 google_analytics:
 
 # Optional features
-animated:           true
+animated:           false
 show_related_posts: false
 show_post_footers:  false
-show_social_icons:  false
+show_social_icons:  true
 
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: nonadmin
 stackoverflow_id:
-twitter_username:
+twitter_username: nonadmn
 google_plus_id:
 linkedin_username:
 angellist_username:
