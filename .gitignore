@@ -1,1 +1,6 @@
 _drafts/
+_site
+.sass-cache
+
+# Ignore the config file that's used for gh-pages.
+_config.gh-pages.yml
