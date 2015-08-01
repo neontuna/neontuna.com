@@ -7,209 +7,490 @@
     <atom:link href="http://pixyll.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>puts(Hello World!)</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-06-02%20at%201.52.25%20PM_large.png&quot; alt=&quot;Jeff Lebowski&#39;s &amp;quot;Danebook&amp;quot; page&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;It has been about a month since I was accepted into the &lt;a href=&quot;http://vikingcodeschool.com&quot;&gt;Viking Code School&lt;/a&gt; and a few weeks since I began my coursework for their Flex program (for folks who can’t commit to the school full time).&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;I think the experience so far can be summed up as “Whoa!”.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;While I don’t doubt that there are hordes of self-made master programmers, I was getting discouraged by the lack of depth of a lot of the online programming courses I tried.  Their efforts were summed up very well by Erik Trautman’s blog post &lt;a href=&quot;http://www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard&quot;&gt;Why Learning To Code Is So Damn Hard&lt;/a&gt;.  Each of these courses holds your hand with bite size projects, slick videos, and really polished marketing and branding.  But coming out on the other side of their curriculum you are not a developer.  At best you might be able to have a conversation with a developer.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Even more in-depth work, such as &lt;a href=&quot;https://www.railstutorial.org/&quot;&gt;Michael Hartl’s Rails’ Tutorial&lt;/a&gt; wasn’t enough for me (and Rails’ Tutorial is seriously awesome).  Viking’s freely available &lt;a href=&quot;http://www.vikingcodeschool.com/prep&quot;&gt;“Prep” courses&lt;/a&gt; are what made me realize that I was basically never going to learn anything about development by only &lt;em&gt;watching&lt;/em&gt; videos and typing out lines of code from a book.  In order to learn I need to &lt;strong&gt;do&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;With Viking, while there is plenty of reading, demonstration videos, and tests there are also truly open ended projects.  The screenshot above is from “Danebook”.  After learning HTML5, CSS3, SASS, and Bootstrap you’re given a few mockups of the site and that’s it.  Everything else you code up from nothing.  Finishing one of those projects gives so much more of a feeling of accomplishment than getting to the end of any simple tutorial where you might have typed a few dozen lines of code at the most.&lt;/p&gt;
+
+&lt;p&gt;Today I’ve just put the finishing touches on my &lt;a href=&quot;https://github.com/nonadmin/assignment_toh&quot;&gt;Towers of Hanoi&lt;/a&gt; game from the first Ruby unit.  And I can’t wait for more.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 01 Aug 2015 05:50:24 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/update/2015/08/01/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/update/2015/08/01/welcome-to-jekyll/</guid>
+        <pubDate>Tue, 02 Jun 2015 08:03:21 -0400</pubDate>
+        <link>http://pixyll.com/blog/2015/06/02/puts(hello-world!)/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2015/06/02/puts(hello-world!)/</guid>
       </item>
     
       <item>
-        <title>hello world</title>
-        <description>
+        <title>Monitoring DirectAccess</title>
+        <description>&lt;p&gt;We recently deployed &lt;a href=&quot;https://technet.microsoft.com/en-us/library/dn636118.aspx&quot;&gt;Windows DirectAccess&lt;/a&gt; for one of our clients and wanted to monitor the deployment.  In particular I was interested in the number of active DirectAccess sessions and if any errors were detected.  The Remote Access MMC snap-in (in Server 2012 R2) has a great  status page that runs down all of DirectAccess’ components and reports any errors that are detected.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-02-17%20at%203.17.44%20PM_large.png&quot; alt=&quot;DirectAccess built-in monitoring&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can basically assume that if any of these are red you’re going to have an issue.  With PRTG the number of components in an error state could be a channel in a sensor which we could monitor and report on (for instance if the number of errors is greater than 0).   Similarly another channel could be the number of sessions.&lt;/p&gt;
+
+&lt;p&gt;DirectAccess comes loaded with a few PowerShell cmdlets for monitoring and reporting on its status.  In particular &lt;strong&gt;Get-RemoteAccessHealth&lt;/strong&gt; and &lt;strong&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/strong&gt; will give you a lot of information.  In order to make that data useful for PRTG we want to strip that output down from something like this (the raw output of Get-RemoteAccessHealth)&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Component            RemoteAccessServer   HealthState     TimeStamp            Id              OperationStatus
+---------            ------------------   -----------     ---------            --              ---------------
+Server               localhost            OK              1/27/2015 11:05:4...
+6to4                 localhost            OK              1/27/2015 11:01:0...
+Vpn Addressing       localhost            Disabled        1/27/2015 11:01:0...
+Network Security     localhost            OK              1/27/2015 11:01:0...
+Dns                  localhost            OK              1/27/2015 11:05:4...
+IP-Https             localhost            OK              1/27/2015 11:01:0...
+Nat64                localhost            OK              1/27/2015 11:01:0...
+Dns64                localhost            OK              1/27/2015 11:01:0...
+IPsec                localhost            OK              1/27/2015 11:01:0...
+Kerberos             localhost            OK              1/27/2015 11:01:0...
+Domain Controller    localhost            OK              1/27/2015 11:01:0...
+Management Servers   localhost            Disabled        1/27/2015 11:01:0...
+Network Location ... localhost            OK              1/27/2015 11:05:4...
+Otp                  localhost            Disabled        1/27/2015 11:01:0...
+High Availability    localhost            Disabled        1/27/2015 11:01:0...
+Isatap               localhost            Disabled        1/27/2015 11:01:0...
+Vpn Connectivity     localhost            Disabled        1/27/2015 11:01:0...
+Teredo               localhost            Disabled        1/27/2015 11:01:0...
+Network Adapters     localhost            OK              1/27/2015 11:01:0...
+Services             localhost            OK              1/27/2015 11:05:4...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To literally just the number of components with a HealthState of “error”.  This gives us our first sensor channel, “error count”.   Our second channel is similar, I just want know how many active DirectAccess sessions we have which involves stripping down the output of Get-RemoteAccessConnectionStatisticsSummary&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;TotalConnections           : 8
+TotalDAConnections         : 8
+TotalVpnConnections        : 0
+TotalUniqueUsers           :
+MaxConcurrentConnections   : 19
+TotalCumulativeConnections : 2550
+TotalBytesIn               : 4024483872
+TotalBytesOut              : 8136960808
+TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To just the number of TotalDAConnections.&lt;/p&gt;
+
+&lt;p&gt;The full PowerShell script is below&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; encoding=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Windows-1252&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ?&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;prtg&amp;gt;&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-RemoteAccessHealth&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ComputerName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SERVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HealthState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-match&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Error&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ComputerName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SERVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ExpandProperty&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TotalDAConnections&lt;/span&gt;
+ 
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;result&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;channel&amp;gt;DirectAccess Errors&amp;lt;/channel&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;value&amp;gt;$daErrorCount&amp;lt;/value&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/result&amp;gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;result&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;channel&amp;gt;DirectAccess Sessions&amp;lt;/channel&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;value&amp;gt;$daUserCount&amp;lt;/value&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/result&amp;gt;&amp;quot;&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;Catch&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;[system.exception]&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;error&amp;gt;1&amp;lt;/error&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;text&amp;gt;$_&amp;lt;/text&amp;gt;&amp;quot;&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/prtg&amp;gt;&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This results in a PRTG sensor with the following channel setup&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-02-17%20at%2010.50.01%20PM_large.png&quot; alt=&quot;Silvrback blog image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The key lines here that give PRTG its value for the channels are&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match &amp;#39;Error&amp;#39;} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | Select -ExpandProperty TotalDAConnections&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The first is getting our error count.  As we move down the command we’re filtering the output of Get-RemoteAccessHealth for the HealthState column and then looking for any matches on the value “Error”.  Both measure and count are needed to just return in integer, measure by itself returns this.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Count    : 0
+Average  :
+Sum      :
+Maximum  :
+Minimum  :
+Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get-RemoteAccessHealth is returning a table and PowerShell makes it pretty easy to search through it like you might search for something in Excel.  Get-RemoteAccessConnectionStatisticsSummary is a little trickier.   Its returning a list and if you try to use the same method of stripping its output as Get-RemoteAccessHealth that won’t work.  However Select -ExpandProperty will.  This took me a while to figure out until I piped the output of each command through Get-Member which reveals the Object-Types being returned.  &lt;a href=&quot;http://windowsitpro.com/powershell/powershell-basics-formatting&quot;&gt;This article&lt;/a&gt; was very helpful during that process.&lt;/p&gt;
+
+&lt;p&gt;The rest of the script is pretty standard fare for PRTG’s custom XML sensors (a lot of great examples can be found &lt;a href=&quot;https://code.google.com/p/prtg-addons/source/browse/#svn%2Ftrunk%2FCustom_EXE_Sensors%2FWindows_Powershell&quot;&gt;here&lt;/a&gt;).  The entire script is returning back to PRTG something that looks like this&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=`&amp;quot;1.0`&amp;quot; encoding=`&amp;quot;Windows-1252`&amp;quot; ?&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;prtg&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Errors&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Sessions&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;10&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/prtg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Which is just the XML formatting that PRTG needs to construct a sensor.  The try statement is used to catch any errors since PowerShell can be annoying to get setup for remote monitoring and I wanted to make sure that any issues with the sensor itself were handled by PRTG instead of the sensor silently failing (for instance returning 0 for a channel, which wouldn’t necessarily set off any alarms but might happen if one of our cmdlets failed)&lt;/p&gt;
+
 </description>
-        <pubDate>Sat, 01 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://pixyll.com/blog/2015/08/01/hello-world/</link>
-        <guid isPermaLink="true">http://pixyll.com/blog/2015/08/01/hello-world/</guid>
+        <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
+        <link>http://pixyll.com/blog/2015/02/17/monitoring-directaccess/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2015/02/17/monitoring-directaccess/</guid>
       </item>
     
       <item>
-        <title>Announcing Version 2.0</title>
-        <description>&lt;p&gt;In an effort to make Pixyll easier to customize and more aesthetically pleasing, we’ve release version &lt;code&gt;2.0&lt;/code&gt;.&lt;/p&gt;
+        <title>Straddling OSX and Windows</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;According to stock photo sites in order to use an Apple product you must obsessively arrange your desk into perfect geometric patterns, like a serial killer.  I have not done this yet.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;Pixyll now features:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1434_large.JPG&quot; alt=&quot;my messy desk&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For a while now I’ve been interested in web development.  I’ll run through a tutorial here and there - &lt;a href=&quot;http://railstutorial.org&quot;&gt;railstutorial.org&lt;/a&gt; and &lt;a href=&quot;http://learnpythonthehardway.org&quot;&gt;learn python the hard way&lt;/a&gt; have been my favorites (yes I realize these are two different languages, I have commitment issues).  If you’re primarily using Windows modern web development can be frustrating to learn.  Every tutorial starts out instructing you to use an OSX package manager and generally include some huge caveat for getting your development environment configured in Windows.  I had no desire to learn Microsoft’s languages, such as ASP.NET, so I decided I should look into a Macbook.  Also that my Dell notebook has always been kind of a piece of junk and that I don’t particularly like Windows 8/8.1 helped push me towards “switching”.&lt;/p&gt;
+
+&lt;p&gt;I’m now typing this from my Macbook Pro and Thunderbolt display.  I haven’t fully made the switch for my day job as a remote IT worker.  I’m still trying to suss out how I want my browsers setup, which softphone to use, and some other odds and ends.  Funny thing is, there isn’t much I need Windows for in order to support our clients that mostly run Windows.  I will probably always keep around a Windows system (&lt;a href=&quot;http://www.nonadmin.com/home-server&quot;&gt;or 12&lt;/a&gt;) because other IT people don’t respect you if you only have one computer.&lt;/p&gt;
+
+&lt;p&gt;This is sort of a compilation of things I’ve noticed and some tips for anyone coming from the Windows world.    I’ve arranged things with buying tips first and then good, bad, and miscellaneous observations.&lt;/p&gt;
+
+&lt;h1 id=&quot;buying-tips&quot;&gt;Buying Tips&lt;/h1&gt;
+
+&lt;p&gt;Besides the notebook I researched and bought a few things from Amazon. The &lt;a href=&quot;http://amzn.to/1D3fmGd&quot;&gt;mStand laptop stand&lt;/a&gt; which is way overpriced for a piece of bent aluminum but I guess it holds the notebook at eye level adequately.  I also picked up an &lt;a href=&quot;http://amzn.to/1wYwpJ5&quot;&gt;ethernet adapter/usb hub&lt;/a&gt; from Anker which instantly became useful because I didn’t have the display (with its NIC) initially.  I really like Anker’s products, they’re generally pretty inexpensive but well built.  I also grabbed an &lt;a href=&quot;http://amzn.to/1HXbO9r&quot;&gt;Incase Neoprene Sleeve&lt;/a&gt; that is apparently made for the 13” MacBook Pro but has a little too much extra space in it. I feel like it ought to fit the notebook snugly and not allow it to move at all inside the sleeve.  Finally, I purchased the &lt;a href=&quot;http://www.amazon.com/gp/product/B004YLCKYA/ref=oh_aui_detailpage_o02_s01?ie=UTF8&amp;amp;psc=1&quot;&gt;Thunderbolt Display&lt;/a&gt; from Amazon as well.  I was going to purchase a Magsafe&amp;gt;Magsafe 2 power adapter as the Thunderbolt display’s charging cable isn’t compatible with the latest Macbooks but then I found out that these are now being included with the displays.&lt;/p&gt;
+
+&lt;p&gt;For the notebook itself I found a really handy &lt;a href=&quot;http://appleinsider.com/mac_price_guide&quot;&gt;price guide&lt;/a&gt; from Apple Insider and ended up picking up the system from Adorama with 3 years of AppleCare bundled.   They threw in an Apple TV with the promo code from Apple Insider but checking the guide now that has changed to a mighty mouse.  I also checked the &lt;a href=&quot;http://buyersguide.macrumors.com/&quot;&gt;Buyer’s Guide&lt;/a&gt; from Mac Rumors, just incase a new model was about to drop.&lt;/p&gt;
+
+&lt;p&gt;Initially I was not going to buy the Thunderbolt display but one issue with living in Apple’s world is you have to play by their rules.  There is no official dock for the Macbook, the Thunderbolt Display is the closest thing to it.  My other options were Thunderbolt hubs which are several hundred dollars and may or may not have worked with my existing monitor which uses DVI-D.  So I reluctantly decided to get the Thunderbolt display but I feel like Apple could make a lot of people happy if they’d just release a dock.   I use a simple KVM to switch keyboard and mouse between the notebook and my PC tower, which is exclusively connected to my old display.  I thought I would need an Apple keyboard but really its no big deal.  The keys are in the same position except with the Windows key acting as the Command key.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
+
+&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
+
+&lt;p&gt;The Macbook’s trackpad and keyboard are the best I’ve used on a notebook, period.  Trackpads on PC notebooks have long been a point of contention.  Whether they’re too small, have weird gestures, or just plan don’t work there’s always some issue.  The latest EliteBooks from HP have come the closest to getting it right that I’ve seen.  Battery life on the notebook has been great and I love that OSX will tell you which apps are eating a lot of energy.  Coming from a system that mysteriously always ran awful on battery this has been most excellent.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.apple.com/osx/continuity/&quot;&gt;continuity features&lt;/a&gt; of Yosemite were a big reason I was interested in switching.  I already own an iPhone and iPad.  Being able to iMessage, and even send regular text, from the computer is very convenient.    This is where I feel like Apple is really edging out Microsoft, it would give people a reason to actually consider Windows Phone to have this sort of functionality.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
+
+&lt;p&gt;The Macbook has only locked up twice but both were kind of worrying.  The first  was actually right out of the box during setup.  It hung forever when I declined to setup iCloud Drive.  When I forced the system to reboot it went  through but had apparently already created my user account.  I elected to just wipe the system out and start over using the download from internet option to install Yosemite.  This worked without issue.  The system also froze completely when I first connected it to the Thunderbolt Display.&lt;/p&gt;
+
+&lt;p&gt;I almost immediately discovered an unfortunate bug with Exchange Online and Yosemite.  The Contacts App will not sync contacts from an Office 365 Exchange Online account (or at least from my account).  An issue &lt;a href=&quot;http://www.andrewconnell.com/blog/resolving-contacts-sync-on-os-x-error-soapwebserviceserrordomain&quot;&gt;documented by others&lt;/a&gt; but remains unfixed even in the latest Yosemite beta (currently 10.10.2).  I opened a case with Microsoft support, who promptly laughed and then closed the case.  I haven’t tried opening one with Apple just yet.  I worked around the problem by manually copying my contacts into iCloud.  There’s a sort of hack to use Microsoft’s OWA app in iOS to sync your contacts into iCloud but this only works on the default/base Contacts folder and I maintain more than one.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-miscellaneous&quot;&gt;The Miscellaneous&lt;/h1&gt;
+
+&lt;p&gt;One of the things that I notice the most is that I’ve gotten a feel for performance on a PC.  You get a sixth sense for if something isn’t right.  Like if Outlook takes longer than 30 seconds to open its probably not going to open at all.  I feel a little lost sometimes on the Mac if something unexpected happens and I find myself starring at the beachball.  I also really miss indicator lights for disk activity, etc, and find myself tapping the caps lock key to make sure my Macbook is alive.&lt;/p&gt;
+
+&lt;p&gt;There are way more boot options for the Mac than Windows and I sort of wish they were all consolidated into one menu.  Although not having the POST and then Windows load that I’m used to is what makes for the variety of options/confusion.&lt;/p&gt;
+
+&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account. &lt;/p&gt;
+
+&lt;p&gt;So far Apple has lived up to its promise to “just work” in every way except for the Contacts bug.  I hope to update this post and add others with more good things as time goes on.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
+        <link>http://pixyll.com/blog/2014/12/29/straddling-osx-and-windows/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Godaddy sucks</title>
+        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.  &lt;/p&gt;
+
+&lt;p&gt;Most of our clients are hosted through Godaddy and were originally setup years ago.  If we were making that decision again it’d probably be with a different company.  But the cost of moving clients off Godaddy pretty much outweighs our personal feelings about them.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy support about the site.  For hosting support you end up speaking with a first level phone rep and if you’re escalated it just means that same phone rep talks to someone at a higher level for you.  So after deflecting her initial assertion that our Wordpress was configured incorrectly she escalated the call.  Second level apparently told her that we should enable SSH access to our account which would migrate everything to a different datacenter.  I protested this, we didn’t need SSH access and this seemed like a really hack method of resolving issues.  She continued to insist this was the only option and so I went ahead with it.&lt;/p&gt;
+
+&lt;p&gt;A few days later and the site was loading fine.  The rep had said that some updates would need to be made to the Wordpress configuration to point to the new database location but we never received the email that was supposed to detail these changes.  So I logged into our client’s hosting panel and was presented with a page that stated we didn’t have a hosting plan.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy again.  The phone rep reported that the site never migrated completely.  The content is on the new server while the database is still on the old system.  Godaddy’s solution to this?  Remove the (Wordpress) database, which will bring the site down, but will allow the migration to complete.  And then restore the database on the new system.  Total downtime?  1-3 &lt;strong&gt;Days&lt;/strong&gt;.  We still have access to the data and old database, and so my suggestion was that a new hosting account be created and we simply upload everything and restore a database backup.  Godaddy says this will work but we’ll need to purchase the hosting plan.  And we’ll need to do all the migration legwork ourselves.&lt;/p&gt;
+
+&lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
+        <link>http://pixyll.com/blog/2014/08/25/godaddy-sucks/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2014/08/25/godaddy-sucks/</guid>
+      </item>
+    
+      <item>
+        <title>Randomizing new Plex pre-roll feature</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/vlcsnap-2014-08-14-00h28m55s45_large.png&quot; alt=&quot;Simpsons THX Preroll&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Last week the wonderful folks at Plex announced support for extras and trailers to play before you watch a movie.  Which was already pretty great, but then a few days ago they &lt;a href=&quot;https://blog.plex.tv/2014/08/11/new-trailers-features/&quot;&gt;added support&lt;/a&gt; for a custom “pre-roll” to play after the trailers and before your movie.  This immediately made me think of all the awesome stuff that used to play in movie theatres and on home video - THX, creepy lobby snack commercials, etc.&lt;/p&gt;
+
+&lt;p&gt;Right now the feature requires that you set one video from your library as the pre-roll clip.  I wanted to randomize this so the clip would change occationally.  Luckily the setting is stored in the registry (by the way this is for folks using Windows as their Plex server) under this key:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So for instance, the full registry key for one of my clips looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+[HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server]
+&quot;CinemaTrailersPrerollID&quot;=&quot;http://plex.tv/web/app#!/server/2b6b5...
+...099e7fcbd0/details/%2Flibrary%2Fmetadata%2F4655&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s probably a million ways to do this but I created a .reg file for each pre-roll in my collection and then used this VBScript to randomly insert the registry value for one of them.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vbnet&quot; data-lang=&quot;vbnet&quot;&gt;&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Wscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Wscript.Shell&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Randomize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Rnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-1.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-2.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-3.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-4.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-5.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Nothing&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally, I set that to run on a schedule every hour.  &lt;/p&gt;
+
+&lt;p&gt;I imagine we’ll have the option to do something like this from Plex itself before too long.  On the blog linked above there were already a few requests for it.  Regardless, these new features are slick and I hope convince more folks to sign up for Plex pass. &lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
+        <link>http://pixyll.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
+      </item>
+    
+      <item>
+        <title>Need data from a dead Surface Pro?</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/photo_large.JPG&quot; alt=&quot;The innards of a dead Surface tablet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have a client that went all in with the first generation Surface Pro, many of their staff are using the tablets as their daily driver and only computer.  Earlier this afternoon I responded to what is usually a typical situation for IT professionals - dead computer, we need data on the hard drive.&lt;/p&gt;
+
+&lt;p&gt;With the Surface things aren’t quite so simple.  Most folks would say, myself included, that a) any important data should always be backed up b) with the prevalence of online storage surely anything really important would be in OneDrive or Dropbox?&lt;/p&gt;
+
+&lt;p&gt;Indeed - when calling Surface support the technician even specifically referenced OneDrive.  Although I have to say its almost like saying you can’t trust the local storage which I don’t think is a fair burden to put on the owner of something Microsoft wants to compete with Ultrabooks.  Anyway, I was mainly calling Microsoft to find out what our out of warranty options were - there is only one, pay $300 for a replacement unit.  Microsoft will not make any attempt to recover data from the dead Surface.  This is also typical, if you send your PC back to Dell or HP the hard drive gets wiped, or is given to the NSA, or perhaps fed to the troll responsible for trying to make PC notebooks look like a Macbook.  So I can’t really fault Microsoft for not offering data recovery.&lt;/p&gt;
+
+&lt;p&gt;Except… this left us with the option I figured on from the start, cracking open the dead tablet like a delicious coconut.  &lt;a href=&quot;https://www.ifixit.com/Teardown/Microsoft+Surface+Pro+Teardown/12842&quot;&gt;iFixit rates&lt;/a&gt; the Surface Pro with its least “repairable” rating - 1/10.  Apparently we were lucky to be dealing with the first gen, its only gotten worse with more recent models.  There are no screws holding the unit together, save two that attach the kickstand.  Instead what I can only describe as black tar made by the Devil himself attaches the screen to the chassis of the tablet.  I told our client that this unit was done, there was no way I wasn’t going to destroy the thing taking it apart.  After a short treatment with the heatgun I could sort of pry up the screen.  I decided to be as brutal as I needed to be with the screen to avoid too much heatgun action damaging the drive.&lt;/p&gt;
+
+&lt;p&gt;Finally with the screen removed, and only a few cuts from the microscopic glass shards produced, we set to work on the interior.  The mSATA drive is on the reverse of the motherboard which is secured to the tablet with dozens and dozens of torx screws.  Very, very small torx screws I came to find out.  The Surface Pro uses T2 and T3 torx screws, some of the smallest out there and so small that my trusty Torx set didn’t include them.&lt;/p&gt;
+
+&lt;p&gt;So that’s where I am, with half a dead tablet.  Waiting on a 40 dollar Torx set (the &lt;a href=&quot;http://www.amazon.com/gp/product/B00CSWY50O/ref=oh_details_o00_s00_i00?ie=UTF8&amp;amp;psc=1&quot;&gt;only one I could&lt;/a&gt; find with T2 and T3 heads on Amazon).  And a mSATA adapter.  Because of course the drive is mSATA.  ;)&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Jun 2014 07:29:07 -0400</pubDate>
+        <link>http://pixyll.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</guid>
+      </item>
+    
+      <item>
+        <title>HP EliteBook Support is really harshing our buzz</title>
+        <description>&lt;p&gt;Updated 3/6/2014&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/CBP0023570_large.JPG&quot; alt=&quot;A twisting maze&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+Midway upon the journey of our life,
+I found myself within a forest dark,
+For the straight forward pathway had been lost.
+  &lt;/p&gt;
+  &lt;footer&gt;&lt;cite title=&quot;Dante Alighieri&quot;&gt;Dante Alighieri&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;HP’s EliteBook line of notebooks are intended to be the top tier of business hardware.  They automatically include a three year warranty, cost a good amount more than your average Best Buy shovelware system, and actually look and run like a computer you’d want to use.&lt;/p&gt;
+
+&lt;p&gt;For these reasons we typically sell EliteBooks to all of our clients.  They may make noise about their budget but we always remind them that you get what you pay for.  If you spend five hundred bucks on a notebook it &lt;strong&gt;will&lt;/strong&gt; be made of Happy Meal plastic and it &lt;strong&gt;will&lt;/strong&gt; fall apart in the middle of your super important  presentation.  Your customer will laugh at you, you will lose the sale, everything will be horrible.&lt;/p&gt;
+
+&lt;p&gt;Lately however we’ve had some… issues with EliteBook support.  On practically all of these systems we purchase an extended warranty from HP.  On top of the better than average warranty they ship with.  This affords next business day onsite repair of hardware issues, avoiding sending the system back to HP for repairs which can take a few weeks.&lt;/p&gt;
+
+&lt;p&gt;Here’s how one recent incident went down, dutifully documented by my diligent co-worker.  Our client had a faulty track pad…&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Line anchors in code blocks and new syntax highlighting&lt;/li&gt;
-  &lt;li&gt;A customizable variables file&lt;/li&gt;
-  &lt;li&gt;Modular, and lighter weight CSS&lt;/li&gt;
-  &lt;li&gt;No more &lt;code&gt;max-width&lt;/code&gt; media queries&lt;/li&gt;
+  &lt;li&gt;1/14 - Worked through troubleshooting steps outlined by HP, they determined that there was a hardware issue&lt;/li&gt;
+  &lt;li&gt;1/15 - Scheduled a call for the 17th, 12-2 PM&lt;/li&gt;
+  &lt;li&gt;1/17 - No call, no show.  HP claims that someone tried to reach out but there’s no record in our phone system of a call.  HP now advises that parts are on back order.  Request replacement PC to get our client going ASAP&lt;/li&gt;
+  &lt;li&gt;1/20 - HP denies replacement request, no ETA on back ordered parts&lt;/li&gt;
+  &lt;li&gt;1/22 - HP still waiting on parts, expects shipment by 1/28&lt;/li&gt;
+  &lt;li&gt;1/28 - No updates from HP.  Receive notice from our data center, in another time zone, that a package arrived from HP.  This was a part intended for our client.  Call HP, told that representative will call us back.&lt;/li&gt;
+  &lt;li&gt;1/29 - No call back.  Email HP to advise on miss-shipped part.&lt;/li&gt;
+  &lt;li&gt;1/30 - Client receives correct part, call HP and setup appointment for 1/31 no later than 1 PM (client is traveling)&lt;/li&gt;
+  &lt;li&gt;1/31 - Client is contacted at 1:45 PM and told technician will be onsite at 1:55.   Client delays travel until 2:40 PM.  Technician advises that additional parts are needed to complete repair.  Repairs will now have to be delayed until 2/6 as client is traveling&lt;/li&gt;
+  &lt;li&gt;2/4 - Call HP to check in, told that they are waiting on the part which the client  already has.  Explain that the client already has the part.  Call forwarded to “Barrister” team to identify which part was actually needed (no idea why HP didn’t handle this internally).  Call drops.&lt;/li&gt;
+  &lt;li&gt;2/5 - Call HP and request system to be replaced.  Told that the case will be reviewed and we’ll receive notice in a few days of their decision.&lt;/li&gt;
+  &lt;li&gt;2/10 - After no contact from HP we called back.  Told decision was delayed due to pending parts order.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        <pubDate>Sat, 11 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</guid>
-      </item>
-    
-      <item>
-        <title>Hello, Pixyll</title>
-        <description>&lt;p&gt;Hello.&lt;/p&gt;
 
-&lt;p&gt;Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff. It’s mobile &lt;em&gt;first&lt;/em&gt;, fluidly responsive, and delightfully lightweight.&lt;/p&gt;
+&lt;p&gt;This continues on for a little while before HP finally relents and agrees to give us a new computer (still waiting on that).  It is now a month and a half since the case was opened.  Throughout this process we worked with about a dozen different people at HP and at least two of HP’s contractors.  Our client continues to receive parts that he already has.&lt;/p&gt;
 
-&lt;p&gt;It’s pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.&lt;/p&gt;
+&lt;p&gt;Another client has a broken screen.  HP scheduled an appointment, went onsite, fixed the screen and closed the case.   Actually, no, the technician just reported going onsite and repairing the system, twice, without anyone showing up or doing anything.&lt;/p&gt;
+
+&lt;p&gt;And finally we have a client whose system was showing an odd error during POST after a BIOS update.  HP tells us a technician just needs to come out and use a software tool to “rebrand” the motherboard and all will be right.  The technician comes out, I verify this actually happens with my own eyeballs.  I leave and he does his thing.  I come check out the system.  Looks great!  Except the client tells me later the technician had the entire system in pieces and now the SIM card for the internal Verizon broadband adapter is missing.  HP wants to know what the part number is.  In the technician’s notes he apparently replaced the hard drive of the system (which I somehow missed when I reviewed it afterwards, maybe it only &lt;em&gt;seemed&lt;/em&gt; to boot up and into the client’s profile).&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+So, the next time you complain about your phone service, why don&#39;t you try using two Dixie cups with a string? We don&#39;t care. We don&#39;t have to. We&#39;re the Phone Company. 
   &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
+  &lt;footer&gt;&lt;cite title=&quot;Lily Tomlin&quot;&gt;Lily Tomlin, SNL&#39;s Phone Company sketch&lt;/cite&gt;&lt;/footer&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;where-is-it&quot;&gt;Where is it?&lt;/h2&gt;
+&lt;p&gt;We are a small business.  Our clients are small businesses.  We do not order hundreds of systems at a time.  We do not have a sales rep at our beck and call.  The purpose of this blog is to at least get our frustrations out there.  However pointless it may be to toss into the winds of the Internet.  Maybe someone that matters will see this?  Until then, we just ordered a batch of Dells.  Out of the frying pan and into the fire.&lt;/p&gt;
 
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to download it, request a feature, or report a bug.&lt;/p&gt;
+&lt;p&gt;/Update&lt;/p&gt;
 
-&lt;p&gt;It’s free, and open source (&lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;MIT&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;This post got the attention of some folks at HP.  In particular we’ve been speaking to Andrew Lamb - Director, Quality &amp;amp; Customer Assurance.  The replacement system for our customer with the faulty trackpad has arrived.  Our other customer who was having the phantom tech visits has also been taken care of.  I don’t get the feeling this post greased any wheels to get those specific issues solved but will hopefully help with future issues.  We’re still working on case number three, it appears that the technician is claiming the unit did not have a SIM card installed prior to him working on it (not true, we would definitely know if this particular user couldn’t get on Verizon).&lt;/p&gt;
+
+&lt;p&gt;My main suggestions to HP were to give us one person to speak to on these type of repair cases and to definitely never have us or our customers in the position of having to work our way through HP’s internals or those of their contractors.&lt;/p&gt;
+
+&lt;p&gt;In the meantime I have another EliteBook Folio that is randomly losing power.  So far we’ve only had a slight delay waiting on a back ordered part.  We’ll see what happens next.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 11 Jun 2014 11:31:19 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/pixyll/2014/06/11/welcome-to-pixyll/</guid>
+        <pubDate>Mon, 24 Feb 2014 06:22:32 -0500</pubDate>
+        <link>http://pixyll.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</guid>
       </item>
     
       <item>
-        <title>Pixyll in Action</title>
-        <description>&lt;p&gt;There is a significant amount of subtle, yet precisely calibrated, styling to ensure
-that your content is emphasized while still looking aesthetically pleasing.&lt;/p&gt;
+        <title>Nest</title>
+        <description>&lt;p&gt;I think a lot of tech/gadget enthusiasts are naturally attracted to the Nest thermostat. Its not super expensive. Its advertised as something you can DIY pretty easily. It looks beautiful! I purchased one after reading about the energy saving people were able to get out of them. And mostly I have no impulse control.&lt;/p&gt;
 
-&lt;p&gt;All links are easy to &lt;a href=&quot;#&quot;&gt;locate and discern&lt;/a&gt;, yet don’t detract from the harmony
-of a paragraph. The &lt;em&gt;same&lt;/em&gt; goes for italics and &lt;strong&gt;bold&lt;/strong&gt; elements. Even the the strikeout
-works if &lt;del&gt;for some reason you need to update your post&lt;/del&gt;. For consistency’s sake,
-&lt;ins&gt;The same goes for insertions&lt;/ins&gt;, of course.&lt;/p&gt;
+&lt;p&gt;The first signs of trouble were when my order hadn’t shipped after 4 days (albeit I ordered on a Friday afternoon). I emailed Nest support on the morning of the fifth day and received a cryptic call from them that afternoon that I couldn’t really devote much attention to as I was neck deep in a new server for a client. But at the end of the call the phone rep told me I’d be getting an email in a few minutes showing that the Nest had shipped. I didn’t, and I called 2 hours later. After about 30 minutes on the phone I spoke to someone that explained that their ordering system had some sort of error, that they had sorted it out and that my Nest would ship the next day. And it did. So that’s one problem dealt with.&lt;/p&gt;
 
-&lt;h3 id=&quot;code-with-syntax-highlighting&quot;&gt;Code, with syntax highlighting&lt;/h3&gt;
+&lt;p&gt;I received the thermostat on a Saturday. I eagerly un-boxed and got the thing on the wall. No issues and it was a snap to get setup. Thermostat wiring, at least for our system here, is pretty much a no-brainer. While stepping through the initial setup I joined our wireless network. The Nest then reported it timed out looking for updates and would try again later (first sign of trouble). I was then presented with the error “Entry Key Error: Initializing please try again” when I tried to get the code I needed to pair to my Nest account from the device. The online account is how the Nest talks to the various apps and monitoring that really make it interesting. I shrugged it off and left for the night, the thermostat itself was working fine.&lt;/p&gt;
 
-&lt;p&gt;Here’s an example of some ruby code with line anchors.&lt;/p&gt;
+&lt;p&gt;The next day I started down a rabbit hole of troubleshooting that killed an entire Sunday afternoon.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c1&quot;&gt;# The most awesome of classes&lt;/span&gt;
-&lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Awesome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
-&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EvenMoreAwesome&lt;/span&gt;
-&lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;n&quot;&gt;validates_presence_of&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:something&lt;/span&gt;
-&lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;n&quot;&gt;validates&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;email_format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-&lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;True-8&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;a name=&quot;True-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-&lt;a name=&quot;True-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;
-&lt;a name=&quot;True-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;favorite_number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-&lt;a name=&quot;True-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;created awesomeness&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;True-13&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;a name=&quot;True-14&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;True-15&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;email_format&lt;/span&gt;
-&lt;a name=&quot;True-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=~&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/\S+@\S+\.\S+/&lt;/span&gt;
-&lt;a name=&quot;True-17&quot;&gt;&lt;/a&gt;  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;a name=&quot;True-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;While the Nest reported that it joined my wireless - it couldn’t get online, apparently. I suspected it was my Meraki network equipment as I’ve had some issues with other “consumer” wireless clients and the Meraki. I tried changing my router/ap to a trusty Netgear WNDR3700 that I’ve had for years. Same issue. After joining the wireless - “Entry Key Error: Initializing please try again”. At this point I called Nest support and I was promptly shutdown. My Netgear was on Nest’s unsupported routers list. Yes they have a list of some &lt;a href=&quot;http://support.nest.com/article/Unsupported-Wi-Fi-Access-Points&quot;&gt;pretty common home routers&lt;/a&gt; that Nest just can’t seem to work correctly with. Never mind that I had only switched to the Netgear because my Meraki didn’t work. The support rep basically said she was sorry and that was that.&lt;/p&gt;
 
-&lt;p&gt;Here’s some CSS:&lt;/p&gt;
+&lt;p&gt;So I get off the line and I go into full IT guy mode. I started forwarding ports. And I turned off wireless security. I set static IPs. Blah blah blah, wireless sucks and you get used to dealing with weird issues. I even took my (horrible) Ubee modem from TWC out of bridge mode and tried to use &lt;em&gt;it&lt;/em&gt; as the wireless router. None of this worked. So I called Nest support again and explained all I had been doing. I got bumped to level two and then level three. We connected the Nest to my computer via USB and manually updated it. We even got out my Karma hotspot and tried to connect the Nest to it. No dice. Btw if you’re reading this and have a Nest, if the unit reports 0ms ping it means the wireless isn’t working.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foobar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;/* Named colors rule */&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tomato&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So finally Nest support decides they’re going to send me a replacement unit. I received that replacement today. For the past several days the original unit has been fine as just a pretty looking thermostat.&lt;/p&gt;
 
-&lt;h1 id=&quot;headings&quot;&gt;Headings!&lt;/h1&gt;
+&lt;p&gt;The swap should have been easy. You just pop the busted unit off the wall (it sort of just clicks into its wall mount) and then put the new unit on. The new unit immediately got stuck in a loop. It would tell you “Please remove the Nest from it’s base and then reattach it” and then “Please attach the display to the base.” Over and over and over. Back on the phone with Nest support. This time we moved wires around on the base. Turned our ac/heating units on and off a half dozen times. Reset the Nest over USB using a ResetToDefault file. All to no avail. The unit would not finish booting. It cannot be used as a thermostat. Maybe it could pass as a busted GladOS unit.&lt;/p&gt;
 
-&lt;p&gt;They’re responsive, and well-proportioned (in &lt;code&gt;padding&lt;/code&gt;, &lt;code&gt;line-height&lt;/code&gt;, &lt;code&gt;margin&lt;/code&gt;, and &lt;code&gt;font-size&lt;/code&gt;).
-They also heavily rely on the awesome utility, &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am now waiting on a replacement for my replacement. They were at least nice enough to overnight it.&lt;/p&gt;
 
-&lt;h5 id=&quot;they-draw-the-perfect-amount-of-attention&quot;&gt;They draw the perfect amount of attention&lt;/h5&gt;
+&lt;p&gt;The kicker to all this? The original unit was working fine, just no wireless. After giving up on the replacement I put it back on the base and it immediately asked me to “Please remove the Nest from it’s base and then reattach it”. In the words of the Jonah Hill meme - Fuck me, right? I’m sort of questioning what I might have done wrong. Did I wire something incorrectly? I have our original thermostat reconnected and its working fine. I don’t know what I’m going to do now. Even if the second replacement works I’m kind of worried its going to somehow put out the pilot on our furnace and blow the house up.&lt;/p&gt;
 
-&lt;p&gt;This allows your content to have the proper informational and contextual hierarchy. Yay.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update 8-16-2013&lt;/em&gt; 
+The second replacement unit and base came in. I installed both and the Nest booted up and walked through setup without an issue. Joined the wireless with no problem and its working just fine. So two bad units in a row and nothing more? Time will tell.&lt;/p&gt;
 
-&lt;h3 id=&quot;there-are-lists-too&quot;&gt;There are lists, too&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 14 Aug 2013 07:20:30 -0400</pubDate>
+        <link>http://pixyll.com/blog/2013/08/14/nest/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2013/08/14/nest/</guid>
+      </item>
+    
+      <item>
+        <title>Be careful with Windows DNS</title>
+        <description>&lt;p&gt;Earlier today I was looking into an issue for a client. In an audit report for folder moves/deletes it was shown that a user (Edgar) moved a folder, but did it from a machine that wasn’t his (Hank’s PC). It turns out this is because both Edgar and Hank had connected to the client’s VPN. This VPN uses its own pool of IPs instead of the Windows DHCP server onsite. Therefore the DNS records for the VPN client’s aren’t kept up-to-date by DHCP. So Edgar and Hank were both in DNS with the same IP. This wouldn’t be an issue very often but could be confusing for the client when it does happen.&lt;/p&gt;
+
+&lt;p&gt;In thinking of ways to resolve this I decided to increase the interval that DNS deletes stale records. By default this isn’t very frequently, about once every 3 days. In true Microsoft fashion there’s this &lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc759204%28v=ws.10%29.aspx&quot;&gt;whole complicated process&lt;/a&gt; by which the DNS server decides which records are stale enough to delete. I decided it wouldn’t be that big of a deal to delete stale records once every 3 hours.&lt;/p&gt;
+
+&lt;p&gt;Fast forward about… 3 hours and suddenly our monitoring system is losing connection to several of the client’s servers. I check DNS and sure enough about  half the servers’ records are gone. After some more digging I found out that by default Windows only re-registers itself with the local DNS server once every 24 hours. This value can be changed using the DefaultRegistrationRefreshInterval registry key (see Microsoft’s &lt;a href=&quot;http://support.microsoft.com/kb/246804&quot;&gt;KB246804&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Of course I should have checked this before making sweeping changes to the DNS configuration. But that would make me a good administrator instead of just so/so. :)&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Mar 2013 06:15:57 -0500</pubDate>
+        <link>http://pixyll.com/blog/2013/03/06/be-careful-with-windows-dns/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2013/03/06/be-careful-with-windows-dns/</guid>
+      </item>
+    
+      <item>
+        <title>Building A Home Server</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;My psychiatrist told me I was crazy and I said I want a second opinion. He said okay, you’re ugly too. - Rodney Dangerfield&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/2012-11-13-19.33.48_large.jpg&quot; alt=&quot;Testing the hardware&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Be in IT for a while and you start to get a sense that - if its related to computers you can do it.  I’m reasonably sure of my abilities, and in particular my ability to google up anything I don’t know,  and so I considered a home server for a while.   I’m always turning up a virtual machine on my workstation or wishing I could run x, y and z applications 24/7 on a system besides my main tower.  Mostly though I’ve started amassing a large amount of DVD rips and wanted to have some sort of file storage option that didn’t involve USB drives hanging off a HTPC in my living room.   Part of the reason for this blog post is that in preparing for this project I was reading forums and blog posts from all over the place.  There’s a lot of great information out there but its a bit like putting together a puzzle.&lt;/p&gt;
+
+&lt;p&gt;If you start looking into small NAS projects you’ll likely run into folks in two camps, one running dedicated devices and the other rolling their own server.  I can’t speak for dedicated devices like those from &lt;a href=&quot;http://arstechnica.com/gadgets/2012/09/synology-ds-412-is-fast-fun-and-flexible/&quot;&gt;Synology&lt;/a&gt; or &lt;a href=&quot;http://arstechnica.com/gadgets/2007/08/storage-robot-at-your-service-a-review-of-the-drobo/&quot;&gt;Drobo&lt;/a&gt;.  Ultimately I decided that if I was going to shell out some coin for a system I want something that can do more with than just serve files.  Synology has this whole ecosystem of apps for their devices but it feels like wasted knowledge to learn too much about that.  However I will say on the tail-end of this project that my sanity might have been better maintained just going with a purpose-built NAS device.&lt;/p&gt;
+
+&lt;p&gt;Basically what I ended up with is a home server built to run ESXi at its core.  With a virtual machine for running FreeNAS and another to run Server 2012.  And then with enough spare resources to turn up future VMs for additionals servers, projects, testing, whatever.&lt;/p&gt;
+
+&lt;p&gt;FreeNAS, based on FreeBSD, is an OS completely devoted to functioning as a NAS - for storing and sharing files.  The feature that the FreeNAS crowd really get excited about is the ZFS file system and its RAIDZ software RAID.   When looking at serious file storage, no matter how you set things up, some sort of RAID is probably going to be involved.  RAIDing your disks gives you a large pool of storage, rather than several individual disks.  It gives you some breathing room if one (or more, depending on setup) disks dies.  It can provide better performance than any single disk (performance is another selling point of ZFS - its damn fast).&lt;/p&gt;
+
+&lt;p&gt;There are a lot of different options with RAID.  In most enterprise settings you’re going to have a hardware controller.  Basically a card, or on motherboard device, dedicated to managing your RAID.  The problem with this for home setups is unless you’re doing something really simple, like two drives in a mirror, you really have to shell out some cash for a decent RAID card.  Basically they’re their own little computers.  And what happens if your RAID card dies?  Well… good luck.&lt;/p&gt;
+
+&lt;p&gt;Here-in lies a big advantage of FreeNAS and ZFS.  &lt;em&gt;Theoretically&lt;/em&gt; your entire server could die.  FreeNAS itself dead, whatever.  Everything is on the disks though so as long as they’re ok you just load up another instance of FreeNAS, import your ZFS volume… and you’re back in business.&lt;/p&gt;
+
+&lt;h2 id=&quot;hardware&quot;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;I found a lot of the same hardware recommended online.  Supermicro motherboard, Intel Xeon i3.  Mostly I just followed the buying guide &lt;a href=&quot;http://wahlnetwork.com/2012/03/13/building-esxi-5-whitebox-home-lab-servers/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Apples&lt;/li&gt;
-  &lt;li&gt;Oranges&lt;/li&gt;
-  &lt;li&gt;Potatoes&lt;/li&gt;
-  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;CPU - Intel Xeon E3-1230 Sandy Bridge 3.2GHz (&lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16819115083&amp;amp;Tpk=Intel%20Xeon%20E3-1230%20%u201cSandy%20Bridge%u201d%20%u2013%203.2GHz%2c%204%20Core&quot;&gt;Newegg&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Motherboard - Supermicro MBD-X9SCM-F-O (&lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16813182253&quot;&gt;Newegg&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Memory - I differed here from the guide linked above, prices have come down and I grabbed 4 sticks of Kingston 8GB KVR13E9/8I for 32 GB total (&lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16820239116&quot;&gt;Newegg&lt;/a&gt;).  32GB is the max amount of RAM that the free version of ESXi will support.&lt;/li&gt;
+  &lt;li&gt;ESXi install drive - This is a flash drive that ESXi will be installed on.  The OS consumes the entire drive its installed on and doesn’t really hit the disk once booted so a flash drive is ok here.  Plus the motherboard has an internal USB port for this.  (&lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16820191366&quot;&gt;Newegg&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Storage HDDs - 5 x Western Digital Red WD30EFRX 3TB.  WD Red drives are &lt;a href=&quot;http://www.wdc.com/en/products/products.aspx?id=810&quot;&gt;ready made&lt;/a&gt; for NAS systems, apparently.  I just like the longer warranty.&lt;/li&gt;
+  &lt;li&gt;VM storage - The storage drives are going to be linked directly into a FreeNAS VM so we need yet another drive to store the actual VM virtual disks.  I just found a &lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16820227706&quot;&gt;SSD with good reviews on Newegg&lt;/a&gt; for this.  OCZ drives aren’t very popular due to firmware issues but I’ll take my chances.&lt;/li&gt;
+  &lt;li&gt;RAID Card - More on this later, IBM m1015 (&lt;a href=&quot;http://www.ebay.com/itm/IBM-ServeRaid-M1015-SAS-SATA-PCI-e-RAID-Controller-46M0861-46M0831-/121020082200?pt=US_Server_Disk_Controllers_RAID_Cards&amp;amp;hash=item1c2d5be818&quot;&gt;eBay&lt;/a&gt;).  Also you’ll need mini-SAS SFF-8087 to SATA cables for this card (&lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16812191302&quot;&gt;Newegg&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16811119206&quot;&gt;case&lt;/a&gt; and &lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16817139001&quot;&gt;power supply&lt;/a&gt; I had laying around.  If I were doing this again I would &lt;strong&gt;definitely&lt;/strong&gt; buy something new, particularly the case.  The Cooler Master case only has a few 3.5 bays for HDDs and I lost the rails for 2 of them.  So basically I had to cobble things together.  Something like &lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16811112316&quot;&gt;this Lian Li case&lt;/a&gt; and &lt;a href=&quot;http://www.newegg.com/Product/Product.aspx?Item=N82E16817151088&quot;&gt;SeaSonic PSU&lt;/a&gt; would work much better.  I also purchased a few new case fans to try to cut down on noise (fans shipped with the case were junk).  Be sure to get &lt;strong&gt;&lt;a href=&quot;http://www.newegg.com/Product/ProductList.aspx?Submit=ENE&amp;amp;N=100007998%20600035674&amp;amp;IsNodeId=1&amp;amp;name=4%20Pin&quot;&gt;4-pin&lt;/a&gt;&lt;/strong&gt;&lt;a href=&quot;http://www.newegg.com/Product/ProductList.aspx?Submit=ENE&amp;amp;N=100007998%20600035674&amp;amp;IsNodeId=1&amp;amp;name=4%20Pin&quot;&gt; fans&lt;/a&gt; if you elect to grab some, the Supermicro motherboard likes to control the speed of the fans.  3-pins will work, they’ll just run at max RPM constantly.  I believe the motherboard has five fan connections.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;Mow the lawn&lt;/li&gt;
-  &lt;li&gt;Feed the dog&lt;/li&gt;
-  &lt;li&gt;Dance&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;The IBM Raid card won’t actually be providing RAID.  Instead we’ll change the operating mode to pass the drives through directly to the system.  Sort of like a SATA expansion board except better for a few reasons.  The m1015 cards have been appearing on eBay for super cheap and come highly recommended by those doing these sort of setups.  You can also hang a TON of drives off the card, the mini-SAS cables linked above allows for 8 drives (4 drives per port) but you can add many more (up to 64) with SAS expanders.&lt;/p&gt;
 
-&lt;h3 id=&quot;images-look-great-too&quot;&gt;Images look great, too&lt;/h3&gt;
+&lt;h2 id=&quot;the-build-raid-card-setup-and-esxi-install&quot;&gt;The Build, RAID card setup and ESXi install&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png&quot; alt=&quot;desk&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Updating the BIOS and flashing the IBM Card&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;there-are-also-pretty-colors&quot;&gt;There are also pretty colors&lt;/h3&gt;
+&lt;p&gt;Putting the system together is pretty standard fare.  We should update the BIOS on the Supermicro board out of the box.  They actually don’t recommend BIOS updates if there isn’t some feature or issue you need specifically addressed but since the system isn’t actually &lt;em&gt;in production&lt;/em&gt; (so to speak) we might as well go ahead and get the latest and greatest on there.&lt;/p&gt;
 
-&lt;p&gt;Also the result of &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;, you can &lt;span class=&quot;bg-dark-gray white&quot;&gt;highlight&lt;/span&gt; certain components
-of a &lt;span class=&quot;red&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;mid-gray&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;green&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;orange&quot;&gt;classes&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;This process can be kind of a pain in the ass.  You need a DOS bootdisk.  The way I like to set this up is using a tool from HP to make a flash drive bootable. &lt;a href=&quot;http://files.extremeoverclocking.com/file.php?f=197&quot;&gt;This blog post&lt;/a&gt; on ExtremeOverclocking.com has everything you need.  You can grab the latest BIOS from &lt;a href=&quot;http://www.supermicro.com/support/bios/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I don’t recommend using blue, though. It looks like a &lt;span class=&quot;blue&quot;&gt;link&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Go ahead and label the WD Red drives with their serial number and maybe a nickname.  I used Norse gods.  If a drive fails later on and you don’t have it labeled you’re gonna have to pop each drive out and check the serial number in order to determine which drive actually died.  Unless you get some fancy enclosure with drive indicators.&lt;/p&gt;
 
-&lt;h3 id=&quot;stylish-blockquotes-included&quot;&gt;Stylish blockquotes included&lt;/h3&gt;
+&lt;p&gt;We also need to put our IBM RAID card in “IT” mode.  This is slightly more of a pain in the ass than updating the BIOS on the motherboard.  Normally this would also be done using a DOS bootdisk except on this particular motherboard model the update will give you a “Failed to initialize PAL” error when run from DOS.  So we need to use the UEFI BIOS shell on the motherboard.  Read through &lt;a href=&quot;http://www.servethehome.com/ibm-serveraid-m1015-part-4/&quot;&gt;this blog post&lt;/a&gt; for the commands and files needed to flash the firmware, you can just download the files to a flash drive.  Then follow &lt;a href=&quot;http://www.supermicro.com/support/faqs/faq.cfm?faq=14716&quot;&gt;this guide&lt;/a&gt; from Supermicro to access the UEFI shell.  Note that the actual “sas2flash” command is different in UEFI, if you do a directory listing of the firmware files you’ll see it highlighted as a UEFI compatible executable.&lt;/p&gt;
 
-&lt;p&gt;You can use the markdown quote syntax, &lt;code&gt;&amp;gt;&lt;/code&gt; for simple quotes.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;ESXi installation&lt;/em&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;Now we can finally install &lt;a href=&quot;http://www.vmware.com/go/get-free-esxi&quot;&gt;ESXi&lt;/a&gt;.  This is the headless virtual machine host OS from VMware.  Headless meaning there’s no GUI, you configure VMs remotely.  And just to save a little face.  &lt;strong&gt;I am not an ESXi expert.&lt;/strong&gt;  I’d barely consider myself a novice.  Besides some work on monitoring ESXi systems I have never done much beyond the basics through work and this was the first time with the software for personal use.  So with that in mind… load your ISO onto a CD or flash drive or you can get fancy and use the Grub4DOS method detailed &lt;a href=&quot;http://superuser.com/questions/154133/grub-boot-from-iso&quot;&gt;here&lt;/a&gt;.  The ESXi install should be pretty straightforward, just make sure you install to your USB flash drive connected directly to the motherboard.  Once installed browse to the IP address of the server to download the vSphere client you’ll use to configure the system.&lt;/p&gt;
 
-&lt;p&gt;However, you need to inject html if you’d like a citation footer. I will be working on a way to
-hopefully sidestep this inconvenience.&lt;/p&gt;
+&lt;h3 id=&quot;freenas-vm-setup&quot;&gt;FreeNAS VM setup&lt;/h3&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;At this point ESXi is installed and you can use the vSphere client to access the system.  You’ll want to add that SSD as your primary datastore.  This is handled from Configuration &amp;gt; Storage &amp;gt; Add Storage in vSphere.  You can mostly next-next-finish through the wizard.&lt;/p&gt;
 
-&lt;h3 id=&quot;theres-more-being-added-all-the-time&quot;&gt;There’s more being added all the time&lt;/h3&gt;
+&lt;p&gt;To setup the FreeNAS VM follow the guide &lt;a href=&quot;http://doc.freenas.org/index.php/FreeNAS%C2%AE_in_a_Virtual_Environment#VMWare_ESXi&quot;&gt;here&lt;/a&gt;.  We want to give the VM 1 GB of ram per TB of storage.  I’m not sure if this is total TB or usable after setting up RAID so I went with giving FreeNAS 16GB of RAM. (edit - I lowered this to 12 GB of RAM after running for a while and I haven’t noticed a difference in performance)&lt;/p&gt;
 
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to request,
-or add, features.&lt;/p&gt;
+&lt;p&gt;Now we need to setup what’s called Raw Device Mapping for our WD Red drives.  This attaches the drives to the VM in the most direct way possible so the file system, etc aren’t touched at all by ESXi.  From within vSphere go to Configuration &amp;gt; Software &amp;gt; Advanced Settings &amp;gt; RDMFilter and uncheck the RDMFilter option.  This is the quick version of a much more complicated solution detailed &lt;a href=&quot;http://blog.davidwarburton.net/2010/10/25/rdm-mapping-of-local-sata-storage-for-esxi/&quot;&gt;here&lt;/a&gt; which apparently only works on some hardware.  Luckily it works on all LSI IT flashable cards.&lt;/p&gt;
 
-&lt;p&gt;Happy writing.&lt;/p&gt;
+&lt;p&gt;Once this is complete you should now be able to add hard disks to your VM, select Raw Device Mappings and then select the physical hard drive’s attached to the RAID card.  Also place the discs on a new SCSI channel (a channel other than the one used by the base virtual disk the FreeNAS OS will be installed to).  This just makes thing neater if you add more storage later.&lt;/p&gt;
+
+&lt;p&gt;With the hardware for the FreeNAS VM configured we’ll want to boot it up and setup networking.  I like to use static addresses for anything that’s going to be on all of the time so that’s what I did with FreeNAS.  Also unrelated to this project but I’ve been taught over the years that trusting DHCP reservations is a bad bet, just set static IPs outside the range of IPs your DHCP server assigns leases from.&lt;/p&gt;
+
+&lt;p&gt;Now that  networking is configured you can access FreeNAS via its IP address and continue configuration.  Unfortunately I didn’t document this part of my setup very well as it’s kind of self explanatory, particularly if you plan on making just one large pool of storage from all of your disks.  &lt;a href=&quot;http://www.trainsignal.com/blog/zfs-nas-setup-guide&quot;&gt;This post&lt;/a&gt; goes into the details except I veer off after creating the Dataset.  I don’t do any actual sharing or other work with the storage within FreeNAS.&lt;/p&gt;
+
+&lt;h3 id=&quot;iscsi&quot;&gt;iSCSI&lt;/h3&gt;
+
+&lt;p&gt;Being a Windows guy I’m most comfortable working in Windows.  So the conclusion of my setup would probably make a lot of NAS die hards roll their eyes &lt;strong&gt;really&lt;/strong&gt; hard but at this point I linked my ZFS volume directly into a Server 2012 VM via iSCSI (following the guide &lt;a href=&quot;http://www.trainsignal.com/blog/freenas-8-iscsi-target-windows-7&quot;&gt;here&lt;/a&gt;).  iSCSI is basically a method of having a disk in one system actually live on another  and be accessed over the network.  I could have simply linked the disks to my Server 2012 VM and used Windows built-in RAID but I don’t trust it as much as the recommendations for RAIDZ.  I do however like controlling access and doing all my media serving in Windows.  Although who knows, my next blog post might be about me changing everything to a Linux setup.  So yeah, haters goin’ hate and all that.&lt;/p&gt;
+
+&lt;p&gt;That’s the basics of the project.  I would have liked to have gone into more detail with FreeNAS and the iSCSI setup but I took a very long break from writing this post and, as my mind is want to do, I pretty much forgot everything.  At this point I have about 4 VMs running on the ESXi server with a few that get cycled on and off as needed for work.  It’s been a rock solid system, no downtime as of yet.  &lt;em&gt;Knocks on wood&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update 12-3-2013&lt;/em&gt;
+Almost a year later and this server is still kicking it.  My only real limiting factor has been the tiny SSD I bought for VM storage.  I’d also feel a lot better having two larger SSDs in a RAID mirror for the VM storage.  As it stands now if that SSD dies I’m going to be spending a lot of time rebuilding things.&lt;/p&gt;
+
+&lt;p&gt;I recently finally replaced the COUGAR CF-V12HP fans I originally ordered for the case.  These fans make a very annoying high pitched whine when they are not spinning at max RPM, which they shouldn’t be if connected properly to this motherboard.  I replaced these with Noctua NF-F12 PWM fans which are completely silent.&lt;/p&gt;
+
+&lt;p&gt;Finally, I’ve stopped ordering from Newegg.  Amazon is typically going to have better prices and ship times.  Newegg is still nice for their search tools however.&lt;/p&gt;
+
 </description>
-        <pubDate>Tue, 10 Jun 2014 08:31:19 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</guid>
-      </item>
-    
-      <item>
-        <title>So, What is Jekyll?</title>
-        <description>&lt;p&gt;Jekyll is a tool for transforming your plain text into static websites and 
-blogs. It is simple, static, and blog-aware. Jekyll uses the 
-&lt;a href=&quot;http://docs.shopify.com/themes/liquid-basics&quot;&gt;Liquid&lt;/a&gt; templating
-language and has builtin &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;
-and &lt;a href=&quot;http://en.wikipedia.org/wiki/Textile_(markup_language)&quot;&gt;Textile&lt;/a&gt; support.&lt;/p&gt;
-
-&lt;p&gt;It also ties in nicely to &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Learn more about Jekyll on their &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 09 Jun 2014 08:32:18 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</guid>
-      </item>
-    
-      <item>
-        <title>Pixyll has Pagination</title>
-        <description>&lt;p&gt;This is an empty post to illustrate the pagination component with Pixyll.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Jun 2014 07:21:29 -0400</pubDate>
-        <link>http://pixyll.com/jekyll/pixyll/2014/06/08/pixyll-has-pagination/</link>
-        <guid isPermaLink="true">http://pixyll.com/jekyll/pixyll/2014/06/08/pixyll-has-pagination/</guid>
+        <pubDate>Mon, 14 Jan 2013 06:10:32 -0500</pubDate>
+        <link>http://pixyll.com/blog/2013/01/14/building-a-home-server/</link>
+        <guid isPermaLink="true">http://pixyll.com/blog/2013/01/14/building-a-home-server/</guid>
       </item>
     
   </channel>

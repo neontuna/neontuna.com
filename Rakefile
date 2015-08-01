@@ -5,6 +5,7 @@ namespace :draft do
   task :new do
     puts "What's the name for your next post?"
     @name = STDIN.gets.chomp
+    @time = Time.now.strftime("%F %T")
     @slug = "#{@name}"
     @slug = @slug.tr('ÁáÉéÍíÓóÚú', 'AaEeIiOoUu')
     @slug = @slug.downcase.strip.gsub(' ', '-')
@@ -13,7 +14,8 @@ namespace :draft do
       file.puts "---"
       file.puts "layout: post"
       file.puts "title: #{@name}"
-      file.puts "description: maximum 155 char description"
+      file.puts "date: #{@time}"
+      file.puts "summary: a brief description"
       file.puts "category: blog"
       file.puts "tag: blog"
       file.puts "---"
