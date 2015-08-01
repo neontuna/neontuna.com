@@ -6,7 +6,7 @@ permalink: /about/
 
 ![Justin and Dixie the cat]({{ site.baseurl }}/assets/justin_dixie_trans.png)
 <br>
-*Riding Dixie through the galaxy, illustrated by Dawn Hall.*
+*Riding Dixie through the galaxy, illustrated by [Dawn Hall][dawn].*
 
 
 Hello there, you've somehow stumbled across my website.  First of all, I apologize
@@ -45,3 +45,4 @@ hosted on [Github Pages][ghp].
 [ghp]:https://pages.github.com
 [f1]:http://f1-networks.com
 [viking]:http://www.vikingcodeschool.com
+[dawn]:http://www.foxandthefiddle.com
