@@ -4,7 +4,7 @@ title: Godaddy sucks
 date: 2014-08-25 11:42:44
 summary: Surprise!
 category: blog
-tag: blog
+categories: rant
 ---
 
 Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.  

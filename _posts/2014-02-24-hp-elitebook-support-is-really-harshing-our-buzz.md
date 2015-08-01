@@ -4,7 +4,7 @@ title: HP EliteBook Support is really harshing our buzz
 date: 2014-02-24 11:22:32
 summary: They may be driving my co-worker and friend into an early grave.
 category: blog
-tag: blog
+categories: rants
 ---
 
 Updated 3/6/2014

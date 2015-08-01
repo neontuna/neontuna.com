@@ -4,7 +4,7 @@ title: Need data from a dead Surface Pro?
 date: 2014-06-25 11:29:07
 summary: Hurry up and wait
 category: blog
-tag: blog
+categories: hardware
 ---
 
 ![The innards of a dead Surface tablet](/assets/photo_large.JPG)

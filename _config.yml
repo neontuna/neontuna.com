@@ -2,9 +2,9 @@
 title:       Night Iron
 email:       justin.mullis@gmail.com
 author:      Justin Mullis
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Rambling thoughts from your IT guy"
 baseurl:     ""
-url:         "http://nonadmin.github.io"
+url:         "http://nightiron.com"
 
 # Google analytics
 google_analytics:
@@ -13,16 +13,16 @@ google_analytics:
 animated:           false
 show_related_posts: false
 show_post_footers:  false
-show_social_icons:  true
+show_social_icons:  false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
 
 # Social icons
-github_username: nonadmin
+github_username: 
 stackoverflow_id:
-twitter_username: nonadmn
+twitter_username: 
 google_plus_id:
 linkedin_username:
 angellist_username:

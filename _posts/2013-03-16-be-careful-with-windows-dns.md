@@ -4,7 +4,7 @@ title: Be careful with Windows DNS
 date: 2013-03-06 11:15:57
 summary: Aging/Savaging can get you into trouble
 category: blog
-tag: blog
+categories: windows admin 
 ---
 
 Earlier today I was looking into an issue for a client. In an audit report for folder moves/deletes it was shown that a user (Edgar) moved a folder, but did it from a machine that wasn't his (Hank's PC). It turns out this is because both Edgar and Hank had connected to the client's VPN. This VPN uses its own pool of IPs instead of the Windows DHCP server onsite. Therefore the DNS records for the VPN client's aren't kept up-to-date by DHCP. So Edgar and Hank were both in DNS with the same IP. This wouldn't be an issue very often but could be confusing for the client when it does happen.
