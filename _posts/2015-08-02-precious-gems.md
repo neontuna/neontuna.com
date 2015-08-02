@@ -92,7 +92,7 @@ def auto_reveal_search(coords)
   queue = [coords]
   until queue.empty?
 
-    test_cell = queue.pop
+    test_cell = queue.shift
     neighbors = get_neighbors( test_cell )
 
     queue += queue_cells_for_search(neighbors)
