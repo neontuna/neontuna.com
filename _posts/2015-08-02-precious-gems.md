@@ -103,7 +103,7 @@ def auto_reveal_search(coords)
 end
 {% endhighlight %}
 
-I'm a lot happier with this code than what I did with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.
+I'm a lot happier with this code than I was with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.
 
 I'm now in the midst of data structures and estimating the time complexity of software using [Big O notation][bigo].  To infinity... and beyond.
 
