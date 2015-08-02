@@ -19,13 +19,13 @@ computers.
 
 Whoa, you're still here... Well my name is Justin Mullis.  I'm a native son of 
 Charlotte, North Carolina.  There are exactly three people living in Charlotte that were born here.
-I built my first computer when I was in highschool.
+I built my first computer when I was in high school.
 
 ![Check out this nerd]({{ site.baseurl }}/assets/551793_10150991698719185_1788344000_n.jpg)
 <br>
 *Does your computer have a "Turbo" button?*
 
-I continued tinkering, including a brief stint running a colo hosted web server
+I continued tinkering, including a brief stint running a colocated hosted web server
 for friends and some small businesses.  In 2008 I started work as an IT guy for [F1-Networks][f1]
 and I've been there ever since.  I love BBQ (NC BBQ, the only kind that matters), camping, 
 screen prints, air plants, my awesome girlfriend Leah, and my giant cat Dixie.

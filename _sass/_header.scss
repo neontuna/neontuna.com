@@ -10,7 +10,11 @@
 }
 
 .site-header .site-title {
+  color: #fff;
   font-size: $h2;
+  background-color: #000;
+  display: block;
+  padding: 2px 4px;
 }
 
 .site-nav {
