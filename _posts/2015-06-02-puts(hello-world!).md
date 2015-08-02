@@ -5,6 +5,7 @@ date: 2015-06-02 12:03:21
 summary: The first few weeks of Viking Code School
 category: blog
 categories: viking developer
+callout: This is the first in a series of posts detailing my experience in the Viking Code School
 ---
 
 ![Jeff Lebowski's "Danebook" page](/assets/Screen%20Shot%202015-06-02%20at%201.52.25%20PM_large.png)

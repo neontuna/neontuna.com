@@ -5,7 +5,9 @@ date: 2015-08-01 18:54:09
 summary: Learning Ruby, TDD, Data Structures O_o
 category: blog
 categories: viking ruby
+callout: This is the second in a series of posts detailing my experience in the [Viking Code School](/blog/2015/06/02/puts(hello-world!)/)
 ---
+
 
 This past month with Viking has been pretty interesting.  After getting through
 the basic syntax of Ruby we went even deeper into object orientation.  

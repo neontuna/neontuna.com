@@ -100,7 +100,7 @@ five guesses.&lt;/p&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;I’m a lot happier with this code than what I did with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.&lt;/p&gt;
+&lt;p&gt;I’m a lot happier with this code than I was with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.&lt;/p&gt;
 
 &lt;p&gt;I’m now in the midst of data structures and estimating the time complexity of software using &lt;a href=&quot;https://www.youtube.com/watch?v=iOq5kSKqeR4&quot;&gt;Big O notation&lt;/a&gt;.  To infinity… and beyond.&lt;/p&gt;
 
