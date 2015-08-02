@@ -4,11 +4,6 @@ title: About
 permalink: /about/
 ---
 
-![Justin and Dixie the cat]({{ site.baseurl }}/assets/justin_dixie_trans.png)
-<br>
-*Riding Dixie through the galaxy, illustrated by [Dawn Hall][dawn].*
-
-
 Hello there, you've somehow stumbled across my website.  First of all, I apologize
 if the domain name is misleading.  Nightiron.com was available and sounded really cool,
 like a hair metal band.  There's really nothing on here about night time or
@@ -36,6 +31,10 @@ Currently I'm cramming my brain with all things web development through the
 If you'd like to contact me, just say my name three times and I will appear.  Failing that, use the [contact page](/contact).
 Or send me an [awesome tweet](https://twitter.com/nonadmn).
 Thank you for reading!
+
+![Justin and Dixie the cat]({{ site.baseurl }}/assets/justin_dixie_trans.png)
+<br>
+*Riding Dixie through the galaxy, illustrated by [Dawn Hall][dawn].*
 
 This site is built with [Jekyll][Jekyll] and uses the [Pixyll theme][Pixyll]. It is 
 hosted on [Github Pages][ghp].

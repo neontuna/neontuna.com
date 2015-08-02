@@ -12,7 +12,7 @@
 the basic syntax of Ruby we went even deeper into object orientation.  &lt;/p&gt;
 
 &lt;h3 id=&quot;mastermind&quot;&gt;Mastermind&lt;/h3&gt;
-&lt;p&gt;We wrapped up with recreating the classic board game &lt;a href=&quot;https://en.wikipedia.org/wiki/Mastermind_(board_game)&quot;&gt;Mastermind&lt;/a&gt;.  The main point of the exercise was to drive home the ideas behind method decomposition, classes, and other basic principles of OOP.  &lt;/p&gt;
+&lt;p&gt;OOP wrapped up with recreating the classic board game &lt;a href=&quot;https://en.wikipedia.org/wiki/Mastermind_(board_game)&quot;&gt;Mastermind&lt;/a&gt;.  The main point of the exercise was to drive home the ideas behind method decomposition, classes, and other basic principles of OOP.  &lt;/p&gt;
 
 &lt;p&gt;However I had the most fun getting Mastermind to break my codes using &lt;a href=&quot;https://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth’s&lt;/a&gt; algorithm.  Properly optimized the software can break a code in
 five guesses.&lt;/p&gt;
@@ -46,15 +46,65 @@ five guesses.&lt;/p&gt;
   &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;The above is my code for this.  And here we see the software cracking a code I set.&lt;/p&gt;
+&lt;p&gt;The above is my code for this.  And here is the software cracking a code I set.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/mastermind.gif&quot; alt=&quot;Mastermind code being cracked&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;What’s funny is even now only a few weeks later, I’m thinking “man, that code works but its confusing as hell to read”.  I’ve since learned to stop trying to do so much with every single line of code, lest it just look like a big mess.&lt;/p&gt;
+&lt;p&gt;I’ve had to focus on writing code that actually makes sense to someone besides me when I’m writing it.  Just a few weeks later and those two methods read like the &lt;a href=&quot;https://en.wikipedia.org/wiki/Voynich_manuscript&quot;&gt;Voynich Manuscript&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;tdd-minesweeper&quot;&gt;TDD Minesweeper&lt;/h3&gt;
 
-&lt;p&gt;The next unit &lt;/p&gt;
+&lt;p&gt;The next unit focused on test driven development with Rspec.  I had a little experience with this from Michael Hartl’s &lt;a href=&quot;https://www.railstutorial.org/&quot;&gt;Rails Tutorial&lt;/a&gt;.   TDD and Rspec are definitely frustrating to get started with.   You’re constantly thinking about what to test, if you’re being too granular, if it wouldn’t be best to just run a higher level integration test that &lt;em&gt;should&lt;/em&gt; fail if a dependent method breaks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rspec.png&quot; alt=&quot;Green Rspec tests&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Despite the frustration, it is a great feeling to revisit well tested code, to refactor it confidentially as you watch your tests re-run with each change.&lt;/p&gt;
+
+&lt;p&gt;Minesweeper also presented an interesting problem to solve.  A recursive function is needed to automatically clear cells when it makes sense to do so.  It should clear the cells or tiles of the board right up to any tile that is adjacent to a mine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/minesweeper.gif&quot; alt=&quot;Minesweeper being played, poorly&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This required a lot of different dependent functions.  You’d need something that could find the “neighbors” of a cell.  You need to add those neighbors to a queue and then come back and check all of &lt;em&gt;their&lt;/em&gt; neighbors and so on until there was nothing left to check.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;auto_reveal_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty?&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;test_cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue_cells_for_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;auto_reveal_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I’m a lot happier with this code than what I did with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.&lt;/p&gt;
+
+&lt;p&gt;I’m now in the midst of data structures and estimating the time complexity of software using &lt;a href=&quot;https://www.youtube.com/watch?v=iOq5kSKqeR4&quot;&gt;Big O notation&lt;/a&gt;.  To infinity… and beyond.&lt;/p&gt;
+
+&lt;p&gt;(Sorry, that’s sort of the perfect way to end something when you’re talking about Big O)&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Aug 2015 14:54:09 -0400</pubDate>
