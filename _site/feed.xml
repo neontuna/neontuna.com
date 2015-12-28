@@ -7,6 +7,80 @@
     <atom:link href="http://nightiron.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>A Year Of Programming</title>
+        <description>&lt;p&gt;Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I’ve moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  As I look to  the final section of the course, Javascript, I have a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cheapest_ticket&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itinerary_id&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flight_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+                     &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;
+                                &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itinerary_id&lt;/span&gt;
+                                &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flight_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+                     &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
+                     &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Reflecting back on the year I’m extremely happy that I decided to commit to becoming a developer and my apprehensions have mostly faded away.    I’ve coded in airports while waiting on flights, I’ve worked in the passenger seat of my girlfriend’s car while we drove to visit friends in the pouring rain.  Which isn’t to say I’m some sort of superhero, just that I really love doing this.&lt;/p&gt;
+
+&lt;p&gt;The only real issue I’ve faced is finding the time needed to study (and being in front of the computer on top of my regular IT hours).  The Viking course load is no joke, and even though I’ve dedicated around 70 hours a month on average its not nearly the ideal pace.  The main problem is retention, for instance the work I originally did with web scraping is starting to get fuzzy and will require some refreshing when I put that knowledge to use in future projects.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 28 Dec 2015 14:59:03 -0500</pubDate>
+        <link>http://nightiron.com/blog/2015/12/28/a-year-of-programming/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2015/12/28/a-year-of-programming/</guid>
+      </item>
+    
+      <item>
+        <title>OSX Utilities</title>
+        <description>&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://jumpcut.sourceforge.net/&quot;&gt;Jumpcut&lt;/a&gt;&lt;/strong&gt; is basically just a clipboard manager.  This is a class of application that sounds extremely geeky unless you think about how often you copy/paste.  Something about IT seems to require an absurd amount of clipboard usage.&lt;/p&gt;
+
+&lt;p&gt;There’s lots of applications that I guess started as just clipboard managers but overtime morphed in a Frankenstein’s monster of unwanted features and eye burning UI choices.  Jumpcut does two things 1) Gives you a history of items you’ve copied to the clipboard 2) Scrubs formatting (HTML, Word, whatever) from text.&lt;/p&gt;
+
+&lt;p&gt;Rather than press Command-V to paste something, I press Control+Option+V.  This pops up the Jumpcut UI which shows the most recent item on the clipboard. If you keep holding Control+Option you can use the up and down arrow keys to pick what to paste.&lt;/p&gt;
+
+&lt;p&gt;Really its one of those things you just need to try and then I’m pretty sure you’ll wonder what you did without it.  Also its free.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://smilesoftware.com/TextExpander&quot;&gt;TextExpander&lt;/a&gt;&lt;/strong&gt; is an extended version of the text shortcuts in OSX and iOS (“omw” becomes “On My Way!”).   For instance I have a few really lazy shortcuts (TextExpander calls them snippets) like &lt;code&gt;;am&lt;/code&gt; becomes “administrator” and &lt;code&gt;;gm&lt;/code&gt; becomes my email address.  Of course you could just do that with the expansion built into the OS.  &lt;/p&gt;
+
+&lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add -A
+git commit -m &quot;whatever I just typed&quot;
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Anything that you type regularly can live in TextExpander.  I keep video/phone conference information in there.  I have some form letter type emails that I keep in there that are similar to the git message and automatically enter a subject and body and tab through fields in Outlook.&lt;/p&gt;
+
+&lt;p&gt;There’s a little statistics pane in TextExpander.  Its apparently auto typed 68,854 characters for me.  Not too shabby.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
+        <link>http://nightiron.com/blog/2015/10/27/osx-utils/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2015/10/27/osx-utils/</guid>
+      </item>
+    
+      <item>
+        <title>Switching to Mac revisited</title>
+        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.   &lt;/p&gt;
+
+&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
+
+&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
+
+&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
+
+&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
+
+&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
+
+&lt;p&gt;[ninite]:&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
+        <link>http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</guid>
+      </item>
+    
+      <item>
         <title>Precious Gems</title>
         <description>&lt;p&gt;This past month with Viking has been pretty interesting.  After getting through
 the basic syntax of Ruby we went even deeper into object orientation.  &lt;/p&gt;
@@ -399,118 +473,6 @@ HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
         <pubDate>Wed, 25 Jun 2014 07:29:07 -0400</pubDate>
         <link>http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</link>
         <guid isPermaLink="true">http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</guid>
-      </item>
-    
-      <item>
-        <title>HP EliteBook Support is really harshing our buzz</title>
-        <description>&lt;p&gt;Updated 3/6/2014&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/CBP0023570_large.JPG&quot; alt=&quot;A twisting maze&quot; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;
-Midway upon the journey of our life,
-I found myself within a forest dark,
-For the straight forward pathway had been lost.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Dante Alighieri&quot;&gt;Dante Alighieri&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;HP’s EliteBook line of notebooks are intended to be the top tier of business hardware.  They automatically include a three year warranty, cost a good amount more than your average Best Buy shovelware system, and actually look and run like a computer you’d want to use.&lt;/p&gt;
-
-&lt;p&gt;For these reasons we typically sell EliteBooks to all of our clients.  They may make noise about their budget but we always remind them that you get what you pay for.  If you spend five hundred bucks on a notebook it &lt;strong&gt;will&lt;/strong&gt; be made of Happy Meal plastic and it &lt;strong&gt;will&lt;/strong&gt; fall apart in the middle of your super important  presentation.  Your customer will laugh at you, you will lose the sale, everything will be horrible.&lt;/p&gt;
-
-&lt;p&gt;Lately however we’ve had some… issues with EliteBook support.  On practically all of these systems we purchase an extended warranty from HP.  On top of the better than average warranty they ship with.  This affords next business day onsite repair of hardware issues, avoiding sending the system back to HP for repairs which can take a few weeks.&lt;/p&gt;
-
-&lt;p&gt;Here’s how one recent incident went down, dutifully documented by my diligent co-worker.  Our client had a faulty track pad…&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1/14 - Worked through troubleshooting steps outlined by HP, they determined that there was a hardware issue&lt;/li&gt;
-  &lt;li&gt;1/15 - Scheduled a call for the 17th, 12-2 PM&lt;/li&gt;
-  &lt;li&gt;1/17 - No call, no show.  HP claims that someone tried to reach out but there’s no record in our phone system of a call.  HP now advises that parts are on back order.  Request replacement PC to get our client going ASAP&lt;/li&gt;
-  &lt;li&gt;1/20 - HP denies replacement request, no ETA on back ordered parts&lt;/li&gt;
-  &lt;li&gt;1/22 - HP still waiting on parts, expects shipment by 1/28&lt;/li&gt;
-  &lt;li&gt;1/28 - No updates from HP.  Receive notice from our data center, in another time zone, that a package arrived from HP.  This was a part intended for our client.  Call HP, told that representative will call us back.&lt;/li&gt;
-  &lt;li&gt;1/29 - No call back.  Email HP to advise on miss-shipped part.&lt;/li&gt;
-  &lt;li&gt;1/30 - Client receives correct part, call HP and setup appointment for 1/31 no later than 1 PM (client is traveling)&lt;/li&gt;
-  &lt;li&gt;1/31 - Client is contacted at 1:45 PM and told technician will be onsite at 1:55.   Client delays travel until 2:40 PM.  Technician advises that additional parts are needed to complete repair.  Repairs will now have to be delayed until 2/6 as client is traveling&lt;/li&gt;
-  &lt;li&gt;2/4 - Call HP to check in, told that they are waiting on the part which the client  already has.  Explain that the client already has the part.  Call forwarded to “Barrister” team to identify which part was actually needed (no idea why HP didn’t handle this internally).  Call drops.&lt;/li&gt;
-  &lt;li&gt;2/5 - Call HP and request system to be replaced.  Told that the case will be reviewed and we’ll receive notice in a few days of their decision.&lt;/li&gt;
-  &lt;li&gt;2/10 - After no contact from HP we called back.  Told decision was delayed due to pending parts order.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This continues on for a little while before HP finally relents and agrees to give us a new computer (still waiting on that).  It is now a month and a half since the case was opened.  Throughout this process we worked with about a dozen different people at HP and at least two of HP’s contractors.  Our client continues to receive parts that he already has.&lt;/p&gt;
-
-&lt;p&gt;Another client has a broken screen.  HP scheduled an appointment, went onsite, fixed the screen and closed the case.   Actually, no, the technician just reported going onsite and repairing the system, twice, without anyone showing up or doing anything.&lt;/p&gt;
-
-&lt;p&gt;And finally we have a client whose system was showing an odd error during POST after a BIOS update.  HP tells us a technician just needs to come out and use a software tool to “rebrand” the motherboard and all will be right.  The technician comes out, I verify this actually happens with my own eyeballs.  I leave and he does his thing.  I come check out the system.  Looks great!  Except the client tells me later the technician had the entire system in pieces and now the SIM card for the internal Verizon broadband adapter is missing.  HP wants to know what the part number is.  In the technician’s notes he apparently replaced the hard drive of the system (which I somehow missed when I reviewed it afterwards, maybe it only &lt;em&gt;seemed&lt;/em&gt; to boot up and into the client’s profile).&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;
-So, the next time you complain about your phone service, why don&#39;t you try using two Dixie cups with a string? We don&#39;t care. We don&#39;t have to. We&#39;re the Phone Company. 
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Lily Tomlin&quot;&gt;Lily Tomlin, SNL&#39;s Phone Company sketch&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;We are a small business.  Our clients are small businesses.  We do not order hundreds of systems at a time.  We do not have a sales rep at our beck and call.  The purpose of this blog is to at least get our frustrations out there.  However pointless it may be to toss into the winds of the Internet.  Maybe someone that matters will see this?  Until then, we just ordered a batch of Dells.  Out of the frying pan and into the fire.&lt;/p&gt;
-
-&lt;p&gt;/Update&lt;/p&gt;
-
-&lt;p&gt;This post got the attention of some folks at HP.  In particular we’ve been speaking to Andrew Lamb - Director, Quality &amp;amp; Customer Assurance.  The replacement system for our customer with the faulty trackpad has arrived.  Our other customer who was having the phantom tech visits has also been taken care of.  I don’t get the feeling this post greased any wheels to get those specific issues solved but will hopefully help with future issues.  We’re still working on case number three, it appears that the technician is claiming the unit did not have a SIM card installed prior to him working on it (not true, we would definitely know if this particular user couldn’t get on Verizon).&lt;/p&gt;
-
-&lt;p&gt;My main suggestions to HP were to give us one person to speak to on these type of repair cases and to definitely never have us or our customers in the position of having to work our way through HP’s internals or those of their contractors.&lt;/p&gt;
-
-&lt;p&gt;In the meantime I have another EliteBook Folio that is randomly losing power.  So far we’ve only had a slight delay waiting on a back ordered part.  We’ll see what happens next.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 24 Feb 2014 06:22:32 -0500</pubDate>
-        <link>http://nightiron.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2014/02/24/hp-elitebook-support-is-really-harshing-our-buzz/</guid>
-      </item>
-    
-      <item>
-        <title>Nest</title>
-        <description>&lt;p&gt;I think a lot of tech/gadget enthusiasts are naturally attracted to the Nest thermostat. Its not super expensive. Its advertised as something you can DIY pretty easily. It looks beautiful! I purchased one after reading about the energy saving people were able to get out of them. And mostly I have no impulse control.&lt;/p&gt;
-
-&lt;p&gt;The first signs of trouble were when my order hadn’t shipped after 4 days (albeit I ordered on a Friday afternoon). I emailed Nest support on the morning of the fifth day and received a cryptic call from them that afternoon that I couldn’t really devote much attention to as I was neck deep in a new server for a client. But at the end of the call the phone rep told me I’d be getting an email in a few minutes showing that the Nest had shipped. I didn’t, and I called 2 hours later. After about 30 minutes on the phone I spoke to someone that explained that their ordering system had some sort of error, that they had sorted it out and that my Nest would ship the next day. And it did. So that’s one problem dealt with.&lt;/p&gt;
-
-&lt;p&gt;I received the thermostat on a Saturday. I eagerly un-boxed and got the thing on the wall. No issues and it was a snap to get setup. Thermostat wiring, at least for our system here, is pretty much a no-brainer. While stepping through the initial setup I joined our wireless network. The Nest then reported it timed out looking for updates and would try again later (first sign of trouble). I was then presented with the error “Entry Key Error: Initializing please try again” when I tried to get the code I needed to pair to my Nest account from the device. The online account is how the Nest talks to the various apps and monitoring that really make it interesting. I shrugged it off and left for the night, the thermostat itself was working fine.&lt;/p&gt;
-
-&lt;p&gt;The next day I started down a rabbit hole of troubleshooting that killed an entire Sunday afternoon.&lt;/p&gt;
-
-&lt;p&gt;While the Nest reported that it joined my wireless - it couldn’t get online, apparently. I suspected it was my Meraki network equipment as I’ve had some issues with other “consumer” wireless clients and the Meraki. I tried changing my router/ap to a trusty Netgear WNDR3700 that I’ve had for years. Same issue. After joining the wireless - “Entry Key Error: Initializing please try again”. At this point I called Nest support and I was promptly shutdown. My Netgear was on Nest’s unsupported routers list. Yes they have a list of some &lt;a href=&quot;http://support.nest.com/article/Unsupported-Wi-Fi-Access-Points&quot;&gt;pretty common home routers&lt;/a&gt; that Nest just can’t seem to work correctly with. Never mind that I had only switched to the Netgear because my Meraki didn’t work. The support rep basically said she was sorry and that was that.&lt;/p&gt;
-
-&lt;p&gt;So I get off the line and I go into full IT guy mode. I started forwarding ports. And I turned off wireless security. I set static IPs. Blah blah blah, wireless sucks and you get used to dealing with weird issues. I even took my (horrible) Ubee modem from TWC out of bridge mode and tried to use &lt;em&gt;it&lt;/em&gt; as the wireless router. None of this worked. So I called Nest support again and explained all I had been doing. I got bumped to level two and then level three. We connected the Nest to my computer via USB and manually updated it. We even got out my Karma hotspot and tried to connect the Nest to it. No dice. Btw if you’re reading this and have a Nest, if the unit reports 0ms ping it means the wireless isn’t working.&lt;/p&gt;
-
-&lt;p&gt;So finally Nest support decides they’re going to send me a replacement unit. I received that replacement today. For the past several days the original unit has been fine as just a pretty looking thermostat.&lt;/p&gt;
-
-&lt;p&gt;The swap should have been easy. You just pop the busted unit off the wall (it sort of just clicks into its wall mount) and then put the new unit on. The new unit immediately got stuck in a loop. It would tell you “Please remove the Nest from it’s base and then reattach it” and then “Please attach the display to the base.” Over and over and over. Back on the phone with Nest support. This time we moved wires around on the base. Turned our ac/heating units on and off a half dozen times. Reset the Nest over USB using a ResetToDefault file. All to no avail. The unit would not finish booting. It cannot be used as a thermostat. Maybe it could pass as a busted GladOS unit.&lt;/p&gt;
-
-&lt;p&gt;I am now waiting on a replacement for my replacement. They were at least nice enough to overnight it.&lt;/p&gt;
-
-&lt;p&gt;The kicker to all this? The original unit was working fine, just no wireless. After giving up on the replacement I put it back on the base and it immediately asked me to “Please remove the Nest from it’s base and then reattach it”. In the words of the Jonah Hill meme - Fuck me, right? I’m sort of questioning what I might have done wrong. Did I wire something incorrectly? I have our original thermostat reconnected and its working fine. I don’t know what I’m going to do now. Even if the second replacement works I’m kind of worried its going to somehow put out the pilot on our furnace and blow the house up.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Update 8-16-2013&lt;/em&gt; 
-The second replacement unit and base came in. I installed both and the Nest booted up and walked through setup without an issue. Joined the wireless with no problem and its working just fine. So two bad units in a row and nothing more? Time will tell.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 14 Aug 2013 07:20:30 -0400</pubDate>
-        <link>http://nightiron.com/blog/2013/08/14/nest/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2013/08/14/nest/</guid>
-      </item>
-    
-      <item>
-        <title>Be careful with Windows DNS</title>
-        <description>&lt;p&gt;Earlier today I was looking into an issue for a client. In an audit report for folder moves/deletes it was shown that a user (Edgar) moved a folder, but did it from a machine that wasn’t his (Hank’s PC). It turns out this is because both Edgar and Hank had connected to the client’s VPN. This VPN uses its own pool of IPs instead of the Windows DHCP server onsite. Therefore the DNS records for the VPN client’s aren’t kept up-to-date by DHCP. So Edgar and Hank were both in DNS with the same IP. This wouldn’t be an issue very often but could be confusing for the client when it does happen.&lt;/p&gt;
-
-&lt;p&gt;In thinking of ways to resolve this I decided to increase the interval that DNS deletes stale records. By default this isn’t very frequently, about once every 3 days. In true Microsoft fashion there’s this &lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc759204%28v=ws.10%29.aspx&quot;&gt;whole complicated process&lt;/a&gt; by which the DNS server decides which records are stale enough to delete. I decided it wouldn’t be that big of a deal to delete stale records once every 3 hours.&lt;/p&gt;
-
-&lt;p&gt;Fast forward about… 3 hours and suddenly our monitoring system is losing connection to several of the client’s servers. I check DNS and sure enough about  half the servers’ records are gone. After some more digging I found out that by default Windows only re-registers itself with the local DNS server once every 24 hours. This value can be changed using the DefaultRegistrationRefreshInterval registry key (see Microsoft’s &lt;a href=&quot;http://support.microsoft.com/kb/246804&quot;&gt;KB246804&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Of course I should have checked this before making sweeping changes to the DNS configuration. But that would make me a good administrator instead of just so/so. :)&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 06 Mar 2013 06:15:57 -0500</pubDate>
-        <link>http://nightiron.com/blog/2013/03/06/be-careful-with-windows-dns/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2013/03/06/be-careful-with-windows-dns/</guid>
       </item>
     
   </channel>
