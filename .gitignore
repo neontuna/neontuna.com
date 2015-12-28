@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 _drafts/
-_site
-.sass-cache
-
-# Ignore the config file that's used for gh-pages.
-_config.gh-pages.yml
-=======
-_site
+_site/
 .sass-cache
 .DS_Store
 
 # Ignore the config file that's used for gh-pages.
 _config.gh-pages.yml
->>>>>>> 9328fe16a0935582d9c0990bcdb0fb67e39d852b
