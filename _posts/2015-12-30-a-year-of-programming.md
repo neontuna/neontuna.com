@@ -8,7 +8,7 @@ categories: viking developer
 callout: This is the third in a series of posts detailing my experience in the [Viking Code School](/blog/2015/06/02/puts(hello-world!)/)
 ---
 
-Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I've moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  What started as a static mockup is now a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.
+Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I've moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  What started as a static mockup is now a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users, and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.
 
 {% highlight sql %}
 /* Who took the cheapest flight? */
@@ -25,7 +25,7 @@ WHERE Users.id IN
    HAVING COUNT(*) = 1)
 {% endhighlight %}
 
-Reflecting back on the year I think the biggest difference between then and now is confidence.  Understanding that an know how an application is put together in something like Rails is more important than remembering every single detail.  I've coded in airports while waiting on flights, I've worked in the passenger seat of my girlfriend's car while we drove to visit friends in the pouring rain.  Which isn't to say I'm some sort of superhero, just that I really love doing this.
+Reflecting back on the year I think the biggest difference between then and now is confidence.  Understanding that knowing how an application is put together in something like Rails is more important than remembering every single detail.  I've coded in airports while waiting on flights. In the passenger seat of my girlfriend's car while we drove to visit friends in the pouring rain.  Which isn't to say I'm some sort of superhero, just that I really love doing this.
 
 {% highlight ruby %}
 # Putting together an efficient query can be messy business
