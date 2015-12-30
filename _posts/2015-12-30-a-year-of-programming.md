@@ -8,7 +8,7 @@ categories: viking developer
 callout: This is the third in a series of posts detailing my experience in the [Viking Code School](/blog/2015/06/02/puts(hello-world!)/)
 ---
 
-Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I've moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  As I look to  the final section of the course, Javascript, I have a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.
+Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I've moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  What started as a static mockup is now a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.
 
 {% highlight sql %}
 /* Who took the cheapest flight? */
