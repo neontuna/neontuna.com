@@ -3,7 +3,7 @@ layout: post
 title: Password Insecurity
 summary: How to deal with passwords without going insane
 category: blog
-categories: security f1-networks
+tags: security f1-networks
 ---
 
 >This is a copy of a post on my [company's blog][1].  So its more of a simplified approach to discussing Passwords.  At least as simple as I can get *pushes up glasses*

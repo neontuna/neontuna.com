@@ -4,7 +4,7 @@ title: Straddling OSX and Windows
 date: 2014-12-29 11:45:57
 summary: Another Windows guy jumps ship
 category: blog
-categories: hardware software
+tags: hardware software
 ---
 
 >According to stock photo sites in order to use an Apple product you must obsessively arrange your desk into perfect geometric patterns, like a serial killer.  I have not done this yet.

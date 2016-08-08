@@ -4,7 +4,7 @@ title: puts(Hello World!)
 date: 2015-06-02 12:03:21
 summary: The first few weeks of Viking Code School
 category: blog
-categories: viking developer
+tags: viking developer
 callout: This is the first in a series of posts detailing my experience in the Viking Code School
 ---
 

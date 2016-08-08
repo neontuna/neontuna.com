@@ -4,7 +4,7 @@ title: Precious Gems
 date: 2015-08-01 18:54:09
 summary: Learning Ruby, TDD, Data Structures O_o
 category: blog
-categories: viking ruby
+tags: viking ruby
 callout: This is the second in a series of posts detailing my experience in the [Viking Code School](/blog/2015/06/02/puts(hello-world!)/)
 ---
 

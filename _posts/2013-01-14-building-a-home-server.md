@@ -4,7 +4,7 @@ title: Building A Home Server
 date: 2013-01-14 11:10:32
 summary: In the most convolted way possible.
 category: blog
-categories: hardware
+tags: hardware
 ---
 
 >My psychiatrist told me I was crazy and I said I want a second opinion. He said okay, you're ugly too. - Rodney Dangerfield

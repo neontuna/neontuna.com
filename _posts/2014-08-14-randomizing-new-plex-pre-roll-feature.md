@@ -4,7 +4,7 @@ title: Randomizing new Plex pre-roll feature
 date: 2014-08-01 11:32:33
 summary: You wouldn't download a car.
 category: blog
-categories: htpc software
+tags: htpc software
 ---
 
 ![Simpsons THX Preroll](/assets/vlcsnap-2014-08-14-00h28m55s45_large.png)

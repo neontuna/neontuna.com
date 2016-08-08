@@ -4,7 +4,7 @@ title: Monitoring DirectAccess
 date: 2015-02-17 11:51:42
 summary: With PowerShell and PRTG
 category: blog
-categories: windows admin
+tags: windows admin
 ---
 
 We recently deployed [Windows DirectAccess][3] for one of our clients and wanted to monitor the deployment.  In particular I was interested in the number of active DirectAccess sessions and if any errors were detected.  The Remote Access MMC snap-in (in Server 2012 R2) has a great  status page that runs down all of DirectAccess' components and reports any errors that are detected.

@@ -4,7 +4,7 @@ title: A Year of Programming
 date: 2015-12-30 08:38
 summary: a long way from precious gems
 category: blog
-categories: viking developer
+tags: viking developer
 callout: This is the third in a series of posts detailing my experience in the [Viking Code School](/blog/2015/06/02/puts(hello-world!)/)
 ---
 

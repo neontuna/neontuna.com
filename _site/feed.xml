@@ -7,10 +7,19 @@
     <atom:link href="http://nightiron.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Archiving Autotask</title>
+        <description>&lt;p&gt;Hello there.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 08 Aug 2016 16:45:00 -0400</pubDate>
+        <link>http://nightiron.com/blog/2016/08/08/archiving-autotask/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2016/08/08/archiving-autotask/</guid>
+      </item>
+    
+      <item>
         <title>A Year of Programming</title>
         <description>&lt;p&gt;Today marks roughly 5 months since I last posted about my course work in Viking.  In that time I’ve moved through data structures, Sinatra, APIs and web scraping, SQL, and finally Rails.  What started as a static mockup is now a functional clone of Facebook.  Users can sign up, post, comment, like, friend, search for other users, and upload photos.  The latter part of the development was all test driven with feature, model, and controller specs.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Who took the cheapest flight? */&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Who took the cheapest flight? */&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;MIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cheapest_ticket&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;
            &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itinerary_id&lt;/span&gt;
@@ -21,25 +30,25 @@
               &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Itineraries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itinerary_id&lt;/span&gt;
               &lt;span class=&quot;k&quot;&gt;JOIN&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tickets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;flight_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Flights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+   &lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Reflecting back on the year I think the biggest difference between then and now is confidence.  Understanding that knowing how an application is put together in something like Rails is more important than remembering every single detail.  I’ve coded in airports while waiting on flights. In the passenger seat of my girlfriend’s car while we drove to visit friends in the pouring rain.  Which isn’t to say I’m some sort of superhero, just that I really love doing this.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Putting together an efficient query can be messy business&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# Putting together an efficient query can be messy business&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search_by_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blank?&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;first_name ILIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; OR &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; OR &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;last_name ILIKE ?&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39; OR &amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;blank?&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;first_name ILIKE ?&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; OR &#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; OR &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;last_name ILIKE ?&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; OR &#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Profile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pluck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;any?&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Profile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;where&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pluck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;any?&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The only real issue I’ve faced is finding the time needed to study (and being in front of the computer on top of my regular IT hours).  The Viking course load is no joke, and even though I’ve dedicated around 70 hours a month on average its not nearly the ideal pace.  The main problem is retention, for instance the work I originally did with web scraping is starting to get fuzzy and will require some refreshing when I put that knowledge to use in future projects.&lt;/p&gt;
 
@@ -60,14 +69,15 @@
 
 &lt;p&gt;Really its one of those things you just need to try and then I’m pretty sure you’ll wonder what you did without it.  Also its free.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://smilesoftware.com/TextExpander&quot;&gt;TextExpander&lt;/a&gt;&lt;/strong&gt; is an extended version of the text shortcuts in OSX and iOS (“omw” becomes “On My Way!”).   For instance I have a few really lazy shortcuts (TextExpander calls them snippets) like &lt;code&gt;;am&lt;/code&gt; becomes “administrator” and &lt;code&gt;;gm&lt;/code&gt; becomes my email address.  Of course you could just do that with the expansion built into the OS.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://smilesoftware.com/TextExpander&quot;&gt;TextExpander&lt;/a&gt;&lt;/strong&gt; is an extended version of the text shortcuts in OSX and iOS (“omw” becomes “On My Way!”).   For instance I have a few really lazy shortcuts (TextExpander calls them snippets) like &lt;code class=&quot;highlighter-rouge&quot;&gt;;am&lt;/code&gt; becomes “administrator” and &lt;code class=&quot;highlighter-rouge&quot;&gt;;gm&lt;/code&gt; becomes my email address.  Of course you could just do that with the expansion built into the OS.&lt;/p&gt;
 
-&lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
+&lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code class=&quot;highlighter-rouge&quot;&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git add -A
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
 git commit -m &quot;whatever I just typed&quot;
 git push origin master
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Anything that you type regularly can live in TextExpander.  I keep video/phone conference information in there.  I have some form letter type emails that I keep in there that are similar to the git message and automatically enter a subject and body and tab through fields in Outlook.&lt;/p&gt;
 
@@ -79,30 +89,51 @@ git push origin master
       </item>
     
       <item>
+        <title>Switching to Mac revisited</title>
+        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.&lt;/p&gt;
+
+&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
+
+&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
+
+&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
+
+&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
+
+&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
+
+&lt;p&gt;[ninite]:&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
+        <link>http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</guid>
+      </item>
+    
+      <item>
         <title>Precious Gems</title>
         <description>&lt;p&gt;This past month with Viking has been pretty interesting.  After getting through
-the basic syntax of Ruby we went even deeper into object orientation.  &lt;/p&gt;
+the basic syntax of Ruby we went even deeper into object orientation.&lt;/p&gt;
 
-&lt;h3 id=&quot;mastermind&quot;&gt;Mastermind&lt;/h3&gt;
-&lt;p&gt;OOP wrapped up with recreating the classic board game &lt;a href=&quot;https://en.wikipedia.org/wiki/Mastermind_(board_game)&quot;&gt;Mastermind&lt;/a&gt;.  The main point of the exercise was to drive home the ideas behind method decomposition, classes, and other basic principles of OOP.  &lt;/p&gt;
+&lt;p&gt;###Mastermind
+OOP wrapped up with recreating the classic board game &lt;a href=&quot;https://en.wikipedia.org/wiki/Mastermind_(board_game)&quot;&gt;Mastermind&lt;/a&gt;.  The main point of the exercise was to drive home the ideas behind method decomposition, classes, and other basic principles of OOP.&lt;/p&gt;
 
 &lt;p&gt;However I had the most fun getting Mastermind to break my codes using &lt;a href=&quot;https://en.wikipedia.org/wiki/Donald_Knuth&quot;&gt;Donald Knuth’s&lt;/a&gt; algorithm.  Properly optimized the software can break a code in
 five guesses.&lt;/p&gt;
 
-&lt;p&gt;The idea is that the software first makes a list of every possible code (in regular Mastermind that’s 1296 codes).  It then makes a pretty standard first guess.  Like &lt;span class=&quot;red&quot;&gt;red red&lt;/span&gt; &lt;span class=&quot;green&quot;&gt;green green&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;The idea is that the software first makes a list of every possible code (in regular Mastermind that’s 1296 codes).  It then makes a pretty standard first guess.  Like &lt;span class=&quot;red&quot;&gt;red red&lt;/span&gt; &lt;span class=&quot;green&quot;&gt;green green&lt;/span&gt;.&lt;/p&gt;
 
 &lt;p&gt;The real magic of the method didn’t make sense to me for a while.  The software gets feedback on its first guess, like say one spot is exactly correct (black peg) and one is the correct color but in the wrong position (white peg).  The software runs through the list of all 1296 possible codes, eliminating any that wouldn’t at least get that feedback.   Then it makes another guess and another elimination pass.  And so on, until it cracks the code.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_guess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_guess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
-    &lt;span class=&quot;vi&quot;&gt;@last_guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@last_guess&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
     &lt;span class=&quot;vi&quot;&gt;@code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@last_guess&lt;/span&gt;
-    &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keep_if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keep_if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;last_feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;sleep&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;vi&quot;&gt;@guesses&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
@@ -111,12 +142,12 @@ five guesses.&lt;/p&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;optimal_guess&lt;/span&gt;
-  &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;vi&quot;&gt;@possibles&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pop&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The above is my code for this.  And here is the software cracking a code I set.&lt;/p&gt;
 
@@ -124,7 +155,7 @@ five guesses.&lt;/p&gt;
 
 &lt;p&gt;I’ve had to focus on writing code that actually makes sense to someone besides me when I’m writing it.  Just a few weeks later and those two methods read like the &lt;a href=&quot;https://en.wikipedia.org/wiki/Voynich_manuscript&quot;&gt;Voynich Manuscript&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;tdd-minesweeper&quot;&gt;TDD Minesweeper&lt;/h3&gt;
+&lt;p&gt;###TDD Minesweeper&lt;/p&gt;
 
 &lt;p&gt;The next unit focused on test driven development with Rspec.  I had a little experience with this from Michael Hartl’s &lt;a href=&quot;https://www.railstutorial.org/&quot;&gt;Rails Tutorial&lt;/a&gt;.   TDD and Rspec are definitely frustrating to get started with.   You’re constantly thinking about what to test, if you’re being too granular, if it wouldn’t be best to just run a higher level integration test that &lt;em&gt;should&lt;/em&gt; fail if a dependent method breaks.&lt;/p&gt;
 
@@ -138,17 +169,17 @@ five guesses.&lt;/p&gt;
 
 &lt;p&gt;This required a lot of different dependent functions.  You’d need something that could find the “neighbors” of a cell.  You need to add those neighbors to a queue and then come back and check all of &lt;em&gt;their&lt;/em&gt; neighbors and so on until there was nothing left to check.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
 
-  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;                 &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
 
-  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;possible_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;neighbor&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
@@ -159,10 +190,10 @@ five guesses.&lt;/p&gt;
 
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;auto_reveal_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty?&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coords&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;empty?&lt;/span&gt;
 
-    &lt;span class=&quot;n&quot;&gt;test_cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shift&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;shift&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_cell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queue_cells_for_search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -170,7 +201,7 @@ five guesses.&lt;/p&gt;
     &lt;span class=&quot;n&quot;&gt;auto_reveal_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neighbors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;I’m a lot happier with this code than I was with Mastermind, initially the auto_reveal_search was one huge method that I was able to break down into a half dozen smaller ones.  TDD definitely forces a lot of this discipline.  If its hard to test, its probably bad code.&lt;/p&gt;
 
@@ -182,24 +213,6 @@ five guesses.&lt;/p&gt;
         <pubDate>Sat, 01 Aug 2015 14:54:09 -0400</pubDate>
         <link>http://nightiron.com/blog/2015/08/01/precious-gems/</link>
         <guid isPermaLink="true">http://nightiron.com/blog/2015/08/01/precious-gems/</guid>
-      </item>
-    
-      <item>
-        <title>Announcing Version 2.0</title>
-        <description>&lt;p&gt;In an effort to make Pixyll easier to customize and more aesthetically pleasing, we’ve release version &lt;code&gt;2.0&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Pixyll now features:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Line anchors in code blocks and new syntax highlighting&lt;/li&gt;
-  &lt;li&gt;A customizable variables file&lt;/li&gt;
-  &lt;li&gt;Modular, and lighter weight CSS&lt;/li&gt;
-  &lt;li&gt;No more &lt;code&gt;max-width&lt;/code&gt; media queries&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 11 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://nightiron.com/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</link>
-        <guid isPermaLink="true">http://nightiron.com/jekyll/pixyll/2015/07/11/announcing-pixyll-version-2/</guid>
       </item>
     
       <item>
@@ -234,7 +247,7 @@ five guesses.&lt;/p&gt;
 
 &lt;p&gt;DirectAccess comes loaded with a few PowerShell cmdlets for monitoring and reporting on its status.  In particular &lt;strong&gt;Get-RemoteAccessHealth&lt;/strong&gt; and &lt;strong&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/strong&gt; will give you a lot of information.  In order to make that data useful for PRTG we want to strip that output down from something like this (the raw output of Get-RemoteAccessHealth)&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Component            RemoteAccessServer   HealthState     TimeStamp            Id              OperationStatus
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Component            RemoteAccessServer   HealthState     TimeStamp            Id              OperationStatus
 ---------            ------------------   -----------     ---------            --              ---------------
 Server               localhost            OK              1/27/2015 11:05:4...
 6to4                 localhost            OK              1/27/2015 11:01:0...
@@ -255,11 +268,11 @@ Isatap               localhost            Disabled        1/27/2015 11:01:0...
 Vpn Connectivity     localhost            Disabled        1/27/2015 11:01:0...
 Teredo               localhost            Disabled        1/27/2015 11:01:0...
 Network Adapters     localhost            OK              1/27/2015 11:01:0...
-Services             localhost            OK              1/27/2015 11:05:4...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Services             localhost            OK              1/27/2015 11:05:4...&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;To literally just the number of components with a HealthState of “error”.  This gives us our first sensor channel, “error count”.   Our second channel is similar, I just want know how many active DirectAccess sessions we have which involves stripping down the output of Get-RemoteAccessConnectionStatisticsSummary&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;TotalConnections           : 8
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;TotalConnections           : 8
 TotalDAConnections         : 8
 TotalVpnConnections        : 0
 TotalUniqueUsers           :
@@ -267,38 +280,38 @@ MaxConcurrentConnections   : 19
 TotalCumulativeConnections : 2550
 TotalBytesIn               : 4024483872
 TotalBytesOut              : 8136960808
-TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;To just the number of TotalDAConnections.&lt;/p&gt;
 
 &lt;p&gt;The full PowerShell script is below&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; encoding=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Windows-1252&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&amp;quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ?&amp;gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;prtg&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; encoding=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Windows-1252&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; ?&amp;gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;prtg&amp;gt;&quot;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-RemoteAccessHealth&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ComputerName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SERVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HealthState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-match&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Error&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ComputerName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SERVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;-ExpandProperty&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TotalDAConnections&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Get-RemoteAccessHealth -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.HealthState -match &lt;span class=&quot;s1&quot;&gt;&#39;Error&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.count
+    &lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Select&lt;/span&gt; -ExpandProperty TotalDAConnections
  
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;result&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;channel&amp;gt;DirectAccess Errors&amp;lt;/channel&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;value&amp;gt;$daErrorCount&amp;lt;/value&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/result&amp;gt;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;channel&amp;gt;DirectAccess Errors&amp;lt;/channel&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;value&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/value&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/result&amp;gt;&quot;&lt;/span&gt;
 
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;result&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;channel&amp;gt;DirectAccess Sessions&amp;lt;/channel&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;value&amp;gt;$daUserCount&amp;lt;/value&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/result&amp;gt;&amp;quot;&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;channel&amp;gt;DirectAccess Sessions&amp;lt;/channel&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;value&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/value&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/result&amp;gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;Catch&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;[system.exception]&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;error&amp;gt;1&amp;lt;/error&amp;gt;&amp;quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;text&amp;gt;$_&amp;lt;/text&amp;gt;&amp;quot;&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;Catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;system.exception]
+ &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;error&amp;gt;1&amp;lt;/error&amp;gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;text&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/text&amp;gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/prtg&amp;gt;&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/prtg&amp;gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This results in a PRTG sensor with the following channel setup&lt;/p&gt;
 
@@ -306,26 +319,26 @@ TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The key lines here that give PRTG its value for the channels are&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match &amp;#39;Error&amp;#39;} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match &#39;Error&#39;} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;and&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | Select -ExpandProperty TotalDAConnections&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | Select -ExpandProperty TotalDAConnections&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The first is getting our error count.  As we move down the command we’re filtering the output of Get-RemoteAccessHealth for the HealthState column and then looking for any matches on the value “Error”.  Both measure and count are needed to just return in integer, measure by itself returns this.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Count    : 0
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Count    : 0
 Average  :
 Sum      :
 Maximum  :
 Minimum  :
-Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Get-RemoteAccessHealth is returning a table and PowerShell makes it pretty easy to search through it like you might search for something in Excel.  Get-RemoteAccessConnectionStatisticsSummary is a little trickier.   Its returning a list and if you try to use the same method of stripping its output as Get-RemoteAccessHealth that won’t work.  However Select -ExpandProperty will.  This took me a while to figure out until I piped the output of each command through Get-Member which reveals the Object-Types being returned.  &lt;a href=&quot;http://windowsitpro.com/powershell/powershell-basics-formatting&quot;&gt;This article&lt;/a&gt; was very helpful during that process.&lt;/p&gt;
 
 &lt;p&gt;The rest of the script is pretty standard fare for PRTG’s custom XML sensors (a lot of great examples can be found &lt;a href=&quot;https://code.google.com/p/prtg-addons/source/browse/#svn%2Ftrunk%2FCustom_EXE_Sensors%2FWindows_Powershell&quot;&gt;here&lt;/a&gt;).  The entire script is returning back to PRTG something that looks like this&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=`&amp;quot;1.0`&amp;quot; encoding=`&amp;quot;Windows-1252`&amp;quot; ?&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=`&quot;1.0`&quot; encoding=`&quot;Windows-1252`&quot; ?&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;prtg&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
       &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Errors&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
@@ -336,7 +349,7 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Sessions&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
       &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;10&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/prtg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/prtg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Which is just the XML formatting that PRTG needs to construct a sensor.  The try statement is used to catch any errors since PowerShell can be annoying to get setup for remote monitoring and I wanted to make sure that any issues with the sensor itself were handled by PRTG instead of the sensor silently failing (for instance returning 0 for a channel, which wouldn’t necessarily set off any alarms but might happen if one of our cmdlets failed)&lt;/p&gt;
 
@@ -360,7 +373,7 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This is sort of a compilation of things I’ve noticed and some tips for anyone coming from the Windows world.    I’ve arranged things with buying tips first and then good, bad, and miscellaneous observations.&lt;/p&gt;
 
-&lt;h1 id=&quot;buying-tips&quot;&gt;Buying Tips&lt;/h1&gt;
+&lt;p&gt;#Buying Tips&lt;/p&gt;
 
 &lt;p&gt;Besides the notebook I researched and bought a few things from Amazon. The &lt;a href=&quot;http://amzn.to/1D3fmGd&quot;&gt;mStand laptop stand&lt;/a&gt; which is way overpriced for a piece of bent aluminum but I guess it holds the notebook at eye level adequately.  I also picked up an &lt;a href=&quot;http://amzn.to/1wYwpJ5&quot;&gt;ethernet adapter/usb hub&lt;/a&gt; from Anker which instantly became useful because I didn’t have the display (with its NIC) initially.  I really like Anker’s products, they’re generally pretty inexpensive but well built.  I also grabbed an &lt;a href=&quot;http://amzn.to/1HXbO9r&quot;&gt;Incase Neoprene Sleeve&lt;/a&gt; that is apparently made for the 13” MacBook Pro but has a little too much extra space in it. I feel like it ought to fit the notebook snugly and not allow it to move at all inside the sleeve.  Finally, I purchased the &lt;a href=&quot;http://www.amazon.com/gp/product/B004YLCKYA/ref=oh_aui_detailpage_o02_s01?ie=UTF8&amp;amp;psc=1&quot;&gt;Thunderbolt Display&lt;/a&gt; from Amazon as well.  I was going to purchase a Magsafe&amp;gt;Magsafe 2 power adapter as the Thunderbolt display’s charging cable isn’t compatible with the latest Macbooks but then I found out that these are now being included with the displays.&lt;/p&gt;
 
@@ -368,27 +381,27 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Initially I was not going to buy the Thunderbolt display but one issue with living in Apple’s world is you have to play by their rules.  There is no official dock for the Macbook, the Thunderbolt Display is the closest thing to it.  My other options were Thunderbolt hubs which are several hundred dollars and may or may not have worked with my existing monitor which uses DVI-D.  So I reluctantly decided to get the Thunderbolt display but I feel like Apple could make a lot of people happy if they’d just release a dock.   I use a simple KVM to switch keyboard and mouse between the notebook and my PC tower, which is exclusively connected to my old display.  I thought I would need an Apple keyboard but really its no big deal.  The keys are in the same position except with the Windows key acting as the Command key.&lt;/p&gt;
 
-&lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
+&lt;p&gt;#The Good&lt;/p&gt;
 
-&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
+&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code class=&quot;highlighter-rouge&quot;&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
 
 &lt;p&gt;The Macbook’s trackpad and keyboard are the best I’ve used on a notebook, period.  Trackpads on PC notebooks have long been a point of contention.  Whether they’re too small, have weird gestures, or just plan don’t work there’s always some issue.  The latest EliteBooks from HP have come the closest to getting it right that I’ve seen.  Battery life on the notebook has been great and I love that OSX will tell you which apps are eating a lot of energy.  Coming from a system that mysteriously always ran awful on battery this has been most excellent.&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://www.apple.com/osx/continuity/&quot;&gt;continuity features&lt;/a&gt; of Yosemite were a big reason I was interested in switching.  I already own an iPhone and iPad.  Being able to iMessage, and even send regular text, from the computer is very convenient.    This is where I feel like Apple is really edging out Microsoft, it would give people a reason to actually consider Windows Phone to have this sort of functionality.&lt;/p&gt;
 
-&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
+&lt;p&gt;#The Bad&lt;/p&gt;
 
 &lt;p&gt;The Macbook has only locked up twice but both were kind of worrying.  The first  was actually right out of the box during setup.  It hung forever when I declined to setup iCloud Drive.  When I forced the system to reboot it went  through but had apparently already created my user account.  I elected to just wipe the system out and start over using the download from internet option to install Yosemite.  This worked without issue.  The system also froze completely when I first connected it to the Thunderbolt Display.&lt;/p&gt;
 
 &lt;p&gt;I almost immediately discovered an unfortunate bug with Exchange Online and Yosemite.  The Contacts App will not sync contacts from an Office 365 Exchange Online account (or at least from my account).  An issue &lt;a href=&quot;http://www.andrewconnell.com/blog/resolving-contacts-sync-on-os-x-error-soapwebserviceserrordomain&quot;&gt;documented by others&lt;/a&gt; but remains unfixed even in the latest Yosemite beta (currently 10.10.2).  I opened a case with Microsoft support, who promptly laughed and then closed the case.  I haven’t tried opening one with Apple just yet.  I worked around the problem by manually copying my contacts into iCloud.  There’s a sort of hack to use Microsoft’s OWA app in iOS to sync your contacts into iCloud but this only works on the default/base Contacts folder and I maintain more than one.&lt;/p&gt;
 
-&lt;h1 id=&quot;the-miscellaneous&quot;&gt;The Miscellaneous&lt;/h1&gt;
+&lt;p&gt;#The Miscellaneous&lt;/p&gt;
 
 &lt;p&gt;One of the things that I notice the most is that I’ve gotten a feel for performance on a PC.  You get a sixth sense for if something isn’t right.  Like if Outlook takes longer than 30 seconds to open its probably not going to open at all.  I feel a little lost sometimes on the Mac if something unexpected happens and I find myself starring at the beachball.  I also really miss indicator lights for disk activity, etc, and find myself tapping the caps lock key to make sure my Macbook is alive.&lt;/p&gt;
 
 &lt;p&gt;There are way more boot options for the Mac than Windows and I sort of wish they were all consolidated into one menu.  Although not having the POST and then Windows load that I’m used to is what makes for the variety of options/confusion.&lt;/p&gt;
 
-&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account. &lt;/p&gt;
+&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account.&lt;/p&gt;
 
 &lt;p&gt;So far Apple has lived up to its promise to “just work” in every way except for the Contacts bug.  I hope to update this post and add others with more good things as time goes on.&lt;/p&gt;
 
@@ -400,7 +413,7 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
     
       <item>
         <title>Godaddy sucks</title>
-        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.  &lt;/p&gt;
+        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.&lt;/p&gt;
 
 &lt;p&gt;Most of our clients are hosted through Godaddy and were originally setup years ago.  If we were making that decision again it’d probably be with a different company.  But the cost of moving clients off Godaddy pretty much outweighs our personal feelings about them.&lt;/p&gt;
 
@@ -425,70 +438,49 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Right now the feature requires that you set one video from your library as the pre-roll clip.  I wanted to randomize this so the clip would change occationally.  Luckily the setting is stored in the registry (by the way this is for folks using Windows as their Plex server) under this key:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;So for instance, the full registry key for one of my clips looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-[HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server]
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server]
 &quot;CinemaTrailersPrerollID&quot;=&quot;http://plex.tv/web/app#!/server/2b6b5...
 ...099e7fcbd0/details/%2Flibrary%2Fmetadata%2F4655&quot;
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;There’s probably a million ways to do this but I created a .reg file for each pre-roll in my collection and then used this VBScript to randomly insert the registry value for one of them.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vbnet&quot; data-lang=&quot;vbnet&quot;&gt;&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vbnet&quot; data-lang=&quot;vbnet&quot;&gt;Dim WshShell, intOption
 
-&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Wscript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CreateObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Wscript.Shell&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Randomize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Rnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+Set WshShell = Wscript.CreateObject(&quot;Wscript.Shell&quot;)
+Randomize()
+intOption = Int(5*Rnd())
 
-&lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;intOption&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-1.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-2.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-3.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-4.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;Case&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Run&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;regedit /S C:\etc\pre-roll-5.reg&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Select&lt;/span&gt;
+Select Case intOption
+  Case 0
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-1.reg&quot;,0,True
+  Case 1
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-2.reg&quot;,0,True
+  Case 2
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-3.reg&quot;,0,True
+  Case 3
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-4.reg&quot;,0,True
+  Case 4
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-5.reg&quot;,0,True
+End Select
 
-&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WshShell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Nothing&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Set WshShell = Nothing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Finally, I set that to run on a schedule every hour.  &lt;/p&gt;
+&lt;p&gt;Finally, I set that to run on a schedule every hour.&lt;/p&gt;
 
-&lt;p&gt;I imagine we’ll have the option to do something like this from Plex itself before too long.  On the blog linked above there were already a few requests for it.  Regardless, these new features are slick and I hope convince more folks to sign up for Plex pass. &lt;/p&gt;
+&lt;p&gt;I imagine we’ll have the option to do something like this from Plex itself before too long.  On the blog linked above there were already a few requests for it.  Regardless, these new features are slick and I hope convince more folks to sign up for Plex pass.&lt;/p&gt;
 
 </description>
         <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
         <link>http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
         <guid isPermaLink="true">http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
-      </item>
-    
-      <item>
-        <title>Need data from a dead Surface Pro?</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/photo_large.JPG&quot; alt=&quot;The innards of a dead Surface tablet&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We have a client that went all in with the first generation Surface Pro, many of their staff are using the tablets as their daily driver and only computer.  Earlier this afternoon I responded to what is usually a typical situation for IT professionals - dead computer, we need data on the hard drive.&lt;/p&gt;
-
-&lt;p&gt;With the Surface things aren’t quite so simple.  Most folks would say, myself included, that a) any important data should always be backed up b) with the prevalence of online storage surely anything really important would be in OneDrive or Dropbox?&lt;/p&gt;
-
-&lt;p&gt;Indeed - when calling Surface support the technician even specifically referenced OneDrive.  Although I have to say its almost like saying you can’t trust the local storage which I don’t think is a fair burden to put on the owner of something Microsoft wants to compete with Ultrabooks.  Anyway, I was mainly calling Microsoft to find out what our out of warranty options were - there is only one, pay $300 for a replacement unit.  Microsoft will not make any attempt to recover data from the dead Surface.  This is also typical, if you send your PC back to Dell or HP the hard drive gets wiped, or is given to the NSA, or perhaps fed to the troll responsible for trying to make PC notebooks look like a Macbook.  So I can’t really fault Microsoft for not offering data recovery.&lt;/p&gt;
-
-&lt;p&gt;Except… this left us with the option I figured on from the start, cracking open the dead tablet like a delicious coconut.  &lt;a href=&quot;https://www.ifixit.com/Teardown/Microsoft+Surface+Pro+Teardown/12842&quot;&gt;iFixit rates&lt;/a&gt; the Surface Pro with its least “repairable” rating - 1/10.  Apparently we were lucky to be dealing with the first gen, its only gotten worse with more recent models.  There are no screws holding the unit together, save two that attach the kickstand.  Instead what I can only describe as black tar made by the Devil himself attaches the screen to the chassis of the tablet.  I told our client that this unit was done, there was no way I wasn’t going to destroy the thing taking it apart.  After a short treatment with the heatgun I could sort of pry up the screen.  I decided to be as brutal as I needed to be with the screen to avoid too much heatgun action damaging the drive.&lt;/p&gt;
-
-&lt;p&gt;Finally with the screen removed, and only a few cuts from the microscopic glass shards produced, we set to work on the interior.  The mSATA drive is on the reverse of the motherboard which is secured to the tablet with dozens and dozens of torx screws.  Very, very small torx screws I came to find out.  The Surface Pro uses T2 and T3 torx screws, some of the smallest out there and so small that my trusty Torx set didn’t include them.&lt;/p&gt;
-
-&lt;p&gt;So that’s where I am, with half a dead tablet.  Waiting on a 40 dollar Torx set (the &lt;a href=&quot;http://www.amazon.com/gp/product/B00CSWY50O/ref=oh_details_o00_s00_i00?ie=UTF8&amp;amp;psc=1&quot;&gt;only one I could&lt;/a&gt; find with T2 and T3 heads on Amazon).  And a mSATA adapter.  Because of course the drive is mSATA.  ;)&lt;/p&gt;
-</description>
-        <pubDate>Wed, 25 Jun 2014 07:29:07 -0400</pubDate>
-        <link>http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro%3F/</guid>
       </item>
     
   </channel>
