@@ -8,7 +8,107 @@
     
       <item>
         <title>Archiving Autotask</title>
-        <description>&lt;p&gt;Hello there.&lt;/p&gt;
+        <description>&lt;p&gt;After much wailing and gnashing of teeth our team finally said goodbye to &lt;a href=&quot;http://www.autotask.net&quot;&gt;Autotask&lt;/a&gt; last week.  Turns out it might not be a good idea to take a customer that’s been month to month for years and suddenly demand they sign a three year contract.&lt;/p&gt;
+
+&lt;p&gt;When you leave Autotask they give you a nice MS SQL .bak file of all of your data.   After getting a trial of SQL 2016 installed I discovered that that Autotask’s data structure looks like something out of Dante’s Inferno.  1,215 tables.  558 views. 😯&lt;/p&gt;
+
+&lt;p&gt;I set about extracting the data that’s relevant to us - tickets, time entries, and internal notes.  After digging around for a little while I honed in on the tables we’d need to see the ticket data as well as the technician that worked on it, client, and end user.&lt;/p&gt;
+
+&lt;h3 id=&quot;exporting-first-attempt&quot;&gt;Exporting, first attempt&lt;/h3&gt;
+
+&lt;p&gt;My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ms162802.aspx&quot;&gt;BCP utility&lt;/a&gt; which is literally for bulk import and export of data.&lt;/p&gt;
+
+&lt;p&gt;This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; for a new line.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bcp &quot;dbo.tblTask&quot; out “c:\export\tblTask.csv&quot; -S localhost \
+-d databasename -C RAW -T -c -t “\t” -r &quot;\n&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First option is the table name&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;out&lt;/strong&gt; destination file name&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-S&lt;/strong&gt;: server name&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-d&lt;/strong&gt;: the database name&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-C&lt;/strong&gt;: the code page to use, don’t really know about this.  MSDN states that RAW means “No conversion from one code page to another occurs. This is the fastest option because no conversion occurs.”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-T&lt;/strong&gt;: use Windows authentication with the currently logged in user&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-c&lt;/strong&gt;: Stops BCP from prompting for a character type for each field, it uses the character data format for each field.  This is specifically to use when exporting data bound for something other than another MS SQL instance.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-t&lt;/strong&gt; and &lt;strong&gt;-r&lt;/strong&gt; the field and record terminators, not actually needed when using &lt;code class=&quot;highlighter-rouge&quot;&gt;-c&lt;/code&gt; as these are the default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Almost immediately I ran into two issues.  One, BCP
+does not export field names.  So there’s no headers in the CSV.  This was easily resolved by simply running a select query on the tables in question and literally copying the first couple of output rows using the option to include headers in Management Studio (Control + Shift + C).&lt;/p&gt;
+
+&lt;p&gt;The bigger problem was new lines in the data.  A lot our tickets and internal notes contain new line characters.  This is obviously no problem when the data is in a proper DBMS but a CSV file doesn’t handle newlines very well.  BCP can technically terminate a record using anything you like,  ▓ for instance, or maybe ╣. However, Excel and &lt;a href=&quot;http://www.ronsplace.eu/Products/RonsEditor&quot;&gt;Ron’s Editor&lt;/a&gt; (seriously awesome if you deal with a lot of CSVs) don’t like this, they expect new lines to terminate records.  Officially CSV is supposed to support new lines in the data but I’ve never been able to figure out.&lt;/p&gt;
+
+&lt;p&gt;At this point I was starting to have flashbacks to another large data migration involving CSVs and hunting for line breaks and other characters for way longer than I cared to. So I decided to rethink my method.  If the goal is to go from one SQL DB to another, why even bother with the intermediary step?  In particular risking data loss with CSV mangling something.  Surely others have done this, maybe there’s even some sort of neato open source tool for the job…&lt;/p&gt;
+
+&lt;h3 id=&quot;exporting-second-times-the-charm&quot;&gt;Exporting, second time’s the charm&lt;/h3&gt;
+
+&lt;p&gt;Poking around a little more I found a neato &lt;a href=&quot;https://github.com/dalibo/sqlserver2pgsql&quot;&gt;Python tool&lt;/a&gt; for this exact purpose - migrating from MS SQL to Postgresql.  After installing a few prerequisites the tool works in 5 steps.  First you take a SQL dump of the database or individual tables you’re interested in.  You then run the tool itself to generate some SQL files for Postgres.  Then psql the generated “before” script. Next, run a migration using the prerequisite Kettle software.  Finally psql the generated “after” script.&lt;/p&gt;
+
+&lt;p&gt;This, somewhat incredibly, just worked for the most part.  It barked about some missing associations. I went back into Management Studio and ran a diagram of associations for the six tables we needed - that brought up about 50 tables, most of which contained hilariously irrelevant data.  I was getting a little sad at the idea of migrating 4 dozen extra tables when I decided to check the new Postgres database - everything we needed was there!&lt;/p&gt;
+
+&lt;h3 id=&quot;rails&quot;&gt;Rails&lt;/h3&gt;
+
+&lt;p&gt;As it turns out, massaging Rails to use an existing database is actually quite simple.  I had to do a pretty minimum amount of work on the Postgres database itself.  I spent some time cleaning up field names to match the “model_id” naming that Rails expects for associations.&lt;/p&gt;
+
+&lt;p&gt;You’ll need to make sure you’ve got the ‘pg’ gem set, and then just plug in the database in &lt;code class=&quot;highlighter-rouge&quot;&gt;config\database.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;&amp;amp;default&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postgresql&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unicode&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5000&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;*default&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;autotask_backup&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This of course will also be my production database but for now we’re just in development mode.&lt;/p&gt;
+
+&lt;p&gt;You then will need to generate the schema file.  I’m not sure if this is actually necessary but its a good test of whether or not Rails is connecting to your database properly.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:schema:dump&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I noticed at this point that Rails wasn’t picking up on the  primary key (id).  After correcting this in &lt;a href=&quot;https://eggerapps.at/postico/&quot;&gt;Postico&lt;/a&gt; and re-dumping the schema…&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Schema&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;define&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;version: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# These are extensions that must be enabled in order to support this database&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;enable_extension&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;plpgsql&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;create_table&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;contacts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;force: :cascade&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;integer&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;customer_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                              &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;phone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                        &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;phoneext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                     &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;fax&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Booya!&lt;/p&gt;
+
+&lt;p&gt;Now you need the actual models for Rails.  The regular command line to generate the model is going to create a migration file which you do not want.  So &lt;code class=&quot;highlighter-rouge&quot;&gt;rails g model Contact --skip migration&lt;/code&gt; (or you could just delete the migration file, but that seems sketchy to me)&lt;/p&gt;
+
+&lt;p&gt;Alright.  So let’s drop down to the console and see if all this actually worked.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] pry(main)&amp;gt; Contact.all.sample
+  Contact Load (12.4ms)  SELECT &quot;contacts&quot;.* FROM &quot;contacts&quot;
++----------+-----------+----------+-------------+
+| id       | firstname | lastname | customer_id |
++----------+-----------+----------+-------------+
+| 29683607 | Fake      | Customer | 29683605    |
++----------+-----------+----------+-------------+
+1 row in set
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Booya!²&lt;/p&gt;
+
+&lt;p&gt;From here on its just standard Rails development.  I
+considered blogging about the rest of the application but this is literally for indexing and reading old data.  So I can’t imagine it will be that interesting.&lt;/p&gt;
+
+&lt;p&gt;If you’ve been traveling down a similar path, I hope this post has helped. And if you noticed anything incredibly stupid or wrong here - &lt;a href=&quot;/contact/&quot;&gt;let me know!&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Mon, 08 Aug 2016 16:45:00 -0400</pubDate>
         <link>http://nightiron.com/blog/2016/08/08/archiving-autotask/</link>
