@@ -20,11 +20,10 @@ I built my first computer when I was in high school.
 <br>
 *Does your computer have a "Turbo" button?*
 
-I continued tinkering, creating some websites for local bands and businesses.  For a while I ran a colocated web server, providing hosting and email services.  I found myself spending more time blocking spammers and defending the server than actually developing.  So in 2008 I started work as an IT guy for [F1-Networks][f1] and I've been there (and working from my home office) ever since.  I love BBQ (NC BBQ, the only kind that matters), camping, 
+I continued tinkering, creating some websites for local bands and businesses.  For a while I ran a collocated web server, providing hosting and email services.  I found myself spending more time blocking spammers and defending the server than actually developing.  So in 2008 I started work as an IT guy for [F1-Networks][f1] and I've been there (and working from my home office) ever since.  I love BBQ (NC BBQ, the only kind that matters), camping, 
 screen prints, air plants, my awesome girlfriend, and my giant cat.
 
-Currently I'm cramming my brain with all things web development through the 
-[Viking Code School][viking].
+I recently finished a web development program with [Viking Code School][viking].  Continuing from there I've been bashing away on Angular 2, which is conveniently completely different from Angular 1.
 
 If you'd like to contact me, just say my name three times and I will appear.  Failing that, use the [contact page](/contact).
 Or send me a [hilarious tweet](https://twitter.com/nonadmn).
