@@ -15,7 +15,7 @@ I set about extracting the data that's relevant to us - tickets, time entries, a
 
 ### Exporting, first attempt
 
-My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the [BCP utility][2] which is literally for bulk import and export of data.
+My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  The application is just for browsing and searching old tickets, the collective memory of the company so its important to hang onto.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the [BCP utility][2] which is literally for bulk import and export of data.
 
 This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and ```\n``` for a new line.  
 
@@ -38,7 +38,7 @@ does not export field names.  So there's no headers in the CSV.  This was easily
 
 The bigger problem was new lines in the data.  A lot our tickets and internal notes contain new line characters.  This is obviously no problem when the data is in a proper DBMS but a CSV file doesn't handle newlines very well.  BCP can technically terminate a record using anything you like,  ▓ for instance, or maybe ╣. However, Excel and [Ron's Editor][3] (seriously awesome if you deal with a lot of CSVs) don't like this, they expect new lines to terminate records.  Officially CSV is supposed to support new lines in the data but I've never been able to figure out.
 
-At this point I was starting to have flashbacks to another large data migration involving CSVs and hunting for line breaks and other characters for way longer than I cared to. So I decided to rethink my method.  If the goal is to go from one SQL DB to another, why even bother with the intermediary step?  In particular risking data loss with CSV mangling something.  Surely others have done this, maybe there's even some sort of neato open source tool for the job...
+At this point I was starting to have flashbacks to another large data migration involving CSVs and hunting for line breaks and other naughty characters. So I decided to rethink my method.  If the goal is to go from one SQL DB to another, why even bother with the intermediary step?  In particular risking data loss with CSV mangling something.  Surely others have done this, maybe there's even some sort of neato open source tool for the job...
 
 ### Exporting, second time's the charm
 
