@@ -7,6 +7,8 @@ category: blog
 tags: rails postgresql developer
 ---
 
+**Update** The Rails application for this project can be found [here][6]
+
 After much wailing and gnashing of teeth our team finally said goodbye to [Autotask][1] last week.  Turns out it might not be a good idea to take a customer that's been month to month for years and suddenly demand they sign a three year contract.  
 
 When you leave Autotask they give you a nice MS SQL .bak file of all of your data.   After getting a trial of SQL 2016 installed I discovered that that Autotask's data structure looks like something out of Dante's Inferno.  1,215 tables.  558 views. 😯 
@@ -115,3 +117,4 @@ If you've been traveling down a similar path, I hope this post has helped. And i
 [3]: http://www.ronsplace.eu/Products/RonsEditor
 [4]: https://github.com/dalibo/sqlserver2pgsql
 [5]: https://eggerapps.at/postico/
+[6]: https://github.com/nonadmin/task_archive
