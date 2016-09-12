@@ -8,7 +8,9 @@
     
       <item>
         <title>Archiving Autotask</title>
-        <description>&lt;p&gt;After much wailing and gnashing of teeth our team finally said goodbye to &lt;a href=&quot;http://www.autotask.net&quot;&gt;Autotask&lt;/a&gt; last week.  Turns out it might not be a good idea to take a customer that’s been month to month for years and suddenly demand they sign a three year contract.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; The Rails application for this project can be found &lt;a href=&quot;https://github.com/nonadmin/task_archive&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;After much wailing and gnashing of teeth our team finally said goodbye to &lt;a href=&quot;http://www.autotask.net&quot;&gt;Autotask&lt;/a&gt; last week.  Turns out it might not be a good idea to take a customer that’s been month to month for years and suddenly demand they sign a three year contract.&lt;/p&gt;
 
 &lt;p&gt;When you leave Autotask they give you a nice MS SQL .bak file of all of your data.   After getting a trial of SQL 2016 installed I discovered that that Autotask’s data structure looks like something out of Dante’s Inferno.  1,215 tables.  558 views. 😯&lt;/p&gt;
 
@@ -16,7 +18,7 @@
 
 &lt;h3 id=&quot;exporting-first-attempt&quot;&gt;Exporting, first attempt&lt;/h3&gt;
 
-&lt;p&gt;My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ms162802.aspx&quot;&gt;BCP utility&lt;/a&gt; which is literally for bulk import and export of data.&lt;/p&gt;
+&lt;p&gt;My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  The application is just for browsing and searching old tickets, the collective memory of the company so its important to hang onto.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ms162802.aspx&quot;&gt;BCP utility&lt;/a&gt; which is literally for bulk import and export of data.&lt;/p&gt;
 
 &lt;p&gt;This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; for a new line.&lt;/p&gt;
 
@@ -41,7 +43,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;The bigger problem was new lines in the data.  A lot our tickets and internal notes contain new line characters.  This is obviously no problem when the data is in a proper DBMS but a CSV file doesn’t handle newlines very well.  BCP can technically terminate a record using anything you like,  ▓ for instance, or maybe ╣. However, Excel and &lt;a href=&quot;http://www.ronsplace.eu/Products/RonsEditor&quot;&gt;Ron’s Editor&lt;/a&gt; (seriously awesome if you deal with a lot of CSVs) don’t like this, they expect new lines to terminate records.  Officially CSV is supposed to support new lines in the data but I’ve never been able to figure out.&lt;/p&gt;
 
-&lt;p&gt;At this point I was starting to have flashbacks to another large data migration involving CSVs and hunting for line breaks and other characters for way longer than I cared to. So I decided to rethink my method.  If the goal is to go from one SQL DB to another, why even bother with the intermediary step?  In particular risking data loss with CSV mangling something.  Surely others have done this, maybe there’s even some sort of neato open source tool for the job…&lt;/p&gt;
+&lt;p&gt;At this point I was starting to have flashbacks to another large data migration involving CSVs and hunting for line breaks and other naughty characters. So I decided to rethink my method.  If the goal is to go from one SQL DB to another, why even bother with the intermediary step?  In particular risking data loss with CSV mangling something.  Surely others have done this, maybe there’s even some sort of neato open source tool for the job…&lt;/p&gt;
 
 &lt;h3 id=&quot;exporting-second-times-the-charm&quot;&gt;Exporting, second time’s the charm&lt;/h3&gt;
 
@@ -110,9 +112,9 @@ considered blogging about the rest of the application but this is literally for 
 &lt;p&gt;If you’ve been traveling down a similar path, I hope this post has helped. And if you noticed anything incredibly stupid or wrong here - &lt;a href=&quot;/contact/&quot;&gt;let me know!&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 08 Aug 2016 16:45:00 -0400</pubDate>
-        <link>http://nightiron.com/blog/2016/08/08/archiving-autotask/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2016/08/08/archiving-autotask/</guid>
+        <pubDate>Tue, 16 Aug 2016 16:45:00 -0400</pubDate>
+        <link>http://nightiron.com/blog/2016/08/16/archiving-autotask/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2016/08/16/archiving-autotask/</guid>
       </item>
     
       <item>
@@ -138,10 +140,10 @@ considered blogging about the rest of the application but this is literally for 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;search_by_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;blank?&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;first_name ILIKE ?&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; OR &#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; OR &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-                        &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;last_name ILIKE ?&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
-                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39; OR &#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
+    &lt;span class=&quot;n&quot;&gt;search_conditions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'first_name ILIKE ?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' OR '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; OR &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+                        &lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'last_name ILIKE ?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; 
+                        &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' OR '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; 
                         &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
                         &lt;span class=&quot;n&quot;&gt;search_terms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;term&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
@@ -186,27 +188,6 @@ git push origin master
         <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
         <link>http://nightiron.com/blog/2015/10/27/osx-utils/</link>
         <guid isPermaLink="true">http://nightiron.com/blog/2015/10/27/osx-utils/</guid>
-      </item>
-    
-      <item>
-        <title>Switching to Mac revisited</title>
-        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.&lt;/p&gt;
-
-&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
-
-&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
-
-&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
-
-&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
-
-&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
-
-&lt;p&gt;[ninite]:&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
-        <link>http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</guid>
       </item>
     
       <item>
@@ -317,7 +298,7 @@ five guesses.&lt;/p&gt;
     
       <item>
         <title>puts(Hello World!)</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-06-02%20at%201.52.25%20PM_large.png&quot; alt=&quot;Jeff Lebowski&#39;s &amp;quot;Danebook&amp;quot; page&quot; /&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-06-02%20at%201.52.25%20PM_large.png&quot; alt=&quot;Jeff Lebowski's &amp;quot;Danebook&amp;quot; page&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;It has been about a month since I was accepted into the &lt;a href=&quot;http://vikingcodeschool.com&quot;&gt;Viking Code School&lt;/a&gt; and a few weeks since I began my coursework for their Flex program (for folks who can’t commit to the school full time).&lt;/p&gt;
 
@@ -391,7 +372,7 @@ TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;
  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Get-RemoteAccessHealth -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.HealthState -match &lt;span class=&quot;s1&quot;&gt;&#39;Error&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.count
+    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Get-RemoteAccessHealth -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.HealthState -match &lt;span class=&quot;s1&quot;&gt;'Error'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.count
     &lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Select&lt;/span&gt; -ExpandProperty TotalDAConnections
  
     &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;
@@ -419,7 +400,7 @@ TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The key lines here that give PRTG its value for the channels are&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match &#39;Error&#39;} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match 'Error'} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;and&lt;/p&gt;
 
@@ -581,6 +562,27 @@ Set WshShell = Nothing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
         <link>http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
         <guid isPermaLink="true">http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
+      </item>
+    
+      <item>
+        <title>Need data from a dead Surface Pro?</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/photo_large.JPG&quot; alt=&quot;The innards of a dead Surface tablet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have a client that went all in with the first generation Surface Pro, many of their staff are using the tablets as their daily driver and only computer.  Earlier this afternoon I responded to what is usually a typical situation for IT professionals - dead computer, we need data on the hard drive.&lt;/p&gt;
+
+&lt;p&gt;With the Surface things aren’t quite so simple.  Most folks would say, myself included, that a) any important data should always be backed up b) with the prevalence of online storage surely anything really important would be in OneDrive or Dropbox?&lt;/p&gt;
+
+&lt;p&gt;Indeed - when calling Surface support the technician even specifically referenced OneDrive.  Although I have to say its almost like saying you can’t trust the local storage which I don’t think is a fair burden to put on the owner of something Microsoft wants to compete with Ultrabooks.  Anyway, I was mainly calling Microsoft to find out what our out of warranty options were - there is only one, pay $300 for a replacement unit.  Microsoft will not make any attempt to recover data from the dead Surface.  This is also typical, if you send your PC back to Dell or HP the hard drive gets wiped, or is given to the NSA, or perhaps fed to the troll responsible for trying to make PC notebooks look like a Macbook.  So I can’t really fault Microsoft for not offering data recovery.&lt;/p&gt;
+
+&lt;p&gt;Except… this left us with the option I figured on from the start, cracking open the dead tablet like a delicious coconut.  &lt;a href=&quot;https://www.ifixit.com/Teardown/Microsoft+Surface+Pro+Teardown/12842&quot;&gt;iFixit rates&lt;/a&gt; the Surface Pro with its least “repairable” rating - 1/10.  Apparently we were lucky to be dealing with the first gen, its only gotten worse with more recent models.  There are no screws holding the unit together, save two that attach the kickstand.  Instead what I can only describe as black tar made by the Devil himself attaches the screen to the chassis of the tablet.  I told our client that this unit was done, there was no way I wasn’t going to destroy the thing taking it apart.  After a short treatment with the heatgun I could sort of pry up the screen.  I decided to be as brutal as I needed to be with the screen to avoid too much heatgun action damaging the drive.&lt;/p&gt;
+
+&lt;p&gt;Finally with the screen removed, and only a few cuts from the microscopic glass shards produced, we set to work on the interior.  The mSATA drive is on the reverse of the motherboard which is secured to the tablet with dozens and dozens of torx screws.  Very, very small torx screws I came to find out.  The Surface Pro uses T2 and T3 torx screws, some of the smallest out there and so small that my trusty Torx set didn’t include them.&lt;/p&gt;
+
+&lt;p&gt;So that’s where I am, with half a dead tablet.  Waiting on a 40 dollar Torx set (the &lt;a href=&quot;http://www.amazon.com/gp/product/B00CSWY50O/ref=oh_details_o00_s00_i00?ie=UTF8&amp;amp;psc=1&quot;&gt;only one I could&lt;/a&gt; find with T2 and T3 heads on Amazon).  And a mSATA adapter.  Because of course the drive is mSATA.  ;)&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 Jun 2014 07:29:07 -0400</pubDate>
+        <link>http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro/</link>
+        <guid isPermaLink="true">http://nightiron.com/blog/2014/06/25/need-data-from-a-dead-surface-pro/</guid>
       </item>
     
   </channel>
