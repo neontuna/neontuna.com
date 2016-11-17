@@ -5,9 +5,9 @@ permalink: /about/
 ---
 
 Hello there, you've somehow stumbled across my website.  First of all, I apologize
-if the domain name is misleading.  Nightiron.com was available and sounded really cool,
-like a hair metal band.  There's really nothing on here about night time or
-metals.  However you will find posts about programming, computers, BBQ, cats, and programming
+if the domain name is misleading.  Neontuna.com was available and sounded really cool,
+like a cyberpunk sushi stand.  There's really nothing on here about fish or neon (signs or otherwise).  
+However you will find posts about programming, computers, BBQ, cats, and programming
 computers.  
 
 ...
