@@ -22,7 +22,6 @@ permalink: /contact/
     </form>
   {% else %}
     <form action="https://api.formbucket.com/f/{{ site.formbucketid }}" method="POST" class="form-stacked">
-    <!-- <form action="https://formspree.io/{{ site.email }}" method="POST" class="form-stacked"> -->
       <input type="text" name="email" class="field-light" placeholder="Email Address">
       <textarea type="text" name="content" class="field-light" rows="5" placeholder="What would you like to say?"></textarea>
       <select name="restaurant" class="field-light">
