@@ -5,7 +5,7 @@ formbucketid: XoJ3GRs
 author:       Justin Mullis
 description:  "Rambling thoughts from your IT guy"
 baseurl:      ""
-url:          "http://neontuna.com"
+url:          "http://www.neontuna.com"
 date_format:  "%b %-d, %Y"
 
 # Google services
