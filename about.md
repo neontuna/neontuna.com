@@ -10,7 +10,7 @@ Hello there, you've stumbled across my website.  Oh, I mean Justin's website.  I
 <br>
 *Justin's first computer, that he built, no big deal*
 
-As you can see, Justin is a super cool dude. For a while he ran a collocated web server, providing hosting and email services.  In 2008, After spending more time blocking spammers and defending the server than actually developing, Justin started work as an IT guy for [F1-Networks][f1]. He's been there (and working from his home office) ever since. 
+As you can see, Justin is a super cool dude. For a while he ran a collocated web server, providing hosting and email services, while designing websites for local businesses.  In 2008, when it became apparent that providing an open relay for spammers wasn't going to pay off, Justin started work as an IT guy for [F1-Networks][f1]. He's been there (and working from his home office) ever since. 
 
 If you'd like to contact Justin, just say his name three times and he will appear.  Failing that, use the [contact page](/contact). Or send a [hilarious tweet](https://twitter.com/nonadmn).
 Thank you for reading!
