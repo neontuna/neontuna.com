@@ -4,28 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Hello there, you've somehow stumbled across my website.  First of all, I apologize
-if the domain name is misleading.  Neontuna.com was available and sounded really cool,
-like a cyberpunk sushi stand.  There's really nothing on here about fish or neon (signs or otherwise).  However you will find posts about programming, computers, BBQ, cats, and programming
-computers.  
-
-...
-
-Whoa, you're still here... Well my name is Justin Mullis.  I'm a native son of 
-Charlotte, North Carolina.  There are exactly three people living in Charlotte that were born here.
-I built my first computer when I was in high school.
+Hello there, you've stumbled across my website.  Oh, I mean Justin's website.  Its customary to write about yourself in third person, as if I have some assistant responsible for my blog.
 
 ![Check out this nerd]({{ site.baseurl }}/assets/551793_10150991698719185_1788344000_n.jpg)
 <br>
-*Does your computer have a "Turbo" button?*
+*Justin's first computer, that he built, no big deal*
 
-I continued tinkering, creating some websites for local bands and businesses.  For a while I ran a collocated web server, providing hosting and email services.  I found myself spending more time blocking spammers and defending the server than actually developing.  So in 2008 I started work as an IT guy for [F1-Networks][f1] and I've been there (and working from my home office) ever since.  I love BBQ (NC BBQ, the only kind that matters), camping, 
-screen prints, air plants, my awesome fiancée, and my giant cat.
+As you can see, Justin is a super cool dude. For a while he ran a collocated web server, providing hosting and email services.  In 2008, After spending more time blocking spammers and defending the server than actually developing, Justin started work as an IT guy for [F1-Networks][f1]. He's been there (and working from his home office) ever since. 
 
-I recently finished a web development program with [Viking Code School][viking].  Continuing from there I've been bashing away on Angular 2, which is conveniently completely different from Angular 1.
-
-If you'd like to contact me, just say my name three times and I will appear.  Failing that, use the [contact page](/contact).
-Or send me a [hilarious tweet](https://twitter.com/nonadmn).
+If you'd like to contact Justin, just say his name three times and he will appear.  Failing that, use the [contact page](/contact). Or send a [hilarious tweet](https://twitter.com/nonadmn).
 Thank you for reading!
 
 ![Justin and Dixie the cat]({{ site.baseurl }}/assets/justin_dixie_trans.png)
@@ -39,5 +26,4 @@ hosted on [Github Pages][ghp].
 [Pixyll]:http://pixyll.com
 [ghp]:https://pages.github.com
 [f1]:http://f1-networks.com
-[viking]:http://www.vikingcodeschool.com
 [dawn]:http://www.foxandthefiddle.com
