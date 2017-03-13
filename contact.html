@@ -7,7 +7,7 @@ permalink: /contact/
 <div class="py2">
   {% if site.ajaxify_contact_form %}
     <form class="form-stacked">
-      <input type="text" name="email" class="field-light" placeholder="Email Address" required autofocus>
+      <input type="text" name="_replyto" class="field-light" placeholder="Email Address" required autofocus>
       <textarea type="text" name="content" class="field-light" rows="5" placeholder="What would you like to say?" required></textarea>
       <select name="restaurant" class="field-light">
         <option value="" selected disabled>Best name for an upscale restaurant that only serves hushpuppies?</option>
@@ -21,8 +21,8 @@ permalink: /contact/
       <button type='submit' class="button button-blue button-big mobile-block">Say Hello</button>
     </form>
   {% else %}
-    <form action="https://api.formbucket.com/f/{{ site.formbucketid }}" method="POST" class="form-stacked">
-      <input type="text" name="email" class="field-light" placeholder="Email Address" required autofocus>
+    <form action="https://formspree.io/neontunablog@fastmail.com" method="POST" class="form-stacked">
+      <input type="text" name="_replyto" class="field-light" placeholder="Email Address" required autofocus>
       <textarea type="text" name="content" class="field-light" rows="5" placeholder="What would you like to say?" required></textarea>
       <select name="restaurant" class="field-light">
         <option value="" selected disabled>Best name for an upscale restaurant that only serves hushpuppies?</option>
