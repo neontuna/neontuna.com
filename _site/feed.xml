@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Night Iron</title>
+    <title>neontuna</title>
     <description>Rambling thoughts from your IT guy</description>
-    <link>http://nightiron.com/</link>
-    <atom:link href="http://nightiron.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Archiving Autotask</title>
@@ -113,8 +113,8 @@ considered blogging about the rest of the application but this is literally for 
 
 </description>
         <pubDate>Tue, 16 Aug 2016 16:45:00 -0400</pubDate>
-        <link>http://nightiron.com/blog/2016/08/16/archiving-autotask/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2016/08/16/archiving-autotask/</guid>
+        <link>http://localhost:4000/blog/2016/08/16/archiving-autotask/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2016/08/16/archiving-autotask/</guid>
       </item>
     
       <item>
@@ -157,8 +157,8 @@ considered blogging about the rest of the application but this is literally for 
 &lt;p&gt;Ahead of me still is Javascript, and the end of the course.  Happy New Year!&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 08:38:00 -0500</pubDate>
-        <link>http://nightiron.com/blog/2015/12/30/a-year-of-programming/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/12/30/a-year-of-programming/</guid>
+        <link>http://localhost:4000/blog/2015/12/30/a-year-of-programming/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/12/30/a-year-of-programming/</guid>
       </item>
     
       <item>
@@ -186,8 +186,8 @@ git push origin master
 &lt;p&gt;There’s a little statistics pane in TextExpander.  Its apparently auto typed 68,854 characters for me.  Not too shabby.&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
-        <link>http://nightiron.com/blog/2015/10/27/osx-utils/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/10/27/osx-utils/</guid>
+        <link>http://localhost:4000/blog/2015/10/27/osx-utils/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/10/27/osx-utils/</guid>
       </item>
     
       <item>
@@ -207,8 +207,8 @@ git push origin master
 &lt;p&gt;[ninite]:&lt;/p&gt;
 </description>
         <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
-        <link>http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/08/04/switching-to-mac-revisited/</guid>
+        <link>http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</guid>
       </item>
     
       <item>
@@ -313,8 +313,8 @@ five guesses.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Aug 2015 14:54:09 -0400</pubDate>
-        <link>http://nightiron.com/blog/2015/08/01/precious-gems/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/08/01/precious-gems/</guid>
+        <link>http://localhost:4000/blog/2015/08/01/precious-gems/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/01/precious-gems/</guid>
       </item>
     
       <item>
@@ -335,8 +335,8 @@ five guesses.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 02 Jun 2015 08:03:21 -0400</pubDate>
-        <link>http://nightiron.com/blog/2015/06/02/puts(hello-world!)/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/06/02/puts(hello-world!)/</guid>
+        <link>http://localhost:4000/blog/2015/06/02/puts(hello-world!)/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/06/02/puts(hello-world!)/</guid>
       </item>
     
       <item>
@@ -457,8 +457,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
-        <link>http://nightiron.com/blog/2015/02/17/monitoring-directaccess/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2015/02/17/monitoring-directaccess/</guid>
+        <link>http://localhost:4000/blog/2015/02/17/monitoring-directaccess/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2015/02/17/monitoring-directaccess/</guid>
       </item>
     
       <item>
@@ -509,8 +509,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
-        <link>http://nightiron.com/blog/2014/12/29/straddling-osx-and-windows/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
+        <link>http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</guid>
       </item>
     
       <item>
@@ -528,8 +528,8 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
 </description>
         <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
-        <link>http://nightiron.com/blog/2014/08/25/godaddy-sucks/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2014/08/25/godaddy-sucks/</guid>
+        <link>http://localhost:4000/blog/2014/08/25/godaddy-sucks/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/25/godaddy-sucks/</guid>
       </item>
     
       <item>
@@ -581,8 +581,8 @@ Set WshShell = Nothing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
-        <link>http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
-        <guid isPermaLink="true">http://nightiron.com/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
+        <link>http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
       </item>
     
   </channel>
