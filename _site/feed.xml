@@ -7,6 +7,34 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>VueJS forms and object props</title>
+        <description>&lt;p&gt;In working with VueJS recently, a reoccurring gremlin has been Vue’s concept of props, using an object as a prop, and using objects with v-model.  The application I’m putting together is basically a CRUD (create read update destroy) ticketing system.  It uses several HTML forms to update records.&lt;/p&gt;
+
+&lt;p&gt;Taking advantage of Vue’s component system, these forms are completely encapsulated which makes them easy to drop in where-ever they’re needed.  They take a database record, as a JSON object, make some changes and then emit a new object when saved.  Whatever component is the parent of the form is responsible for providing the initial record as a prop and handling saving the new record.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;save-ticket-form&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;:ticket=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ticket&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;:submitting=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;v-on:save=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;onSaveTicket&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;v-on:cancel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;resetTicket&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/save-ticket-form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There’s a few important concepts here that expose the prickly nature of using props to pass in the initial database record.  The first is that props are read-only. In fact some of Vue’s contributors will suggest that you only use primitives like numbers, strings, and booleans in props, and not objects, since objects are passed by reference.  If you try to directly manipulate a primitive prop, Vue’s developer tools will yell at you.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But it can’t tell if you change properties on an object prop.  That is unless you’re using Vuex, in which case Vuex will then yell at you for manipulating its data directly.  The end result is the same - you don’t want to directly mutate props.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to respect read-only props when using objects.  This gets into another issue however, data reactivity.  Depending on how you handle the prop, if you’re using v-model on the resulting object’s properties, you might have issues with data reactivity.  Vue expects to know about all of an object’s properties whenever the component exposing that object is rendered.  If not you’ll run into instances where v-model behaves in unpredictable ways, watchers won’t fire, and Vue might give you warnings about null values if you’re trying to use deeply nested properties (Object.company.id)&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Jul 2017 09:49:00 -0400</pubDate>
+        <link>http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</guid>
+      </item>
+    
+      <item>
         <title>Archiving Autotask</title>
         <description>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; The Rails application for this project can be found &lt;a href=&quot;https://github.com/nonadmin/task_archive&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -530,59 +558,6 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
         <link>http://localhost:4000/blog/2014/08/25/godaddy-sucks/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2014/08/25/godaddy-sucks/</guid>
-      </item>
-    
-      <item>
-        <title>Randomizing new Plex pre-roll feature</title>
-        <description>&lt;p&gt;&lt;img src=&quot;/assets/vlcsnap-2014-08-14-00h28m55s45_large.png&quot; alt=&quot;Simpsons THX Preroll&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Last week the wonderful folks at Plex announced support for extras and trailers to play before you watch a movie.  Which was already pretty great, but then a few days ago they &lt;a href=&quot;https://blog.plex.tv/2014/08/11/new-trailers-features/&quot;&gt;added support&lt;/a&gt; for a custom “pre-roll” to play after the trailers and before your movie.  This immediately made me think of all the awesome stuff that used to play in movie theatres and on home video - THX, creepy lobby snack commercials, etc.&lt;/p&gt;
-
-&lt;p&gt;Right now the feature requires that you set one video from your library as the pre-roll clip.  I wanted to randomize this so the clip would change occationally.  Luckily the setting is stored in the registry (by the way this is for folks using Windows as their Plex server) under this key:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So for instance, the full registry key for one of my clips looks like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server]
-&quot;CinemaTrailersPrerollID&quot;=&quot;http://plex.tv/web/app#!/server/2b6b5...
-...099e7fcbd0/details/%2Flibrary%2Fmetadata%2F4655&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;There’s probably a million ways to do this but I created a .reg file for each pre-roll in my collection and then used this VBScript to randomly insert the registry value for one of them.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vbnet&quot; data-lang=&quot;vbnet&quot;&gt;Dim WshShell, intOption
-
-Set WshShell = Wscript.CreateObject(&quot;Wscript.Shell&quot;)
-Randomize()
-intOption = Int(5*Rnd())
-
-Select Case intOption
-  Case 0
-    WshShell.Run &quot;regedit /S C:\etc\pre-roll-1.reg&quot;,0,True
-  Case 1
-    WshShell.Run &quot;regedit /S C:\etc\pre-roll-2.reg&quot;,0,True
-  Case 2
-    WshShell.Run &quot;regedit /S C:\etc\pre-roll-3.reg&quot;,0,True
-  Case 3
-    WshShell.Run &quot;regedit /S C:\etc\pre-roll-4.reg&quot;,0,True
-  Case 4
-    WshShell.Run &quot;regedit /S C:\etc\pre-roll-5.reg&quot;,0,True
-End Select
-
-Set WshShell = Nothing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Finally, I set that to run on a schedule every hour.&lt;/p&gt;
-
-&lt;p&gt;I imagine we’ll have the option to do something like this from Plex itself before too long.  On the blog linked above there were already a few requests for it.  Regardless, these new features are slick and I hope convince more folks to sign up for Plex pass.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
-        <link>http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
       </item>
     
   </channel>
