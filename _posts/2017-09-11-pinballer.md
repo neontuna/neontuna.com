@@ -7,7 +7,7 @@ category: blog
 tags: javascript vuejs developer
 ---
 
-Pinball, like most competitive games, has a heaping of stats.  Arcades/barcades host tournaments and league play.  Our local barcade, [Abari][1], wanted to post standings for their tournaments online.  They use [Matchplay.events][2] which exposes a pretty robust [API][3].  At first we just needed something basic that that hit the "Standings" endpoint of Matchplay and enumerated the players name and rank.
+Pinball, like most competitive games, has a heaping of stats.  Arcades/barcades host tournaments and league play.  Our local barcade [Abari][1] wanted to post standings for their tournaments online.  They use [Matchplay.events][2] which exposes a pretty robust [API][3].  At first we just needed something basic that that hit the "Standings" endpoint of Matchplay and enumerated the players name and rank.
 
 I've been doing a lot of work with [VueJS][4] recently. The framework makes creating a nice table from an API response a breeze.  
 
@@ -65,7 +65,7 @@ You can see the results in this [jsfiddle][7].
 
 So all that's pretty simple.  Why not make it needlessly complicated so we have to write exponentially more code?! 😛
 
-[IFPA][8] or The International Flipper Pinball Association maintains stats on Pinball players through its World Pinball Player Rankings or WPPR.  Most of the players in Abari's tournaments will have a WPPR score so wouldn't it be cool to show that along with their standing in the current tournament?  And IFPA even has its own [API][9].
+[IFPA][8] or The International Flipper Pinball Association maintains stats on Pinball players through its World Pinball Player Rankings (WPPR).  Most of the players in Abari's tournaments will have a WPPR score so wouldn't it be cool to show that along with their standing in the current tournament?  And IFPA even has its own [API][9].
 
 It turns out that Matchplay keeps track of the IFPA ID of players, as we can see in this result from its tournament endpoint
 
