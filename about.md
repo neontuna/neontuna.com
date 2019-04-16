@@ -4,15 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Hello there, you've stumbled across my website.  Oh, I mean Justin's website.  Its customary to write about yourself in third person, as if I have some assistant responsible for my blog.
+Hi, I'm Justin, welcome to my website.  
 
 ![Check out this nerd]({{ site.baseurl }}/assets/551793_10150991698719185_1788344000_n.jpg)
 <br>
-*Justin's first computer, that he built, no big deal*
+*Here I am with my first computer, it had several megabytes of ram.*
 
-As you can see, Justin is a super cool dude. For a while he ran a collocated web server, providing hosting and email services, while designing websites for local businesses.  In 2008, when it became apparent that providing an open relay for spammers wasn't going to pay off, Justin started work as an IT guy for [F1-Networks][f1]. He's been there (and working from his home office) ever since. 
+Some professional background - As you can see, I am a super cool dude. For a while I ran a collocated web server, providing hosting and email services, while designing websites for local businesses.  In 2008, I started work as an IT guy for [F1-Networks][f1].  Eleven years later (when it became apparent that Windows was never going away) I switched things up and started programming for a local startup, [Rabbu][rabbu].  Now I have a Macbook with several hip stickers and instead of hating Microsoft I hate REST APIs.
 
-If you'd like to contact Justin, just say his name three times and he will appear.  Failing that, use the [contact page](/contact). Or send a [hilarious tweet](https://twitter.com/neontunafishy).
+If you'd like to contact me, just say my name three times and I will appear.  Failing that, use the [contact page](/contact). Or send a [hilarious tweet](https://twitter.com/neontunafishy).
 Thank you for reading!
 
 ![Justin and Dixie the cat]({{ site.baseurl }}/assets/justin_dixie_trans.png)
@@ -27,3 +27,4 @@ hosted on [Github Pages][ghp].
 [ghp]:https://pages.github.com
 [f1]:http://f1-networks.com
 [dawn]:http://www.foxandthefiddle.com
+[rabbu]:http://www.rabbu.com
