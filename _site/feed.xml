@@ -8,7 +8,7 @@
     
       <item>
         <title>Pinballer</title>
-        <description>&lt;p&gt;Pinball, like most competitive games, has a heaping of stats.  Arcades/barcades host tournaments and league play.  Our local barcade, &lt;a href=&quot;http://abarigamebar.com&quot;&gt;Abari&lt;/a&gt;, wanted to post standings for their tournaments online.  They use &lt;a href=&quot;https://matchplay.events&quot;&gt;Matchplay.events&lt;/a&gt; which exposes a pretty robust &lt;a href=&quot;https://matchplay.events/api-docs&quot;&gt;API&lt;/a&gt;.  At first we just needed something basic that that hit the “Standings” endpoint of Matchplay and enumerated the players name and rank.&lt;/p&gt;
+        <description>&lt;p&gt;Pinball, like most competitive games, has a heaping of stats.  Arcades/barcades host tournaments and league play.  Our local barcade &lt;a href=&quot;http://abarigamebar.com&quot;&gt;Abari&lt;/a&gt; wanted to post standings for their tournaments online.  They use &lt;a href=&quot;https://matchplay.events&quot;&gt;Matchplay.events&lt;/a&gt; which exposes a pretty robust &lt;a href=&quot;https://matchplay.events/api-docs&quot;&gt;API&lt;/a&gt;.  At first we just needed something basic that that hit the “Standings” endpoint of Matchplay and enumerated the players name and rank.&lt;/p&gt;
 
 &lt;p&gt;I’ve been doing a lot of work with &lt;a href=&quot;https://vuejs.org/&quot;&gt;VueJS&lt;/a&gt; recently. The framework makes creating a nice table from an API response a breeze.&lt;/p&gt;
 
@@ -60,61 +60,61 @@
 
 &lt;p&gt;So all that’s pretty simple.  Why not make it needlessly complicated so we have to write exponentially more code?! 😛&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.ifpapinball.com/&quot;&gt;IFPA&lt;/a&gt; or The International Flipper Pinball Association maintains stats on Pinball players through its World Pinball Player Rankings or WPPR.  Most of the players in Abari’s tournaments will have a WPPR score so wouldn’t it be cool to show that along with their standing in the current tournament?  And IFPA even has its own &lt;a href=&quot;https://www.ifpapinball.com/api/documentation/&quot;&gt;API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ifpapinball.com/&quot;&gt;IFPA&lt;/a&gt; or The International Flipper Pinball Association maintains stats on Pinball players through its World Pinball Player Rankings (WPPR).  Most of the players in Abari’s tournaments will have a WPPR score so wouldn’t it be cool to show that along with their standing in the current tournament?  And IFPA even has its own &lt;a href=&quot;https://www.ifpapinball.com/api/documentation/&quot;&gt;API&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It turns out that Matchplay keeps track of the IFPA ID of players, as we can see in this result from its tournament endpoint&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;player_id&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10263&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;user_id&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;187&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;claimed_by&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1168&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;ifpa_id&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30959&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Justin Richardson&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;tournament&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;tournament_id&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10866&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;seed&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;player_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10263&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;user_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;187&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;claimed_by&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1168&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;ifpa_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30959&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Justin Richardson&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;tournament&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;tournament_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10866&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;active&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;seed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;And we can use that ID from Matchplay to pull the player’s stats from the IFPA API.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;player&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;player_id&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;30959&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;first_name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Justin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;last_name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Richardson &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;city&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Charlotte&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;state&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;country_code&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;country_name&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;United States&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;initials&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;JSR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;excluded_flag&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;N&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;ifpa_registered&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Y&quot;&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;player&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;player_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;30959&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;first_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Justin&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;last_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Richardson &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;city&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Charlotte&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;state&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;country_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;country_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;United States&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;initials&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;JSR&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;age&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;excluded_flag&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;N&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;ifpa_registered&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Y&quot;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;player_stats&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;current_wppr_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2076&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;last_month_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2211&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;last_year_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;3650&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;highest_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2140&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;highest_rank_date&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2017-09-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;current_wppr_value&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;33.07&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;wppr_points_all_time&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;38.41&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;best_finish&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;best_finish_count&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;average_finish&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;12&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;average_finish_last_year&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;17&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;total_events_all_time&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;35&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;total_active_events&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;35&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;total_events_away&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;ratings_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;405&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;ratings_value&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1585.70&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;efficiency_rank&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1257&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;efficiency_value&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;13.550&quot;&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;player_stats&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;current_wppr_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2076&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;last_month_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2211&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;last_year_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;3650&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;highest_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2140&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;highest_rank_date&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2017-09-01&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;current_wppr_value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;33.07&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;wppr_points_all_time&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;38.41&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;best_finish&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;best_finish_count&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;average_finish&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;12&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;average_finish_last_year&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;17&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;total_events_all_time&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;35&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;total_active_events&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;35&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;total_events_away&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;ratings_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;405&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;ratings_value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1585.70&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;efficiency_rank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;1257&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;efficiency_value&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;13.550&quot;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&quot;championshipSeries&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&quot;championshipSeries&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
             &lt;span class=&quot;s2&quot;&gt;&quot;view_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;100&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;s2&quot;&gt;&quot;group_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;NC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -255,34 +255,6 @@
       </item>
     
       <item>
-        <title>VueJS forms and object props</title>
-        <description>&lt;p&gt;In working with VueJS recently, a reoccurring gremlin has been Vue’s concept of props, using an object as a prop, and using objects with v-model.  The application I’m putting together is basically a CRUD (create read update destroy) ticketing system.  It uses several HTML forms to update records.&lt;/p&gt;
-
-&lt;p&gt;Taking advantage of Vue’s component system, these forms are completely encapsulated which makes them easy to drop in where-ever they’re needed.  They take a database record, as a JSON object, make some changes and then emit a new object when saved.  Whatever component is the parent of the form is responsible for providing the initial record as a prop and handling saving the new record.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;save-ticket-form&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;:ticket=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ticket&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;:submitting=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;v-on:save=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;onSaveTicket&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;v-on:cancel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;resetTicket&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/save-ticket-form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;There’s a few important concepts here that expose the prickly nature of using props to pass in the initial database record.  The first is that props are read-only. In fact some of Vue’s contributors will suggest that you only use primitives like numbers, strings, and booleans in props, and not objects, since objects are passed by reference.  If you try to directly manipulate a primitive prop, Vue’s developer tools will yell at you.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;But it can’t tell if you change properties on an object prop.  That is unless you’re using Vuex, in which case Vuex will then yell at you for manipulating its data directly.  The end result is the same - you don’t want to directly mutate props.&lt;/p&gt;
-
-&lt;p&gt;There are several ways to respect read-only props when using objects.  This gets into another issue however, data reactivity.  Depending on how you handle the prop, if you’re using v-model on the resulting object’s properties, you might have issues with data reactivity.  Vue expects to know about all of an object’s properties whenever the component exposing that object is rendered.  If not you’ll run into instances where v-model behaves in unpredictable ways, watchers won’t fire, and Vue might give you warnings about null values if you’re trying to use deeply nested properties (Object.company.id)&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Jul 2017 09:49:00 -0400</pubDate>
-        <link>http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</guid>
-      </item>
-    
-      <item>
         <title>Archiving Autotask</title>
         <description>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; The Rails application for this project can be found &lt;a href=&quot;https://github.com/nonadmin/task_archive&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -298,10 +270,9 @@
 
 &lt;p&gt;This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; for a new line.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bcp &quot;dbo.tblTask&quot; out “c:\export\tblTask.csv&quot; -S localhost \
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bcp &quot;dbo.tblTask&quot; out “c:\export\tblTask.csv&quot; -S localhost \
 -d databasename -C RAW -T -c -t “\t” -r &quot;\n&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;First option is the table name&lt;/li&gt;
@@ -333,15 +304,15 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;You’ll need to make sure you’ve got the ‘pg’ gem set, and then just plug in the database in &lt;code class=&quot;highlighter-rouge&quot;&gt;config\database.yml&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;s&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;&amp;amp;default&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postgresql&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unicode&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5000&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;&amp;amp;default&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postgresql&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unicode&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5000&lt;/span&gt;
 
-&lt;span class=&quot;s&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;s&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;*default&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;autotask_backup&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;span class=&quot;na&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;autotask_backup&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This of course will also be my production database but for now we’re just in development mode.&lt;/p&gt;
 
@@ -361,7 +332,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
     &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;phone&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                        &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;phoneext&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                     &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;string&lt;/span&gt;   &lt;span class=&quot;s2&quot;&gt;&quot;fax&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                          &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;ss&quot;&gt;null: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Booya!&lt;/p&gt;
 
@@ -369,7 +340,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;Alright.  So let’s drop down to the console and see if all this actually worked.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] pry(main)&amp;gt; Contact.all.sample
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] pry(main)&amp;gt; Contact.all.sample
   Contact Load (12.4ms)  SELECT &quot;contacts&quot;.* FROM &quot;contacts&quot;
 +----------+-----------+----------+-------------+
 | id       | firstname | lastname | customer_id |
@@ -377,8 +348,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 | 29683607 | Fake      | Customer | 29683605    |
 +----------+-----------+----------+-------------+
 1 row in set
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Booya!²&lt;/p&gt;
 
@@ -451,11 +421,10 @@ considered blogging about the rest of the application but this is literally for 
 
 &lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code class=&quot;highlighter-rouge&quot;&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
 git commit -m &quot;whatever I just typed&quot;
 git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Anything that you type regularly can live in TextExpander.  I keep video/phone conference information in there.  I have some form letter type emails that I keep in there that are similar to the git message and automatically enter a subject and body and tab through fields in Outlook.&lt;/p&gt;
 
@@ -464,27 +433,6 @@ git push origin master
         <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
         <link>http://localhost:4000/blog/2015/10/27/osx-utils/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2015/10/27/osx-utils/</guid>
-      </item>
-    
-      <item>
-        <title>Switching to Mac revisited</title>
-        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.&lt;/p&gt;
-
-&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
-
-&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
-
-&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
-
-&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
-
-&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
-
-&lt;p&gt;[ninite]:&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</guid>
       </item>
     
       <item>
@@ -664,12 +612,12 @@ TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The full PowerShell script is below&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; encoding=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Windows-1252&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; ?&amp;gt;&quot;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; encoding=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Windows-1252&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ?&amp;gt;&quot;&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;prtg&amp;gt;&quot;&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;Try&lt;/span&gt;
  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Get-RemoteAccessHealth -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Where-Object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.HealthState -match &lt;span class=&quot;s1&quot;&gt;'Error'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.count
+    &lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Get-RemoteAccessHealth -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Where&lt;/span&gt;-Object &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.HealthState -match &lt;span class=&quot;s1&quot;&gt;'Error'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.count
     &lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | &lt;span class=&quot;nb&quot;&gt;Select&lt;/span&gt; -ExpandProperty TotalDAConnections
  
     &lt;span class=&quot;nb&quot;&gt;Write-Host&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;
@@ -787,6 +735,76 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
         <link>http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Godaddy sucks</title>
+        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.&lt;/p&gt;
+
+&lt;p&gt;Most of our clients are hosted through Godaddy and were originally setup years ago.  If we were making that decision again it’d probably be with a different company.  But the cost of moving clients off Godaddy pretty much outweighs our personal feelings about them.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy support about the site.  For hosting support you end up speaking with a first level phone rep and if you’re escalated it just means that same phone rep talks to someone at a higher level for you.  So after deflecting her initial assertion that our Wordpress was configured incorrectly she escalated the call.  Second level apparently told her that we should enable SSH access to our account which would migrate everything to a different datacenter.  I protested this, we didn’t need SSH access and this seemed like a really hack method of resolving issues.  She continued to insist this was the only option and so I went ahead with it.&lt;/p&gt;
+
+&lt;p&gt;A few days later and the site was loading fine.  The rep had said that some updates would need to be made to the Wordpress configuration to point to the new database location but we never received the email that was supposed to detail these changes.  So I logged into our client’s hosting panel and was presented with a page that stated we didn’t have a hosting plan.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy again.  The phone rep reported that the site never migrated completely.  The content is on the new server while the database is still on the old system.  Godaddy’s solution to this?  Remove the (Wordpress) database, which will bring the site down, but will allow the migration to complete.  And then restore the database on the new system.  Total downtime?  1-3 &lt;strong&gt;Days&lt;/strong&gt;.  We still have access to the data and old database, and so my suggestion was that a new hosting account be created and we simply upload everything and restore a database backup.  Godaddy says this will work but we’ll need to purchase the hosting plan.  And we’ll need to do all the migration legwork ourselves.&lt;/p&gt;
+
+&lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
+        <link>http://localhost:4000/blog/2014/08/25/godaddy-sucks/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/25/godaddy-sucks/</guid>
+      </item>
+    
+      <item>
+        <title>Randomizing new Plex pre-roll feature</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/vlcsnap-2014-08-14-00h28m55s45_large.png&quot; alt=&quot;Simpsons THX Preroll&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Last week the wonderful folks at Plex announced support for extras and trailers to play before you watch a movie.  Which was already pretty great, but then a few days ago they &lt;a href=&quot;https://blog.plex.tv/2014/08/11/new-trailers-features/&quot;&gt;added support&lt;/a&gt; for a custom “pre-roll” to play after the trailers and before your movie.  This immediately made me think of all the awesome stuff that used to play in movie theatres and on home video - THX, creepy lobby snack commercials, etc.&lt;/p&gt;
+
+&lt;p&gt;Right now the feature requires that you set one video from your library as the pre-roll clip.  I wanted to randomize this so the clip would change occationally.  Luckily the setting is stored in the registry (by the way this is for folks using Windows as their Plex server) under this key:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server\CinemaTrailersPrerollID
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So for instance, the full registry key for one of my clips looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[HKEY_CURRENT_USER\Software\Plex, Inc.\Plex Media Server]
+&quot;CinemaTrailersPrerollID&quot;=&quot;http://plex.tv/web/app#!/server/2b6b5...
+...099e7fcbd0/details/%2Flibrary%2Fmetadata%2F4655&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There’s probably a million ways to do this but I created a .reg file for each pre-roll in my collection and then used this VBScript to randomly insert the registry value for one of them.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vbnet&quot; data-lang=&quot;vbnet&quot;&gt;Dim WshShell, intOption
+
+Set WshShell = Wscript.CreateObject(&quot;Wscript.Shell&quot;)
+Randomize()
+intOption = Int(5*Rnd())
+
+Select Case intOption
+  Case 0
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-1.reg&quot;,0,True
+  Case 1
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-2.reg&quot;,0,True
+  Case 2
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-3.reg&quot;,0,True
+  Case 3
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-4.reg&quot;,0,True
+  Case 4
+    WshShell.Run &quot;regedit /S C:\etc\pre-roll-5.reg&quot;,0,True
+End Select
+
+Set WshShell = Nothing&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Finally, I set that to run on a schedule every hour.&lt;/p&gt;
+
+&lt;p&gt;I imagine we’ll have the option to do something like this from Plex itself before too long.  On the blog linked above there were already a few requests for it.  Regardless, these new features are slick and I hope convince more folks to sign up for Plex pass.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 01 Aug 2014 07:32:33 -0400</pubDate>
+        <link>http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/01/randomizing-new-plex-pre-roll-feature/</guid>
       </item>
     
   </channel>
