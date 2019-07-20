@@ -7,6 +7,8 @@ categories: blog
 tags: ruby home_automation node-red aws
 ---
 
+![header, sample detection](/assets/2019_ha/header.png)
+
 Home Automation is the Deadwood of the technological Wild West.  An illegal settlement, in violation of various treaties, run by murderers and thieves.  A modern Wild Bill Hickok killed when his Works With Nest integration is [suddenly sunset][1] by a cowardly Google.
 
 One day Home Automation will be tamed.  Things will *Just Work*, you'll be able to buy automated lights, fans, thermostats, locks, and cameras that don't all have their own wireless standard, hub and app.  Or more than likely when a house is built all of this stuff will just be put in along with the water heater and electrical.  For now - its all kind of a hell ride.
