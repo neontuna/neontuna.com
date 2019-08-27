@@ -4,7 +4,7 @@ email:        justinm@fastmail.com
 author:       Justin Mullis
 description:  "Rambling thoughts from an IT guy turned software developer"
 baseurl:      ""
-url:          "http://www.neontuna.com"
+url:          "https://www.neontuna.com"
 date_format:  "%b %-d, %Y"
 
 # Google services
@@ -66,4 +66,5 @@ sass:
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-feed
 
