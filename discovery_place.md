@@ -13,7 +13,7 @@ permalink: /discoveryplace/
 #### Websites
 - [railstutorial.org](https://www.railstutorial.org/)
 - [rubyweekly.com (newsletter)](https://rubyweekly.com/)
-- [Hacker News](news.ycombinator.com/)
+- [Hacker News](https://news.ycombinator.com/)
 - [The Odin Project](https://www.theodinproject.com/home)
 
 #### Etc
