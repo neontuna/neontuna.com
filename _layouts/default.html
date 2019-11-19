@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-<body class="site{% if site.animated %} animated fade-in-down{% endif %}">
+
+<style>
+.svg-background {
+  background-image: url(/assets/ufo.svg);
+	background-repeat: no-repeat;
+	background-position: 80% 10px;
+	background-size: 200px; 
+}
+</style>
+
+<body class="site{% if site.animated %} animated fade-in-down{% endif %} svg-background">
 
 	{% if site.facebook_comments %}
 		<div id="fb-root"></div>
