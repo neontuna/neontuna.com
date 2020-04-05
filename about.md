@@ -20,11 +20,11 @@ Thank you for reading!
 *Riding Dixie through the galaxy, illustrated by [Dawn Hall][dawn].*
 
 This site is built with [Jekyll][Jekyll] and uses the [Pixyll theme][Pixyll]. It is 
-hosted on [Github Pages][ghp].
+hosted on [Amazon S3][s3].
 
 [Jekyll]:http://jekyllrb.com
 [Pixyll]:http://pixyll.com
-[ghp]:https://pages.github.com
+[s3]:https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html
 [f1]:http://f1-networks.com
 [dawn]:http://www.foxandthefiddle.com
 [rabbu]:http://www.rabbu.com
