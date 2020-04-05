@@ -32,3 +32,22 @@ body {
      -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+.svg-background:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    opacity: 0.05;
+    background-image: url(/assets/ufo.svg);
+  	background-repeat: no-repeat;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}

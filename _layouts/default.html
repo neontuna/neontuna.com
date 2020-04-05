@@ -2,16 +2,7 @@
 <html>
 {% include head.html %}
 
-<style>
-.svg-background {
-  background-image: url(/assets/ufo.svg);
-	background-repeat: no-repeat;
-	background-position: 80% 10px;
-	background-size: 200px; 
-}
-</style>
-
-<body class="site{% if site.animated %} animated fade-in-down{% endif %} svg-background">
+<body class="site{% if site.animated %} animated fade-in-down{% endif %}">
 
 	{% if site.facebook_comments %}
 		<div id="fb-root"></div>
@@ -23,7 +14,7 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 	{% endif %}
-
+  
   <div class="site-wrap">
     {% include header.html %}
 

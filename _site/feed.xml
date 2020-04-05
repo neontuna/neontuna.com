@@ -406,33 +406,6 @@ ___&lt;/p&gt;
       </item>
     
       <item>
-        <title>VueJS forms and object props</title>
-        <description>&lt;p&gt;In working with VueJS recently, a reoccurring gremlin has been Vue’s concept of props, using an object as a prop, and using objects with v-model.  The application I’m putting together is basically a CRUD (create read update destroy) ticketing system.  It uses several HTML forms to update records.&lt;/p&gt;
-
-&lt;p&gt;Taking advantage of Vue’s component system, these forms are completely encapsulated which makes them easy to drop in where-ever they’re needed.  They take a database record, as a JSON object, make some changes and then emit a new object when saved.  Whatever component is the parent of the form is responsible for providing the initial record as a prop and handling saving the new record.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;save-ticket-form&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;:ticket=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ticket&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;:submitting=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;v-on:save=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;onSaveTicket&quot;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;v-on:cancel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;resetTicket&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/save-ticket-form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;There’s a few important concepts here that expose the prickly nature of using props to pass in the initial database record.  The first is that props are read-only. In fact some of Vue’s contributors will suggest that you only use primitives like numbers, strings, and booleans in props, and not objects, since objects are passed by reference.  If you try to directly manipulate a primitive prop, Vue’s developer tools will yell at you.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;But it can’t tell if you change properties on an object prop.  That is unless you’re using Vuex, in which case Vuex will then yell at you for manipulating its data directly.  The end result is the same - you don’t want to directly mutate props.&lt;/p&gt;
-
-&lt;p&gt;There are several ways to respect read-only props when using objects.  This gets into another issue however, data reactivity.  Depending on how you handle the prop, if you’re using v-model on the resulting object’s properties, you might have issues with data reactivity.  Vue expects to know about all of an object’s properties whenever the component exposing that object is rendered.  If not you’ll run into instances where v-model behaves in unpredictable ways, watchers won’t fire, and Vue might give you warnings about null values if you’re trying to use deeply nested properties (Object.company.id)&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Jul 2017 09:49:00 -0400</pubDate>
-        <link>http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2017/07/04/vuejs-forms-and-object-props/</guid>
-      </item>
-    
-      <item>
         <title>Archiving Autotask</title>
         <description>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt; The Rails application for this project can be found &lt;a href=&quot;https://github.com/nonadmin/task_archive&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -611,27 +584,6 @@ git push origin master
         <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
         <link>http://localhost:4000/blog/2015/10/27/osx-utils/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2015/10/27/osx-utils/</guid>
-      </item>
-    
-      <item>
-        <title>Switching to Mac revisited</title>
-        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.&lt;/p&gt;
-
-&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
-
-&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
-
-&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
-
-&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
-
-&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
-
-&lt;p&gt;[ninite]:&lt;/p&gt;
-</description>
-        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
-        <link>http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/2015/08/04/switching-to-mac-revisited/</guid>
       </item>
     
       <item>
@@ -882,6 +834,77 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
         <link>http://localhost:4000/blog/2015/02/17/monitoring-directaccess/</link>
         <guid isPermaLink="true">http://localhost:4000/blog/2015/02/17/monitoring-directaccess/</guid>
+      </item>
+    
+      <item>
+        <title>Straddling OSX and Windows</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;According to stock photo sites in order to use an Apple product you must obsessively arrange your desk into perfect geometric patterns, like a serial killer.  I have not done this yet.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/IMG_1434_large.JPG&quot; alt=&quot;my messy desk&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For a while now I’ve been interested in web development.  I’ll run through a tutorial here and there - &lt;a href=&quot;http://railstutorial.org&quot;&gt;railstutorial.org&lt;/a&gt; and &lt;a href=&quot;http://learnpythonthehardway.org&quot;&gt;learn python the hard way&lt;/a&gt; have been my favorites (yes I realize these are two different languages, I have commitment issues).  If you’re primarily using Windows modern web development can be frustrating to learn.  Every tutorial starts out instructing you to use an OSX package manager and generally include some huge caveat for getting your development environment configured in Windows.  I had no desire to learn Microsoft’s languages, such as ASP.NET, so I decided I should look into a Macbook.  Also that my Dell notebook has always been kind of a piece of junk and that I don’t particularly like Windows 8/8.1 helped push me towards “switching”.&lt;/p&gt;
+
+&lt;p&gt;I’m now typing this from my Macbook Pro and Thunderbolt display.  I haven’t fully made the switch for my day job as a remote IT worker.  I’m still trying to suss out how I want my browsers setup, which softphone to use, and some other odds and ends.  Funny thing is, there isn’t much I need Windows for in order to support our clients that mostly run Windows.  I will probably always keep around a Windows system (&lt;a href=&quot;http://www.nonadmin.com/home-server&quot;&gt;or 12&lt;/a&gt;) because other IT people don’t respect you if you only have one computer.&lt;/p&gt;
+
+&lt;p&gt;This is sort of a compilation of things I’ve noticed and some tips for anyone coming from the Windows world.    I’ve arranged things with buying tips first and then good, bad, and miscellaneous observations.&lt;/p&gt;
+
+&lt;p&gt;#Buying Tips&lt;/p&gt;
+
+&lt;p&gt;Besides the notebook I researched and bought a few things from Amazon. The &lt;a href=&quot;http://amzn.to/1D3fmGd&quot;&gt;mStand laptop stand&lt;/a&gt; which is way overpriced for a piece of bent aluminum but I guess it holds the notebook at eye level adequately.  I also picked up an &lt;a href=&quot;http://amzn.to/1wYwpJ5&quot;&gt;ethernet adapter/usb hub&lt;/a&gt; from Anker which instantly became useful because I didn’t have the display (with its NIC) initially.  I really like Anker’s products, they’re generally pretty inexpensive but well built.  I also grabbed an &lt;a href=&quot;http://amzn.to/1HXbO9r&quot;&gt;Incase Neoprene Sleeve&lt;/a&gt; that is apparently made for the 13” MacBook Pro but has a little too much extra space in it. I feel like it ought to fit the notebook snugly and not allow it to move at all inside the sleeve.  Finally, I purchased the &lt;a href=&quot;http://www.amazon.com/gp/product/B004YLCKYA/ref=oh_aui_detailpage_o02_s01?ie=UTF8&amp;amp;psc=1&quot;&gt;Thunderbolt Display&lt;/a&gt; from Amazon as well.  I was going to purchase a Magsafe&amp;gt;Magsafe 2 power adapter as the Thunderbolt display’s charging cable isn’t compatible with the latest Macbooks but then I found out that these are now being included with the displays.&lt;/p&gt;
+
+&lt;p&gt;For the notebook itself I found a really handy &lt;a href=&quot;http://appleinsider.com/mac_price_guide&quot;&gt;price guide&lt;/a&gt; from Apple Insider and ended up picking up the system from Adorama with 3 years of AppleCare bundled.   They threw in an Apple TV with the promo code from Apple Insider but checking the guide now that has changed to a mighty mouse.  I also checked the &lt;a href=&quot;http://buyersguide.macrumors.com/&quot;&gt;Buyer’s Guide&lt;/a&gt; from Mac Rumors, just incase a new model was about to drop.&lt;/p&gt;
+
+&lt;p&gt;Initially I was not going to buy the Thunderbolt display but one issue with living in Apple’s world is you have to play by their rules.  There is no official dock for the Macbook, the Thunderbolt Display is the closest thing to it.  My other options were Thunderbolt hubs which are several hundred dollars and may or may not have worked with my existing monitor which uses DVI-D.  So I reluctantly decided to get the Thunderbolt display but I feel like Apple could make a lot of people happy if they’d just release a dock.   I use a simple KVM to switch keyboard and mouse between the notebook and my PC tower, which is exclusively connected to my old display.  I thought I would need an Apple keyboard but really its no big deal.  The keys are in the same position except with the Windows key acting as the Command key.&lt;/p&gt;
+
+&lt;p&gt;#The Good&lt;/p&gt;
+
+&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code class=&quot;highlighter-rouge&quot;&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
+
+&lt;p&gt;The Macbook’s trackpad and keyboard are the best I’ve used on a notebook, period.  Trackpads on PC notebooks have long been a point of contention.  Whether they’re too small, have weird gestures, or just plan don’t work there’s always some issue.  The latest EliteBooks from HP have come the closest to getting it right that I’ve seen.  Battery life on the notebook has been great and I love that OSX will tell you which apps are eating a lot of energy.  Coming from a system that mysteriously always ran awful on battery this has been most excellent.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.apple.com/osx/continuity/&quot;&gt;continuity features&lt;/a&gt; of Yosemite were a big reason I was interested in switching.  I already own an iPhone and iPad.  Being able to iMessage, and even send regular text, from the computer is very convenient.    This is where I feel like Apple is really edging out Microsoft, it would give people a reason to actually consider Windows Phone to have this sort of functionality.&lt;/p&gt;
+
+&lt;p&gt;#The Bad&lt;/p&gt;
+
+&lt;p&gt;The Macbook has only locked up twice but both were kind of worrying.  The first  was actually right out of the box during setup.  It hung forever when I declined to setup iCloud Drive.  When I forced the system to reboot it went  through but had apparently already created my user account.  I elected to just wipe the system out and start over using the download from internet option to install Yosemite.  This worked without issue.  The system also froze completely when I first connected it to the Thunderbolt Display.&lt;/p&gt;
+
+&lt;p&gt;I almost immediately discovered an unfortunate bug with Exchange Online and Yosemite.  The Contacts App will not sync contacts from an Office 365 Exchange Online account (or at least from my account).  An issue &lt;a href=&quot;http://www.andrewconnell.com/blog/resolving-contacts-sync-on-os-x-error-soapwebserviceserrordomain&quot;&gt;documented by others&lt;/a&gt; but remains unfixed even in the latest Yosemite beta (currently 10.10.2).  I opened a case with Microsoft support, who promptly laughed and then closed the case.  I haven’t tried opening one with Apple just yet.  I worked around the problem by manually copying my contacts into iCloud.  There’s a sort of hack to use Microsoft’s OWA app in iOS to sync your contacts into iCloud but this only works on the default/base Contacts folder and I maintain more than one.&lt;/p&gt;
+
+&lt;p&gt;#The Miscellaneous&lt;/p&gt;
+
+&lt;p&gt;One of the things that I notice the most is that I’ve gotten a feel for performance on a PC.  You get a sixth sense for if something isn’t right.  Like if Outlook takes longer than 30 seconds to open its probably not going to open at all.  I feel a little lost sometimes on the Mac if something unexpected happens and I find myself starring at the beachball.  I also really miss indicator lights for disk activity, etc, and find myself tapping the caps lock key to make sure my Macbook is alive.&lt;/p&gt;
+
+&lt;p&gt;There are way more boot options for the Mac than Windows and I sort of wish they were all consolidated into one menu.  Although not having the POST and then Windows load that I’m used to is what makes for the variety of options/confusion.&lt;/p&gt;
+
+&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account.&lt;/p&gt;
+
+&lt;p&gt;So far Apple has lived up to its promise to “just work” in every way except for the Contacts bug.  I hope to update this post and add others with more good things as time goes on.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
+        <link>http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/12/29/straddling-osx-and-windows/</guid>
+      </item>
+    
+      <item>
+        <title>Godaddy sucks</title>
+        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.&lt;/p&gt;
+
+&lt;p&gt;Most of our clients are hosted through Godaddy and were originally setup years ago.  If we were making that decision again it’d probably be with a different company.  But the cost of moving clients off Godaddy pretty much outweighs our personal feelings about them.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy support about the site.  For hosting support you end up speaking with a first level phone rep and if you’re escalated it just means that same phone rep talks to someone at a higher level for you.  So after deflecting her initial assertion that our Wordpress was configured incorrectly she escalated the call.  Second level apparently told her that we should enable SSH access to our account which would migrate everything to a different datacenter.  I protested this, we didn’t need SSH access and this seemed like a really hack method of resolving issues.  She continued to insist this was the only option and so I went ahead with it.&lt;/p&gt;
+
+&lt;p&gt;A few days later and the site was loading fine.  The rep had said that some updates would need to be made to the Wordpress configuration to point to the new database location but we never received the email that was supposed to detail these changes.  So I logged into our client’s hosting panel and was presented with a page that stated we didn’t have a hosting plan.&lt;/p&gt;
+
+&lt;p&gt;I called Godaddy again.  The phone rep reported that the site never migrated completely.  The content is on the new server while the database is still on the old system.  Godaddy’s solution to this?  Remove the (Wordpress) database, which will bring the site down, but will allow the migration to complete.  And then restore the database on the new system.  Total downtime?  1-3 &lt;strong&gt;Days&lt;/strong&gt;.  We still have access to the data and old database, and so my suggestion was that a new hosting account be created and we simply upload everything and restore a database backup.  Godaddy says this will work but we’ll need to purchase the hosting plan.  And we’ll need to do all the migration legwork ourselves.&lt;/p&gt;
+
+&lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
+        <link>http://localhost:4000/blog/2014/08/25/godaddy-sucks/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2014/08/25/godaddy-sucks/</guid>
       </item>
     
   </channel>
