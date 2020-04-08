@@ -1,6 +1,6 @@
 [Neonwine.com][1], personal blog.  
 
-Hosted on [Amazonn S3][5], backed by [Jekyll][3] and the [Pixyll][4] theme.
+Hosted on [Amazon S3][5], backed by [Jekyll][3] and the [Pixyll][4] theme.
 
 [1]: http://neonwine.com
 [2]: https://pages.github.com/
