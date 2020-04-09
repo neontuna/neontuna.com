@@ -7,6 +7,30 @@
     <atom:link href="https://www.neontuna.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>AWS Solutions Architect Associate</title>
+        <description>&lt;p&gt;Last night I sat for the AWS Solutions Architect Associate exam, and thankfully passed.  I wanted to write a little about this as I think these certifications have a unique value during the pandemic - you can go through the entire process online.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sa-badge.png&quot; alt=&quot;Badge&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Back in November, &lt;a href=&quot;https://udemy.com&quot;&gt;udemy.com&lt;/a&gt; ran a Cyber Monday sale that featured a ton of courses with huge discounts.  The &lt;a href=&quot;https://www.udemy.com/course/aws-certified-solutions-architect-associate/&quot;&gt;AWS Solutions Architect course from A Cloud Guru&lt;/a&gt; was only $15.  A few friends were talking about taking the course and certification, it is the most popular certification for AWS.  I’ve been using AWS for a while but only for &lt;a href=&quot;/blog/2019/07/18/whos-at-the-door/&quot;&gt;small projects&lt;/a&gt; and mostly I would just plow through the documentation for whatever service I was interested in.  At &lt;a href=&quot;https://rabbu.com&quot;&gt;Rabbu&lt;/a&gt; we had a use case for putting together something using &lt;a href=&quot;https://aws.amazon.com/lambda/&quot;&gt;Lambda&lt;/a&gt; and where we had trouble was integrating the various AWS services together.  I figured the Solutions Architect course would at least be a good formal education on AWS and maybe could help with our project.&lt;/p&gt;
+
+&lt;p&gt;In hindsight I should have done a little more research.  While I’m definitely happy I went through with the course, and I know &lt;em&gt;a lot&lt;/em&gt; more about AWS, the Solutions Architect is geared towards… someone architecting business solutions on AWS (surprise!).  This involves understanding the various AWS services that help a business migrate to the cloud as well as keeping applications running, highly available, and performant.  Beyond the Lambda project I really wanted to understand AWS more from a developer’s perspective (services like &lt;a href=&quot;https://aws.amazon.com/elasticbeanstalk/&quot;&gt;Elastic Beanstalk&lt;/a&gt; and &lt;a href=&quot;https://aws.amazon.com/dynamodb/&quot;&gt;DynamoDB&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;If I were starting now, I would have gone with AWS Certified Developer.  Which I have bought from &lt;a href=&quot;https://www.udemy.com/course/aws-certified-developer-associate/&quot;&gt;A Cloud Guru on udemy.com&lt;/a&gt; as its on sale at the moment.  I have to admit I actually enjoying learning about and getting these certifications.  I think its seen as a chore for a lot of folks.&lt;/p&gt;
+
+&lt;p&gt;The A Cloud Guru course is pretty decent with about 12 hours of videos, quizzes, and a few practice exams.  I didn’t realize that right around the time I was finishing the course, AWS updated the exam.  I could have taken the older version of the test but after some digging around to figure out what was updated (the &lt;a href=&quot;https://acloud.guru/learn/aws-certified-solutions-architect-associate&quot;&gt;acloud.guru site&lt;/a&gt; shows which content was changed recently) I decided to take the new exam.  I was a little disappointed that while the ACG course definitely covered all the bases, it was a little too high level.  In order to actually pass it was necessary to spend a lot of time reading the various service FAQs from AWS as well as purchase some additional practice tests.  The ACG instructor mentions using additional study material a few times during the course but its really sold (in my opinion) as a one stop shop for exam prep.  I opted for &lt;a href=&quot;https://www.udemy.com/course/aws-certified-solutions-architect-associate-practice-tests-k/&quot;&gt;this set&lt;/a&gt; of additional practice tests from Digital Cloud Training, which includes cheat sheets that were really useful for some of the trivia type questions like whats the default timeout for x service option y.&lt;/p&gt;
+
+&lt;p&gt;Finally - the reason I think this is more relevant right now.  I was surprised that the exam itself had an option to be taken online.  Normally you would go to a testing center where you will be monitored during the exam.  &lt;a href=&quot;https://home.pearsonvue.com/Test-Owner/Deliver/Online-Proctored.aspx&quot;&gt;Pearson Vue&lt;/a&gt; has an app you download to take the exam at home.  I’m a little afraid of going into the details as I don’t want to violate any policies around the test but it was a pretty easy process.&lt;/p&gt;
+
+&lt;p&gt;I’d highly recommend anyone with an interest in AWS, or any certification, check and see if you have the option for online proctoring.  We unfortunately may have a lot of free time to occupy. 😷&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 08 Apr 2020 17:28:00 -0400</pubDate>
+        <link>https://www.neontuna.com/2020/04/08/aws-certification/</link>
+        <guid isPermaLink="true">https://www.neontuna.com/2020/04/08/aws-certification/</guid>
+      </item>
+    
+      <item>
         <title>Who's at the door?</title>
         <description>&lt;p&gt;&lt;img src=&quot;/assets/2019_ha/header.png&quot; alt=&quot;header, sample detection&quot; /&gt;&lt;/p&gt;
 
@@ -886,25 +910,6 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
         <link>https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</link>
         <guid isPermaLink="true">https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
-      </item>
-    
-      <item>
-        <title>Godaddy sucks</title>
-        <description>&lt;p&gt;Last week the HTTP monitoring sensors for one of our clients started going haywire.  Their site was taking way too long to load or not loading at all.  Going to the site in a web browser presented alternating database errors and partial loads of the content.&lt;/p&gt;
-
-&lt;p&gt;Most of our clients are hosted through Godaddy and were originally setup years ago.  If we were making that decision again it’d probably be with a different company.  But the cost of moving clients off Godaddy pretty much outweighs our personal feelings about them.&lt;/p&gt;
-
-&lt;p&gt;I called Godaddy support about the site.  For hosting support you end up speaking with a first level phone rep and if you’re escalated it just means that same phone rep talks to someone at a higher level for you.  So after deflecting her initial assertion that our Wordpress was configured incorrectly she escalated the call.  Second level apparently told her that we should enable SSH access to our account which would migrate everything to a different datacenter.  I protested this, we didn’t need SSH access and this seemed like a really hack method of resolving issues.  She continued to insist this was the only option and so I went ahead with it.&lt;/p&gt;
-
-&lt;p&gt;A few days later and the site was loading fine.  The rep had said that some updates would need to be made to the Wordpress configuration to point to the new database location but we never received the email that was supposed to detail these changes.  So I logged into our client’s hosting panel and was presented with a page that stated we didn’t have a hosting plan.&lt;/p&gt;
-
-&lt;p&gt;I called Godaddy again.  The phone rep reported that the site never migrated completely.  The content is on the new server while the database is still on the old system.  Godaddy’s solution to this?  Remove the (Wordpress) database, which will bring the site down, but will allow the migration to complete.  And then restore the database on the new system.  Total downtime?  1-3 &lt;strong&gt;Days&lt;/strong&gt;.  We still have access to the data and old database, and so my suggestion was that a new hosting account be created and we simply upload everything and restore a database backup.  Godaddy says this will work but we’ll need to purchase the hosting plan.  And we’ll need to do all the migration legwork ourselves.&lt;/p&gt;
-
-&lt;p&gt;So basically Godaddy support tells me to do something which breaks our hosting plan and then tells me to take the site down to fix it, or migrate to a new hosting plan on our dime to fix things without any downtime.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 25 Aug 2014 07:42:44 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2014/08/25/godaddy-sucks/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2014/08/25/godaddy-sucks/</guid>
       </item>
     
   </channel>
