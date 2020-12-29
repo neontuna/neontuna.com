@@ -3,8 +3,8 @@
   <channel>
     <title>neontuna</title>
     <description>Rambling thoughts from an IT guy turned software developer</description>
-    <link>https://www.neontuna.com/</link>
-    <atom:link href="https://www.neontuna.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:3333/</link>
+    <atom:link href="http://localhost:3333/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>AWS Solutions Architect Associate</title>
@@ -26,8 +26,8 @@
 
 </description>
         <pubDate>Wed, 08 Apr 2020 17:28:00 -0400</pubDate>
-        <link>https://www.neontuna.com/2020/04/08/aws-certification/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/2020/04/08/aws-certification/</guid>
+        <link>http://localhost:3333/2020/04/08/aws-certification/</link>
+        <guid isPermaLink="true">http://localhost:3333/2020/04/08/aws-certification/</guid>
       </item>
     
       <item>
@@ -38,7 +38,7 @@
 
 &lt;p&gt;One day Home Automation will be tamed.  Things will &lt;em&gt;Just Work&lt;/em&gt;, you’ll be able to buy automated lights, fans, thermostats, locks, and cameras that don’t all have their own wireless standard, hub and app.  Or more than likely when a house is built all of this stuff will just be put in along with the water heater and electrical.  For now - its all kind of a hell ride.&lt;/p&gt;
 
-&lt;p&gt;For smart home hobbyists&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&quot;https://www.home-assistant.io/&quot;&gt;Home Assistant&lt;/a&gt; and &lt;a href=&quot;https://nodered.org/&quot;&gt;Node-RED&lt;/a&gt; really help tie the room together.  The purpose of this post is to go into how I send a short video clip to my wife and I’s phones whenever a person is detected at our front door.&lt;/p&gt;
+&lt;p&gt;For smart home hobbyists&lt;sup id=&quot;fnref:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&quot;https://www.home-assistant.io/&quot;&gt;Home Assistant&lt;/a&gt; and &lt;a href=&quot;https://nodered.org/&quot;&gt;Node-RED&lt;/a&gt; really help tie the room together.  The purpose of this post is to go into how I send a short video clip to my wife and I’s phones whenever a person is detected at our front door.&lt;/p&gt;
 
 &lt;p&gt;The automation started modestly.  I thought I wanted to get a recording on my phone whenever our front door camera detected motion.  That evolved into only getting a clip when both my wife and I were away, so we weren’t getting clips of each other walking out to check the mail.  But we &lt;em&gt;did&lt;/em&gt; want to get a clip when we’re home if motion was detected at night.  And finally I don’t want a clip at all unless there’s a person there - mostly due to getting 20 recordings a night of a mayfly buzzing around.&lt;/p&gt;
 
@@ -64,17 +64,17 @@
   &lt;li&gt;Finally the clip is sent to Leah and I via a &lt;a href=&quot;https://www.home-assistant.io/components/telegram/&quot;&gt;Telegram bot&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Theres also some error/debug logging.  I can run &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo journalctl -f -u nodered -o cat&lt;/code&gt; on the Pi to check the output of ffmpeg and the ruby script.&lt;/p&gt;
+&lt;p&gt;Theres also some error/debug logging.  I can run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo journalctl -f -u nodered -o cat&lt;/code&gt; on the Pi to check the output of ffmpeg and the ruby script.&lt;/p&gt;
 
 &lt;h2 id=&quot;motion-detection-and-clip-recording&quot;&gt;Motion detection and clip recording&lt;/h2&gt;
 
 &lt;p&gt;There are a few ways the clip can be recorded.  I initially had a &lt;a href=&quot;https://www.home-assistant.io/components/stream/&quot;&gt;stream&lt;/a&gt; setup for the camera in Home Assistant but this proved to be error prone.  Also when dealing with motion detection you really need to start the clip recording several seconds &lt;em&gt;before&lt;/em&gt; motion is detected.  Otherwise you end up with a video of someone walking away.  Luckily Axis (and most IP cameras) have a “look behind” type feature for motion triggered recordings.&lt;/p&gt;
 
-&lt;p&gt;You’re probably wondering why I have ffmpeg running to convert the clip.  That was the most frustrating part of this process.  There are a myriad of different ways you can send notifications from Home Assistant to a smartphone.  If you’d like to send a notification with an auto playing video clip - Telegram is your best option (at least in my experience&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;).  In order to send a video clip through Telegram it &lt;em&gt;must&lt;/em&gt; be an mp4 (which it then converts to a gif for… reasons).  And even though the Axis camera has the ability to produce mp4 files instead of mkv, I could not get these to send via Telegram.&lt;/p&gt;
+&lt;p&gt;You’re probably wondering why I have ffmpeg running to convert the clip.  That was the most frustrating part of this process.  There are a myriad of different ways you can send notifications from Home Assistant to a smartphone.  If you’d like to send a notification with an auto playing video clip - Telegram is your best option (at least in my experience&lt;sup id=&quot;fnref:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;).  In order to send a video clip through Telegram it &lt;em&gt;must&lt;/em&gt; be an mp4 (which it then converts to a gif for… reasons).  And even though the Axis camera has the ability to produce mp4 files instead of mkv, I could not get these to send via Telegram.&lt;/p&gt;
 
 &lt;p&gt;(╯°□°)╯︵ ┻━┻&lt;/p&gt;
 
-&lt;p&gt;That’s where ffmpeg comes in.  Its entire purpose is to convert the video.  &lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg -hide_banner -loglevel info -i /home/pi/tmp/frontdoor.mkv -codec copy /tmp/frontdoor.mp4 -y&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;That’s where ffmpeg comes in.  Its entire purpose is to convert the video.  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ffmpeg -hide_banner -loglevel info -i /home/pi/tmp/frontdoor.mkv -codec copy /tmp/frontdoor.mp4 -y&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;person-detection&quot;&gt;Person detection&lt;/h2&gt;
 
@@ -154,9 +154,9 @@
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;detect.rb ./somevideo.mp4&lt;/code&gt; and we upload the clip to S3, give the S3 object to Rekognition, wait for the job to finish.&lt;/p&gt;
+&lt;p&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;detect.rb ./somevideo.mp4&lt;/code&gt; and we upload the clip to S3, give the S3 object to Rekognition, wait for the job to finish.&lt;/p&gt;
 
-&lt;p&gt;Usually this process takes about 30 seconds but I’ve seen it take several minutes.  Tuning ImageAI I was able to get results in just a few seconds.   I wish Rekognition had more options for the label function, like to increase speed at the cost of accuracy. The &lt;code class=&quot;highlighter-rouge&quot;&gt;min_confidence&lt;/code&gt; option is just 1-100% confidence threshold in order for some potential object type to be labeled.&lt;/p&gt;
+&lt;p&gt;Usually this process takes about 30 seconds but I’ve seen it take several minutes.  Tuning ImageAI I was able to get results in just a few seconds.   I wish Rekognition had more options for the label function, like to increase speed at the cost of accuracy. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;min_confidence&lt;/code&gt; option is just 1-100% confidence threshold in order for some potential object type to be labeled.&lt;/p&gt;
 
 &lt;p&gt;The script makes use of exit codes to aid in processing on Node-RED.  We check for an exit code of 0 before sending the clip.  If the script times out, fails for some other reason, or no people are detected the exit code will be 1 and the automation will stop.&lt;/p&gt;
 
@@ -165,20 +165,20 @@
 &lt;p&gt;&lt;img src=&quot;/assets/2019_ha/mailman.png&quot; alt=&quot;Just the mailman&quot; /&gt;
 ___&lt;/p&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;That is dorks like me who insist that its somehow better to endlessly tinker with this stuff rather than just buy a Ring doorbell &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;That is dorks like me who insist that its somehow better to endlessly tinker with this stuff rather than just buy a Ring doorbell &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:2&quot;&gt;
-      &lt;p&gt;Home Assistant has its own mobile app and notification setup but I couldn’t get this working with video clips.  I also tried Pushbullet but again could not get video clips working. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:2&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Home Assistant has its own mobile app and notification setup but I couldn’t get this working with video clips.  I also tried Pushbullet but again could not get video clips working. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
 </description>
         <pubDate>Thu, 18 Jul 2019 15:58:00 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2019/07/18/whos-at-the-door/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2019/07/18/whos-at-the-door/</guid>
+        <link>http://localhost:3333/blog/2019/07/18/whos-at-the-door/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2019/07/18/whos-at-the-door/</guid>
       </item>
     
       <item>
@@ -187,7 +187,7 @@ ___&lt;/p&gt;
 
 &lt;p&gt;I’ve been doing a lot of work with &lt;a href=&quot;https://vuejs.org/&quot;&gt;VueJS&lt;/a&gt; recently. The framework makes creating a nice table from an API response a breeze.&lt;/p&gt;
 
-&lt;p&gt;We’ll setup a new Vue instance and in the &lt;code class=&quot;highlighter-rouge&quot;&gt;created&lt;/code&gt; lifecycle hook generate a XHR.  Then parse the response and set an array defined in the &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; property of the Vue instance.  We could use something like &lt;a href=&quot;https://github.com/mzabriskie/axios&quot;&gt;Axios&lt;/a&gt; instead of XHR but it seems silly to add another library to the mix for a single request.&lt;/p&gt;
+&lt;p&gt;We’ll setup a new Vue instance and in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;created&lt;/code&gt; lifecycle hook generate a XHR.  Then parse the response and set an array defined in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; property of the Vue instance.  We could use something like &lt;a href=&quot;https://github.com/mzabriskie/axios&quot;&gt;Axios&lt;/a&gt; instead of XHR but it seems silly to add another library to the mix for a single request.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;vm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#el&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -212,7 +212,7 @@ ___&lt;/p&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;The HTML is even more basic.  Just have Vue grab onto a table using the &lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; attribute and then iterate over the players array using the built-in &lt;a href=&quot;https://vuejs.org/v2/guide/list.html&quot;&gt;v-for directive&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The HTML is even more basic.  Just have Vue grab onto a table using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; attribute and then iterate over the players array using the built-in &lt;a href=&quot;https://vuejs.org/v2/guide/list.html&quot;&gt;v-for directive&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;table&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;el&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;table&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;thead&amp;gt;&lt;/span&gt;
@@ -425,8 +425,35 @@ ___&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 11 Sep 2017 16:30:00 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2017/09/11/pinballer/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2017/09/11/pinballer/</guid>
+        <link>http://localhost:3333/blog/2017/09/11/pinballer/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2017/09/11/pinballer/</guid>
+      </item>
+    
+      <item>
+        <title>VueJS forms and object props</title>
+        <description>&lt;p&gt;In working with VueJS recently, a reoccurring gremlin has been Vue’s concept of props, using an object as a prop, and using objects with v-model.  The application I’m putting together is basically a CRUD (create read update destroy) ticketing system.  It uses several HTML forms to update records.&lt;/p&gt;
+
+&lt;p&gt;Taking advantage of Vue’s component system, these forms are completely encapsulated which makes them easy to drop in where-ever they’re needed.  They take a database record, as a JSON object, make some changes and then emit a new object when saved.  Whatever component is the parent of the form is responsible for providing the initial record as a prop and handling saving the new record.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;save-ticket-form&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;:ticket=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ticket&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;:submitting=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;v-on:save=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;onSaveTicket&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;v-on:cancel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;resetTicket&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/save-ticket-form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;There’s a few important concepts here that expose the prickly nature of using props to pass in the initial database record.  The first is that props are read-only. In fact some of Vue’s contributors will suggest that you only use primitives like numbers, strings, and booleans in props, and not objects, since objects are passed by reference.  If you try to directly manipulate a primitive prop, Vue’s developer tools will yell at you.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But it can’t tell if you change properties on an object prop.  That is unless you’re using Vuex, in which case Vuex will then yell at you for manipulating its data directly.  The end result is the same - you don’t want to directly mutate props.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to respect read-only props when using objects.  This gets into another issue however, data reactivity.  Depending on how you handle the prop, if you’re using v-model on the resulting object’s properties, you might have issues with data reactivity.  Vue expects to know about all of an object’s properties whenever the component exposing that object is rendered.  If not you’ll run into instances where v-model behaves in unpredictable ways, watchers won’t fire, and Vue might give you warnings about null values if you’re trying to use deeply nested properties (Object.company.id)&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Jul 2017 09:49:00 -0400</pubDate>
+        <link>http://localhost:3333/blog/2017/07/04/vuejs-forms-and-object-props/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2017/07/04/vuejs-forms-and-object-props/</guid>
       </item>
     
       <item>
@@ -443,9 +470,9 @@ ___&lt;/p&gt;
 
 &lt;p&gt;My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  The application is just for browsing and searching old tickets, the collective memory of the company so its important to hang onto.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ms162802.aspx&quot;&gt;BCP utility&lt;/a&gt; which is literally for bulk import and export of data.&lt;/p&gt;
 
-&lt;p&gt;This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and &lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt; for a new line.&lt;/p&gt;
+&lt;p&gt;This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\n&lt;/code&gt; for a new line.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bcp &quot;dbo.tblTask&quot; out “c:\export\tblTask.csv&quot; -S localhost \
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bcp &quot;dbo.tblTask&quot; out “c:\export\tblTask.csv&quot; -S localhost \
 -d databasename -C RAW -T -c -t “\t” -r &quot;\n&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -457,7 +484,7 @@ ___&lt;/p&gt;
   &lt;li&gt;&lt;strong&gt;-C&lt;/strong&gt;: the code page to use, don’t really know about this.  MSDN states that RAW means “No conversion from one code page to another occurs. This is the fastest option because no conversion occurs.”&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;-T&lt;/strong&gt;: use Windows authentication with the currently logged in user&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;-c&lt;/strong&gt;: Stops BCP from prompting for a character type for each field, it uses the character data format for each field.  This is specifically to use when exporting data bound for something other than another MS SQL instance.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;-t&lt;/strong&gt; and &lt;strong&gt;-r&lt;/strong&gt; the field and record terminators, not actually needed when using &lt;code class=&quot;highlighter-rouge&quot;&gt;-c&lt;/code&gt; as these are the default&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;-t&lt;/strong&gt; and &lt;strong&gt;-r&lt;/strong&gt; the field and record terminators, not actually needed when using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-c&lt;/code&gt; as these are the default&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Almost immediately I ran into two issues.  One, BCP
@@ -477,7 +504,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;As it turns out, massaging Rails to use an existing database is actually quite simple.  I had to do a pretty minimum amount of work on the Postgres database itself.  I spent some time cleaning up field names to match the “model_id” naming that Rails expects for associations.&lt;/p&gt;
 
-&lt;p&gt;You’ll need to make sure you’ve got the ‘pg’ gem set, and then just plug in the database in &lt;code class=&quot;highlighter-rouge&quot;&gt;config\database.yml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You’ll need to make sure you’ve got the ‘pg’ gem set, and then just plug in the database in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config\database.yml&lt;/code&gt;&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;&amp;amp;default&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;postgresql&lt;/span&gt;
@@ -493,7 +520,7 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;You then will need to generate the schema file.  I’m not sure if this is actually necessary but its a good test of whether or not Rails is connecting to your database properly.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rake db:schema:dump&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rake db:schema:dump&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;I noticed at this point that Rails wasn’t picking up on the  primary key (id).  After correcting this in &lt;a href=&quot;https://eggerapps.at/postico/&quot;&gt;Postico&lt;/a&gt; and re-dumping the schema…&lt;/p&gt;
 
@@ -511,11 +538,11 @@ does not export field names.  So there’s no headers in the CSV.  This was easi
 
 &lt;p&gt;Booya!&lt;/p&gt;
 
-&lt;p&gt;Now you need the actual models for Rails.  The regular command line to generate the model is going to create a migration file which you do not want.  So &lt;code class=&quot;highlighter-rouge&quot;&gt;rails g model Contact --skip migration&lt;/code&gt; (or you could just delete the migration file, but that seems sketchy to me)&lt;/p&gt;
+&lt;p&gt;Now you need the actual models for Rails.  The regular command line to generate the model is going to create a migration file which you do not want.  So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rails g model Contact --skip migration&lt;/code&gt; (or you could just delete the migration file, but that seems sketchy to me)&lt;/p&gt;
 
 &lt;p&gt;Alright.  So let’s drop down to the console and see if all this actually worked.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] pry(main)&amp;gt; Contact.all.sample
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1] pry(main)&amp;gt; Contact.all.sample
   Contact Load (12.4ms)  SELECT &quot;contacts&quot;.* FROM &quot;contacts&quot;
 +----------+-----------+----------+-------------+
 | id       | firstname | lastname | customer_id |
@@ -534,8 +561,8 @@ considered blogging about the rest of the application but this is literally for 
 
 </description>
         <pubDate>Tue, 16 Aug 2016 16:45:00 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2016/08/16/archiving-autotask/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2016/08/16/archiving-autotask/</guid>
+        <link>http://localhost:3333/blog/2016/08/16/archiving-autotask/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2016/08/16/archiving-autotask/</guid>
       </item>
     
       <item>
@@ -578,8 +605,8 @@ considered blogging about the rest of the application but this is literally for 
 &lt;p&gt;Ahead of me still is Javascript, and the end of the course.  Happy New Year!&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Dec 2015 08:38:00 -0500</pubDate>
-        <link>https://www.neontuna.com/blog/2015/12/30/a-year-of-programming/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2015/12/30/a-year-of-programming/</guid>
+        <link>http://localhost:3333/blog/2015/12/30/a-year-of-programming/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2015/12/30/a-year-of-programming/</guid>
       </item>
     
       <item>
@@ -592,11 +619,11 @@ considered blogging about the rest of the application but this is literally for 
 
 &lt;p&gt;Really its one of those things you just need to try and then I’m pretty sure you’ll wonder what you did without it.  Also its free.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://smilesoftware.com/TextExpander&quot;&gt;TextExpander&lt;/a&gt;&lt;/strong&gt; is an extended version of the text shortcuts in OSX and iOS (“omw” becomes “On My Way!”).   For instance I have a few really lazy shortcuts (TextExpander calls them snippets) like &lt;code class=&quot;highlighter-rouge&quot;&gt;;am&lt;/code&gt; becomes “administrator” and &lt;code class=&quot;highlighter-rouge&quot;&gt;;gm&lt;/code&gt; becomes my email address.  Of course you could just do that with the expansion built into the OS.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://smilesoftware.com/TextExpander&quot;&gt;TextExpander&lt;/a&gt;&lt;/strong&gt; is an extended version of the text shortcuts in OSX and iOS (“omw” becomes “On My Way!”).   For instance I have a few really lazy shortcuts (TextExpander calls them snippets) like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;;am&lt;/code&gt; becomes “administrator” and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;;gm&lt;/code&gt; becomes my email address.  Of course you could just do that with the expansion built into the OS.&lt;/p&gt;
 
-&lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code class=&quot;highlighter-rouge&quot;&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
+&lt;p&gt;Where TextExpander comes alive is with “Fill-ins”.  Another snippet I have is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;;gpom&lt;/code&gt; which pops up a prompt asking me for a commit message and then expands to this (as well pressing enter between each line)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
 git commit -m &quot;whatever I just typed&quot;
 git push origin master
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -606,8 +633,29 @@ git push origin master
 &lt;p&gt;There’s a little statistics pane in TextExpander.  Its apparently auto typed 68,854 characters for me.  Not too shabby.&lt;/p&gt;
 </description>
         <pubDate>Tue, 27 Oct 2015 03:50:43 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2015/10/27/osx-utils/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2015/10/27/osx-utils/</guid>
+        <link>http://localhost:3333/blog/2015/10/27/osx-utils/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2015/10/27/osx-utils/</guid>
+      </item>
+    
+      <item>
+        <title>Switching to Mac revisited</title>
+        <description>&lt;p&gt;Its been about 8 months since I made the switch to using a Macbook Pro as my “daily driver” system.  I now mostly just use Windows via RDP into my old tower or some virtual machine.  In terms of pure hardware, the system is a dream.  Its battery will last me all day if I happen to be working from a client’s office.  The system reliably resumes immediately, everytime the lid is opened (a feat that stills to allude Windows based notebooks).  Most other things about the notebook itself you’ll find in every review of Apple hardware - the keyboard and trackpad are awesome, retina screen looks great, etc.&lt;/p&gt;
+
+&lt;p&gt;After purchase I almost immediately had an issue where the Contacts App did not want to pull down all of the contacts from my Exchange Online mailbox.  Apparently Outlook for Mac had inserted some hidden categories into my contacts that the Contacts app could not handle.  I manually stripped all categories on the contacts and that issue was in the rearview.  This was really the only showstopper type bug I encountered as I needed to have those Contacts for work.&lt;/p&gt;
+
+&lt;p&gt;The funny thing about OSX is I think the best feature is the applications specifically developed for OSX.  Its also very refreshing to have built-in apps that can handle really basic things.  Preview can basically open any file type I throw at it and handle basic PDF markup.  Finder automatically expands compressed files.  Windows of course does this in newer versions but even as recent as Windows 7 you had to immediately go out and find a PDF viewer.  And the included viewer in Windows 8 doesn’t seem to have any functionality beyond displaying the PDF (in full screen, Modern UI mode).&lt;/p&gt;
+
+&lt;p&gt;Its also really awesome to use iMessage from the notebook.  I wish Google would let Hangouts break free from the heinous Chrome extension and let us add it to the Messages app.&lt;/p&gt;
+
+&lt;p&gt;A lot of people have this mentality that software should just be free, or that they’ll never pay for software.  Or that paying for software is some sort of admission of defeat, that you couldn’t pirate it.  On Windows I would just hit up [ninite.com][ninite] and get whatever was needed and I can’t think of much besides the Office suite that I would actually purchase.  I never actually &lt;em&gt;enjoyed&lt;/em&gt; using software in Windows, with maybe the exception of more recent versions of Outlook.&lt;/p&gt;
+
+&lt;p&gt;Since I didn’t really know what would be the best program for XYZ on OSX I set aside a budget of a few hundred dollars incase I needed or wanted to purchase software.&lt;/p&gt;
+
+&lt;p&gt;[ninite]:&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Aug 2015 12:59:10 -0400</pubDate>
+        <link>http://localhost:3333/blog/2015/08/04/switching-to-mac-revisited/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2015/08/04/switching-to-mac-revisited/</guid>
       </item>
     
       <item>
@@ -712,8 +760,8 @@ five guesses.&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 01 Aug 2015 14:54:09 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2015/08/01/precious-gems/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2015/08/01/precious-gems/</guid>
+        <link>http://localhost:3333/blog/2015/08/01/precious-gems/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2015/08/01/precious-gems/</guid>
       </item>
     
       <item>
@@ -734,182 +782,8 @@ five guesses.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 02 Jun 2015 08:03:21 -0400</pubDate>
-        <link>https://www.neontuna.com/blog/2015/06/02/puts(hello-world!)/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2015/06/02/puts(hello-world!)/</guid>
-      </item>
-    
-      <item>
-        <title>Monitoring DirectAccess</title>
-        <description>&lt;p&gt;We recently deployed &lt;a href=&quot;https://technet.microsoft.com/en-us/library/dn636118.aspx&quot;&gt;Windows DirectAccess&lt;/a&gt; for one of our clients and wanted to monitor the deployment.  In particular I was interested in the number of active DirectAccess sessions and if any errors were detected.  The Remote Access MMC snap-in (in Server 2012 R2) has a great  status page that runs down all of DirectAccess’ components and reports any errors that are detected.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-02-17%20at%203.17.44%20PM_large.png&quot; alt=&quot;DirectAccess built-in monitoring&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can basically assume that if any of these are red you’re going to have an issue.  With PRTG the number of components in an error state could be a channel in a sensor which we could monitor and report on (for instance if the number of errors is greater than 0).   Similarly another channel could be the number of sessions.&lt;/p&gt;
-
-&lt;p&gt;DirectAccess comes loaded with a few PowerShell cmdlets for monitoring and reporting on its status.  In particular &lt;strong&gt;Get-RemoteAccessHealth&lt;/strong&gt; and &lt;strong&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/strong&gt; will give you a lot of information.  In order to make that data useful for PRTG we want to strip that output down from something like this (the raw output of Get-RemoteAccessHealth)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Component            RemoteAccessServer   HealthState     TimeStamp            Id              OperationStatus
----------            ------------------   -----------     ---------            --              ---------------
-Server               localhost            OK              1/27/2015 11:05:4...
-6to4                 localhost            OK              1/27/2015 11:01:0...
-Vpn Addressing       localhost            Disabled        1/27/2015 11:01:0...
-Network Security     localhost            OK              1/27/2015 11:01:0...
-Dns                  localhost            OK              1/27/2015 11:05:4...
-IP-Https             localhost            OK              1/27/2015 11:01:0...
-Nat64                localhost            OK              1/27/2015 11:01:0...
-Dns64                localhost            OK              1/27/2015 11:01:0...
-IPsec                localhost            OK              1/27/2015 11:01:0...
-Kerberos             localhost            OK              1/27/2015 11:01:0...
-Domain Controller    localhost            OK              1/27/2015 11:01:0...
-Management Servers   localhost            Disabled        1/27/2015 11:01:0...
-Network Location ... localhost            OK              1/27/2015 11:05:4...
-Otp                  localhost            Disabled        1/27/2015 11:01:0...
-High Availability    localhost            Disabled        1/27/2015 11:01:0...
-Isatap               localhost            Disabled        1/27/2015 11:01:0...
-Vpn Connectivity     localhost            Disabled        1/27/2015 11:01:0...
-Teredo               localhost            Disabled        1/27/2015 11:01:0...
-Network Adapters     localhost            OK              1/27/2015 11:01:0...
-Services             localhost            OK              1/27/2015 11:05:4...&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To literally just the number of components with a HealthState of “error”.  This gives us our first sensor channel, “error count”.   Our second channel is similar, I just want know how many active DirectAccess sessions we have which involves stripping down the output of Get-RemoteAccessConnectionStatisticsSummary&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;TotalConnections           : 8
-TotalDAConnections         : 8
-TotalVpnConnections        : 0
-TotalUniqueUsers           :
-MaxConcurrentConnections   : 19
-TotalCumulativeConnections : 2550
-TotalBytesIn               : 4024483872
-TotalBytesOut              : 8136960808
-TotalBytesInOut            : 12161444680&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To just the number of TotalDAConnections.&lt;/p&gt;
-
-&lt;p&gt;The full PowerShell script is below&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-powershell&quot; data-lang=&quot;powershell&quot;&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;?xml version=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; encoding=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Windows-1252&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;`&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ?&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;prtg&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Try&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-RemoteAccessHealth&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ComputerName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SERVER&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Where-Object&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;HealthState&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-match&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Error'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;measure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ComputerName&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SERVER&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Select&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-ExpandProperty&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TotalDAConnections&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- 
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;channel&amp;gt;DirectAccess Errors&amp;lt;/channel&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;value&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daErrorCount&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/value&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/result&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;result&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;channel&amp;gt;DirectAccess Sessions&amp;lt;/channel&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;value&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$daUserCount&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/value&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/result&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;Catch&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;system.&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;error&amp;gt;1&amp;lt;/error&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;text&amp;gt;&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;$_&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;lt;/text&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
- &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-
-&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Write-Host&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;/prtg&amp;gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This results in a PRTG sensor with the following channel setup&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/Screen%20Shot%202015-02-17%20at%2010.50.01%20PM_large.png&quot; alt=&quot;Silvrback blog image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The key lines here that give PRTG its value for the channels are&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;(Get-RemoteAccessHealth -ComputerName SERVER | Where-Object {$_.HealthState -match 'Error'} | measure).count&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Get-RemoteAccessConnectionStatisticsSummary -ComputerName SERVER | Select -ExpandProperty TotalDAConnections&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The first is getting our error count.  As we move down the command we’re filtering the output of Get-RemoteAccessHealth for the HealthState column and then looking for any matches on the value “Error”.  Both measure and count are needed to just return in integer, measure by itself returns this.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Count    : 0
-Average  :
-Sum      :
-Maximum  :
-Minimum  :
-Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Get-RemoteAccessHealth is returning a table and PowerShell makes it pretty easy to search through it like you might search for something in Excel.  Get-RemoteAccessConnectionStatisticsSummary is a little trickier.   Its returning a list and if you try to use the same method of stripping its output as Get-RemoteAccessHealth that won’t work.  However Select -ExpandProperty will.  This took me a while to figure out until I piped the output of each command through Get-Member which reveals the Object-Types being returned.  &lt;a href=&quot;http://windowsitpro.com/powershell/powershell-basics-formatting&quot;&gt;This article&lt;/a&gt; was very helpful during that process.&lt;/p&gt;
-
-&lt;p&gt;The rest of the script is pretty standard fare for PRTG’s custom XML sensors (a lot of great examples can be found &lt;a href=&quot;https://code.google.com/p/prtg-addons/source/browse/#svn%2Ftrunk%2FCustom_EXE_Sensors%2FWindows_Powershell&quot;&gt;here&lt;/a&gt;).  The entire script is returning back to PRTG something that looks like this&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=`&quot;1.0`&quot; encoding=`&quot;Windows-1252`&quot; ?&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;prtg&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Errors&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;0&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;channel&amp;gt;&lt;/span&gt;DirectAccess Sessions&lt;span class=&quot;nt&quot;&gt;&amp;lt;/channel&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;10&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/prtg&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Which is just the XML formatting that PRTG needs to construct a sensor.  The try statement is used to catch any errors since PowerShell can be annoying to get setup for remote monitoring and I wanted to make sure that any issues with the sensor itself were handled by PRTG instead of the sensor silently failing (for instance returning 0 for a channel, which wouldn’t necessarily set off any alarms but might happen if one of our cmdlets failed)&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
-        <link>https://www.neontuna.com/blog/2015/02/17/monitoring-directaccess/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2015/02/17/monitoring-directaccess/</guid>
-      </item>
-    
-      <item>
-        <title>Straddling OSX and Windows</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;According to stock photo sites in order to use an Apple product you must obsessively arrange your desk into perfect geometric patterns, like a serial killer.  I have not done this yet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_1434_large.JPG&quot; alt=&quot;my messy desk&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For a while now I’ve been interested in web development.  I’ll run through a tutorial here and there - &lt;a href=&quot;http://railstutorial.org&quot;&gt;railstutorial.org&lt;/a&gt; and &lt;a href=&quot;http://learnpythonthehardway.org&quot;&gt;learn python the hard way&lt;/a&gt; have been my favorites (yes I realize these are two different languages, I have commitment issues).  If you’re primarily using Windows modern web development can be frustrating to learn.  Every tutorial starts out instructing you to use an OSX package manager and generally include some huge caveat for getting your development environment configured in Windows.  I had no desire to learn Microsoft’s languages, such as ASP.NET, so I decided I should look into a Macbook.  Also that my Dell notebook has always been kind of a piece of junk and that I don’t particularly like Windows 8/8.1 helped push me towards “switching”.&lt;/p&gt;
-
-&lt;p&gt;I’m now typing this from my Macbook Pro and Thunderbolt display.  I haven’t fully made the switch for my day job as a remote IT worker.  I’m still trying to suss out how I want my browsers setup, which softphone to use, and some other odds and ends.  Funny thing is, there isn’t much I need Windows for in order to support our clients that mostly run Windows.  I will probably always keep around a Windows system (&lt;a href=&quot;http://www.nonadmin.com/home-server&quot;&gt;or 12&lt;/a&gt;) because other IT people don’t respect you if you only have one computer.&lt;/p&gt;
-
-&lt;p&gt;This is sort of a compilation of things I’ve noticed and some tips for anyone coming from the Windows world.    I’ve arranged things with buying tips first and then good, bad, and miscellaneous observations.&lt;/p&gt;
-
-&lt;p&gt;#Buying Tips&lt;/p&gt;
-
-&lt;p&gt;Besides the notebook I researched and bought a few things from Amazon. The &lt;a href=&quot;http://amzn.to/1D3fmGd&quot;&gt;mStand laptop stand&lt;/a&gt; which is way overpriced for a piece of bent aluminum but I guess it holds the notebook at eye level adequately.  I also picked up an &lt;a href=&quot;http://amzn.to/1wYwpJ5&quot;&gt;ethernet adapter/usb hub&lt;/a&gt; from Anker which instantly became useful because I didn’t have the display (with its NIC) initially.  I really like Anker’s products, they’re generally pretty inexpensive but well built.  I also grabbed an &lt;a href=&quot;http://amzn.to/1HXbO9r&quot;&gt;Incase Neoprene Sleeve&lt;/a&gt; that is apparently made for the 13” MacBook Pro but has a little too much extra space in it. I feel like it ought to fit the notebook snugly and not allow it to move at all inside the sleeve.  Finally, I purchased the &lt;a href=&quot;http://www.amazon.com/gp/product/B004YLCKYA/ref=oh_aui_detailpage_o02_s01?ie=UTF8&amp;amp;psc=1&quot;&gt;Thunderbolt Display&lt;/a&gt; from Amazon as well.  I was going to purchase a Magsafe&amp;gt;Magsafe 2 power adapter as the Thunderbolt display’s charging cable isn’t compatible with the latest Macbooks but then I found out that these are now being included with the displays.&lt;/p&gt;
-
-&lt;p&gt;For the notebook itself I found a really handy &lt;a href=&quot;http://appleinsider.com/mac_price_guide&quot;&gt;price guide&lt;/a&gt; from Apple Insider and ended up picking up the system from Adorama with 3 years of AppleCare bundled.   They threw in an Apple TV with the promo code from Apple Insider but checking the guide now that has changed to a mighty mouse.  I also checked the &lt;a href=&quot;http://buyersguide.macrumors.com/&quot;&gt;Buyer’s Guide&lt;/a&gt; from Mac Rumors, just incase a new model was about to drop.&lt;/p&gt;
-
-&lt;p&gt;Initially I was not going to buy the Thunderbolt display but one issue with living in Apple’s world is you have to play by their rules.  There is no official dock for the Macbook, the Thunderbolt Display is the closest thing to it.  My other options were Thunderbolt hubs which are several hundred dollars and may or may not have worked with my existing monitor which uses DVI-D.  So I reluctantly decided to get the Thunderbolt display but I feel like Apple could make a lot of people happy if they’d just release a dock.   I use a simple KVM to switch keyboard and mouse between the notebook and my PC tower, which is exclusively connected to my old display.  I thought I would need an Apple keyboard but really its no big deal.  The keys are in the same position except with the Windows key acting as the Command key.&lt;/p&gt;
-
-&lt;p&gt;#The Good&lt;/p&gt;
-
-&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code class=&quot;highlighter-rouge&quot;&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
-
-&lt;p&gt;The Macbook’s trackpad and keyboard are the best I’ve used on a notebook, period.  Trackpads on PC notebooks have long been a point of contention.  Whether they’re too small, have weird gestures, or just plan don’t work there’s always some issue.  The latest EliteBooks from HP have come the closest to getting it right that I’ve seen.  Battery life on the notebook has been great and I love that OSX will tell you which apps are eating a lot of energy.  Coming from a system that mysteriously always ran awful on battery this has been most excellent.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://www.apple.com/osx/continuity/&quot;&gt;continuity features&lt;/a&gt; of Yosemite were a big reason I was interested in switching.  I already own an iPhone and iPad.  Being able to iMessage, and even send regular text, from the computer is very convenient.    This is where I feel like Apple is really edging out Microsoft, it would give people a reason to actually consider Windows Phone to have this sort of functionality.&lt;/p&gt;
-
-&lt;p&gt;#The Bad&lt;/p&gt;
-
-&lt;p&gt;The Macbook has only locked up twice but both were kind of worrying.  The first  was actually right out of the box during setup.  It hung forever when I declined to setup iCloud Drive.  When I forced the system to reboot it went  through but had apparently already created my user account.  I elected to just wipe the system out and start over using the download from internet option to install Yosemite.  This worked without issue.  The system also froze completely when I first connected it to the Thunderbolt Display.&lt;/p&gt;
-
-&lt;p&gt;I almost immediately discovered an unfortunate bug with Exchange Online and Yosemite.  The Contacts App will not sync contacts from an Office 365 Exchange Online account (or at least from my account).  An issue &lt;a href=&quot;http://www.andrewconnell.com/blog/resolving-contacts-sync-on-os-x-error-soapwebserviceserrordomain&quot;&gt;documented by others&lt;/a&gt; but remains unfixed even in the latest Yosemite beta (currently 10.10.2).  I opened a case with Microsoft support, who promptly laughed and then closed the case.  I haven’t tried opening one with Apple just yet.  I worked around the problem by manually copying my contacts into iCloud.  There’s a sort of hack to use Microsoft’s OWA app in iOS to sync your contacts into iCloud but this only works on the default/base Contacts folder and I maintain more than one.&lt;/p&gt;
-
-&lt;p&gt;#The Miscellaneous&lt;/p&gt;
-
-&lt;p&gt;One of the things that I notice the most is that I’ve gotten a feel for performance on a PC.  You get a sixth sense for if something isn’t right.  Like if Outlook takes longer than 30 seconds to open its probably not going to open at all.  I feel a little lost sometimes on the Mac if something unexpected happens and I find myself starring at the beachball.  I also really miss indicator lights for disk activity, etc, and find myself tapping the caps lock key to make sure my Macbook is alive.&lt;/p&gt;
-
-&lt;p&gt;There are way more boot options for the Mac than Windows and I sort of wish they were all consolidated into one menu.  Although not having the POST and then Windows load that I’m used to is what makes for the variety of options/confusion.&lt;/p&gt;
-
-&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account.&lt;/p&gt;
-
-&lt;p&gt;So far Apple has lived up to its promise to “just work” in every way except for the Contacts bug.  I hope to update this post and add others with more good things as time goes on.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
-        <link>https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
+        <link>http://localhost:3333/blog/2015/06/02/puts(hello-world!)/</link>
+        <guid isPermaLink="true">http://localhost:3333/blog/2015/06/02/puts(hello-world!)/</guid>
       </item>
     
   </channel>
