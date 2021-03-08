@@ -9,17 +9,17 @@ tags: rails postgresql developer
 
 **Update** The Rails application for this project can be found [here][6]
 
-After much wailing and gnashing of teeth our team finally said goodbye to [Autotask][1] last week.  Turns out it might not be a good idea to take a customer that's been month to month for years and suddenly demand they sign a three year contract.  
+After much wailing and gnashing of teeth our team finally said goodbye to [Autotask][1] last week.  Turns out it might not be a good idea to take a customer that's been month to month for years and suddenly demand they sign a three year contract.
 
-When you leave Autotask they give you a nice MS SQL .bak file of all of your data.   After getting a trial of SQL 2016 installed I discovered that that Autotask's data structure looks like something out of Dante's Inferno.  1,215 tables.  558 views. 😯 
+When you leave Autotask they give you a nice MS SQL .bak file of all of your data.   After getting a trial of SQL 2016 installed I discovered that Autotask's data structure looks like something out of Dante's Inferno.  1,215 tables.  558 views. 😯
 
-I set about extracting the data that's relevant to us - tickets, time entries, and internal notes.  After digging around for a little while I honed in on the tables we'd need to see the ticket data as well as the technician that worked on it, client, and end user.  
+I set about extracting the data that's relevant to us - tickets, time entries, and internal notes.  After digging around for a little while I honed in on the tables we'd need to see the ticket data as well as the technician that worked on it, client, and end user.
 
 ### Exporting, first attempt
 
 My goal is to get the data out of MS SQL and into Postgresql which will eventually get plumbed by a Rails application.  The application is just for browsing and searching old tickets, the collective memory of the company so its important to hang onto.  I think its the IT guy in me but my first thought was to try for a CSV of all the data.  I found some great blogs about the [BCP utility][2] which is literally for bulk import and export of data.
 
-This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and ```\n``` for a new line.  
+This command exports a single table of tasks (tickets) to CSV with tabs separating the fields and ```\n``` for a new line.
 
 ```
 bcp "dbo.tblTask" out “c:\export\tblTask.csv" -S localhost \
@@ -50,7 +50,7 @@ This, somewhat incredibly, just worked for the most part.  It barked about some 
 
 ### Rails
 
-As it turns out, massaging Rails to use an existing database is actually quite simple.  I had to do a pretty minimum amount of work on the Postgres database itself.  I spent some time cleaning up field names to match the "model_id" naming that Rails expects for associations.   
+As it turns out, massaging Rails to use an existing database is actually quite simple.  I had to do a pretty minimum amount of work on the Postgres database itself.  I spent some time cleaning up field names to match the "model_id" naming that Rails expects for associations.
 
 You'll need to make sure you've got the 'pg' gem set, and then just plug in the database in ```config\database.yml```
 
@@ -108,9 +108,9 @@ Alright.  So let's drop down to the console and see if all this actually worked.
 Booya!²
 
 From here on its just standard Rails development.  I
-considered blogging about the rest of the application but this is literally for indexing and reading old data.  So I can't imagine it will be that interesting. 
+considered blogging about the rest of the application but this is literally for indexing and reading old data.  So I can't imagine it will be that interesting.
 
-If you've been traveling down a similar path, I hope this post has helped. And if you noticed anything incredibly stupid or wrong here - <a href="{{ site.baseurl }}/contact/">let me know!</a> 
+If you've been traveling down a similar path, I hope this post has helped. And if you noticed anything incredibly stupid or wrong here - <a href="{{ site.baseurl }}/contact/">let me know!</a>
 
 [1]: http://www.autotask.net
 [2]: https://msdn.microsoft.com/en-us/library/ms162802.aspx
