@@ -1,7 +1,7 @@
 <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="{{ site.url }}" class="site-title">{{ site.title }}</a>
+      <a href="{{ site.url }}" class="site-title" data-text="{{ site.title }}">{{ site.title }}</a>
       <nav class="site-nav">
         {% include navigation.html %}
         <div class="svg-background"></div>
@@ -13,3 +13,17 @@
     </div>
   </div>
 </header>
+
+<script>
+  function blackCat() {
+    if (Math.floor(Math.random() * 5) > 0) return;
+
+    const siteTitleEl = document.querySelector('.site-title');
+
+    siteTitleEl.classList.add('glitch');
+
+    setTimeout(() => { siteTitleEl.classList.remove('glitch'); }, 3000);
+  }
+
+  setInterval(blackCat, 4000);
+</script>

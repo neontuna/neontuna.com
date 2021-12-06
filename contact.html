@@ -6,24 +6,11 @@ permalink: /contact/
 
 <div class="py2">
   {% if site.ajaxify_contact_form %}
-    <form class="form-stacked">
-      <input type="text" name="_replyto" class="field-light" placeholder="Email Address" required autofocus>
-      <textarea type="text" name="content" class="field-light" rows="5" placeholder="What would you like to say?" required></textarea>
-      <select name="restaurant" class="field-light">
-        <option value="" selected disabled>Best name for an upscale restaurant that only serves hushpuppies?</option>
-        <option value="Club Puppy">Club Puppy</option>
-        <option value="Hush">Hush</option>
-        <option value="Solo Pup">Solo Pup</option>
-        <option value="Corn, The Meal">Corn, The Meal</option>
-        <option value="Batter Up">Batter Up</option>
-      </select>
-      <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks/" />
-      <input type="hidden" name="_format" value="plain" />
-      <button type='submit' class="button button-blue button-big mobile-block">Say Hello</button>
-    </form>
   {% else %}
-    <form action="https://formspree.io/neontunablog@fastmail.com" method="POST" class="form-stacked">
-      <input type="text" name="_replyto" class="field-light" placeholder="Email Address" required autofocus>
+    <form action="https://secure-cliffs-71853.herokuapp.com/new-contact-from-blog" method="POST" class="form-stacked"
+      id="contact-form">
+      <input type="text" name="name" class="field-light" placeholder="Name" required>
+      <input type="text" name="_replyto" class="field-light" placeholder="Email Address" required>
       <textarea type="text" name="content" class="field-light" rows="5" placeholder="What would you like to say?" required></textarea>
       <select name="restaurant" class="field-light">
         <option value="" selected disabled>Best name for an upscale restaurant that only serves hushpuppies?</option>
@@ -35,10 +22,42 @@ permalink: /contact/
       </select>
       <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks/" />
       <input type="hidden" name="_format" value="plain" />
-      <input type="submit" class="button button-blue button-big mobile-block" value="Say Hello">
+      <input type="submit" class="h-captcha button button-blue button-big mobile-block"
+        data-sitekey="d3015ba0-193b-4e84-8797-cd3b9ca68aa2" data-callback="onSubmit" value="Say Hello">
     </form>
   {% endif %}
 </div>
+
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
+<script>
+  const inputs = document.querySelectorAll("input, select, textarea");
+
+  inputs.forEach(input => {
+    input.addEventListener(
+      "invalid",
+      event => {
+        input.classList.add("is-error");
+      },
+      false
+    );
+
+    input.addEventListener("blur", function () {
+      input.checkValidity();
+
+      if (input.reportValidity()) {
+        input.classList.remove("is-error");
+      }
+    });
+  });
+
+  function onSubmit(token) {
+    let form = document.getElementById('contact-form');
+
+    if (form.checkValidity()) {
+      form.submit()
+    }
+  }
+</script>
 
 {% if site.ajaxify_contact_form %}
   {% include ajaxify_content_form.html %}
