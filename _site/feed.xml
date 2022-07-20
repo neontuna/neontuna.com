@@ -7,6 +7,30 @@
     <atom:link href="https://www.neontuna.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Songs of Innocence, Snow Crash</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/static.jpg&quot; alt=&quot;static&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In September of 2014 Apple is launching the iPhone 6 and the first Apple Watch.  Also, the company thinks people still care about the band U2.&lt;/p&gt;
+
+&lt;p&gt;With the benefit of hindsight, I’m not sure we had reached peak Apple getting high on their own farts.  Someone(s) there (or maybe Tim Cook himself) figured it would be cool to “give” every iTunes account a copy of U2’s new album, Songs of Innocence.  Had they just pushed a notification or sent out an email with a link to download the record, I’m sure some would have been stoked and most would have ignored it and that would have been the end of it.  But of course Apple did something only a company that is perpetually drinking its own Kool-Aid would do.&lt;/p&gt;
+
+&lt;p&gt;They just &lt;em&gt;added&lt;/em&gt; the album to every iTunes account.  At the time, Apple “accounts” were a little more nebulous.  So I don’t know what qualified someone to receive a copy.  Regardless, the album suddenly appeared in iTunes for nearly half a billion people.  And even this might not have been a big deal but.. you couldn’t remove it.  If you dug around some in iTunes, you could hide it but the album was forever stapled to the Apple you (or the @me.com).&lt;/p&gt;
+
+&lt;p&gt;So for a lot of humans the album just hung around.  By 2014 I was using Spotify for everything and had left iTunes behind.  But iTunes was still the default music player on the iPhone.  Whenever the phone thought it was time to automatically play music, when a new bluetooth device (like your car) connected, it would play iTunes.  And the only thing in my iTunes library was that U2 album.&lt;/p&gt;
+
+&lt;p&gt;I’m the type of person that can’t have the thermostat set on an odd temperature, or the volume if its measured in integers.  Hearing that album when I started my car was like suddenly seeing the outline of a Crown Vic in your rearview mirror.&lt;/p&gt;
+
+&lt;p&gt;Even when hidden the album would still show up on new devices and re-appear randomly as iTunes was changed and phased out over the years.  Eventually Apple gave folks a way to remove the album, via a link on a support page.  Which is what I used to finally get rid of it.  After a while that stopped working and now you have to &lt;a href=&quot;https://www.vulture.com/2020/10/u2-songs-of-innocence-apple-remove.html&quot;&gt;contact Apple support&lt;/a&gt; to have the album removed.&lt;/p&gt;
+
+&lt;p&gt;Eight years later, there’s &lt;a href=&quot;https://news.ycombinator.com/item?id=32163667&quot;&gt;still some unfortunate souls&lt;/a&gt; out there with it on their devices.  Songs of Innocence was U2’s 13th studio album.  Has any musical act still been good at that point?  There’s a really &lt;a href=&quot;https://www.mentalfloss.com/article/94569/clair-patterson-scientist-who-determined-age-earth-and-then-saved-it&quot;&gt;great story&lt;/a&gt; about leaded gasoline and the scientist who discovered it was basically poisoning the entire planet.  How many millions of humans are hearing just a little bit of a shitty U2 album every time they start their car, for close to a decade?  Look at what’s happened to the world since 2014.  Trump, COVID-19, Brexit, Logan Paul, Tiktok.  Was it U2 all along?  What did &lt;a href=&quot;https://en.wikipedia.org/wiki/Snow_Crash&quot;&gt;Snow Crash&lt;/a&gt; sound like?&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 20 Jul 2022 03:49:00 -0400</pubDate>
+        <link>https://www.neontuna.com/blog/2022/07/20/songs-of-innocence/</link>
+        <guid isPermaLink="true">https://www.neontuna.com/blog/2022/07/20/songs-of-innocence/</guid>
+      </item>
+    
+      <item>
         <title>AWS Solutions Architect Associate</title>
         <description>&lt;p&gt;Last night I sat for the AWS Solutions Architect Associate exam, and thankfully passed.  I wanted to write a little about this as I think these certifications have a unique value during the pandemic - you can go through the entire process online.&lt;/p&gt;
 
@@ -858,58 +882,6 @@ Property :&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <pubDate>Tue, 17 Feb 2015 06:51:42 -0500</pubDate>
         <link>https://www.neontuna.com/blog/2015/02/17/monitoring-directaccess/</link>
         <guid isPermaLink="true">https://www.neontuna.com/blog/2015/02/17/monitoring-directaccess/</guid>
-      </item>
-    
-      <item>
-        <title>Straddling OSX and Windows</title>
-        <description>&lt;blockquote&gt;
-  &lt;p&gt;According to stock photo sites in order to use an Apple product you must obsessively arrange your desk into perfect geometric patterns, like a serial killer.  I have not done this yet.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/IMG_1434_large.JPG&quot; alt=&quot;my messy desk&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For a while now I’ve been interested in web development.  I’ll run through a tutorial here and there - &lt;a href=&quot;http://railstutorial.org&quot;&gt;railstutorial.org&lt;/a&gt; and &lt;a href=&quot;http://learnpythonthehardway.org&quot;&gt;learn python the hard way&lt;/a&gt; have been my favorites (yes I realize these are two different languages, I have commitment issues).  If you’re primarily using Windows modern web development can be frustrating to learn.  Every tutorial starts out instructing you to use an OSX package manager and generally include some huge caveat for getting your development environment configured in Windows.  I had no desire to learn Microsoft’s languages, such as ASP.NET, so I decided I should look into a Macbook.  Also that my Dell notebook has always been kind of a piece of junk and that I don’t particularly like Windows 8/8.1 helped push me towards “switching”.&lt;/p&gt;
-
-&lt;p&gt;I’m now typing this from my Macbook Pro and Thunderbolt display.  I haven’t fully made the switch for my day job as a remote IT worker.  I’m still trying to suss out how I want my browsers setup, which softphone to use, and some other odds and ends.  Funny thing is, there isn’t much I need Windows for in order to support our clients that mostly run Windows.  I will probably always keep around a Windows system (&lt;a href=&quot;http://www.nonadmin.com/home-server&quot;&gt;or 12&lt;/a&gt;) because other IT people don’t respect you if you only have one computer.&lt;/p&gt;
-
-&lt;p&gt;This is sort of a compilation of things I’ve noticed and some tips for anyone coming from the Windows world.    I’ve arranged things with buying tips first and then good, bad, and miscellaneous observations.&lt;/p&gt;
-
-&lt;p&gt;#Buying Tips&lt;/p&gt;
-
-&lt;p&gt;Besides the notebook I researched and bought a few things from Amazon. The &lt;a href=&quot;http://amzn.to/1D3fmGd&quot;&gt;mStand laptop stand&lt;/a&gt; which is way overpriced for a piece of bent aluminum but I guess it holds the notebook at eye level adequately.  I also picked up an &lt;a href=&quot;http://amzn.to/1wYwpJ5&quot;&gt;ethernet adapter/usb hub&lt;/a&gt; from Anker which instantly became useful because I didn’t have the display (with its NIC) initially.  I really like Anker’s products, they’re generally pretty inexpensive but well built.  I also grabbed an &lt;a href=&quot;http://amzn.to/1HXbO9r&quot;&gt;Incase Neoprene Sleeve&lt;/a&gt; that is apparently made for the 13” MacBook Pro but has a little too much extra space in it. I feel like it ought to fit the notebook snugly and not allow it to move at all inside the sleeve.  Finally, I purchased the &lt;a href=&quot;http://www.amazon.com/gp/product/B004YLCKYA/ref=oh_aui_detailpage_o02_s01?ie=UTF8&amp;amp;psc=1&quot;&gt;Thunderbolt Display&lt;/a&gt; from Amazon as well.  I was going to purchase a Magsafe&amp;gt;Magsafe 2 power adapter as the Thunderbolt display’s charging cable isn’t compatible with the latest Macbooks but then I found out that these are now being included with the displays.&lt;/p&gt;
-
-&lt;p&gt;For the notebook itself I found a really handy &lt;a href=&quot;http://appleinsider.com/mac_price_guide&quot;&gt;price guide&lt;/a&gt; from Apple Insider and ended up picking up the system from Adorama with 3 years of AppleCare bundled.   They threw in an Apple TV with the promo code from Apple Insider but checking the guide now that has changed to a mighty mouse.  I also checked the &lt;a href=&quot;http://buyersguide.macrumors.com/&quot;&gt;Buyer’s Guide&lt;/a&gt; from Mac Rumors, just incase a new model was about to drop.&lt;/p&gt;
-
-&lt;p&gt;Initially I was not going to buy the Thunderbolt display but one issue with living in Apple’s world is you have to play by their rules.  There is no official dock for the Macbook, the Thunderbolt Display is the closest thing to it.  My other options were Thunderbolt hubs which are several hundred dollars and may or may not have worked with my existing monitor which uses DVI-D.  So I reluctantly decided to get the Thunderbolt display but I feel like Apple could make a lot of people happy if they’d just release a dock.   I use a simple KVM to switch keyboard and mouse between the notebook and my PC tower, which is exclusively connected to my old display.  I thought I would need an Apple keyboard but really its no big deal.  The keys are in the same position except with the Windows key acting as the Command key.&lt;/p&gt;
-
-&lt;p&gt;#The Good&lt;/p&gt;
-
-&lt;p&gt;I occasionally listen to the &lt;a href=&quot;http://www.macpowerusers.com/&quot;&gt;Mac Power Users podcast&lt;/a&gt;, which was kind of funny to do before I actually owned an Apple computer.  But from it I gleaned a lot of information on OSX applications I’d want to pick up.  So far &lt;a href=&quot;http://smilesoftware.com/TextExpander/index.html&quot;&gt;TextExpander &lt;/a&gt;has been my favorite.  If you’re not familiar with text expansion, you basically type a shortcut and the application automatically fills in something for you.  For instance if I type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;;gm&lt;/code&gt; I get my email address.    It seems like I type my email address about 30 thousand times a day so I love having that.  I’ve also started using the advanced features (known as macros) to &lt;a href=&quot;http://vimeo.com/44456425&quot;&gt;quickly fill out&lt;/a&gt; some reminder emails I send frequently that are always the same text.  I was already a &lt;a href=&quot;https://agilebits.com/onepassword&quot;&gt;1Password&lt;/a&gt; user and its definitely been my favorite password manager.  It is expensive to get the bundle for Windows, OSX, and iOS but really worth it considering how much information I store in the app and how much &lt;a href=&quot;http://www.nonadmin.com/password-insecurity&quot;&gt;more secure&lt;/a&gt; it makes my online life.  1password might be the prettiest piece of software I use, which &lt;em&gt;does&lt;/em&gt; matter (damn it).  I still have some other applications I’d like to check out, namely Hazel and Omnifocus.&lt;/p&gt;
-
-&lt;p&gt;The Macbook’s trackpad and keyboard are the best I’ve used on a notebook, period.  Trackpads on PC notebooks have long been a point of contention.  Whether they’re too small, have weird gestures, or just plan don’t work there’s always some issue.  The latest EliteBooks from HP have come the closest to getting it right that I’ve seen.  Battery life on the notebook has been great and I love that OSX will tell you which apps are eating a lot of energy.  Coming from a system that mysteriously always ran awful on battery this has been most excellent.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://www.apple.com/osx/continuity/&quot;&gt;continuity features&lt;/a&gt; of Yosemite were a big reason I was interested in switching.  I already own an iPhone and iPad.  Being able to iMessage, and even send regular text, from the computer is very convenient.    This is where I feel like Apple is really edging out Microsoft, it would give people a reason to actually consider Windows Phone to have this sort of functionality.&lt;/p&gt;
-
-&lt;p&gt;#The Bad&lt;/p&gt;
-
-&lt;p&gt;The Macbook has only locked up twice but both were kind of worrying.  The first  was actually right out of the box during setup.  It hung forever when I declined to setup iCloud Drive.  When I forced the system to reboot it went  through but had apparently already created my user account.  I elected to just wipe the system out and start over using the download from internet option to install Yosemite.  This worked without issue.  The system also froze completely when I first connected it to the Thunderbolt Display.&lt;/p&gt;
-
-&lt;p&gt;I almost immediately discovered an unfortunate bug with Exchange Online and Yosemite.  The Contacts App will not sync contacts from an Office 365 Exchange Online account (or at least from my account).  An issue &lt;a href=&quot;http://www.andrewconnell.com/blog/resolving-contacts-sync-on-os-x-error-soapwebserviceserrordomain&quot;&gt;documented by others&lt;/a&gt; but remains unfixed even in the latest Yosemite beta (currently 10.10.2).  I opened a case with Microsoft support, who promptly laughed and then closed the case.  I haven’t tried opening one with Apple just yet.  I worked around the problem by manually copying my contacts into iCloud.  There’s a sort of hack to use Microsoft’s OWA app in iOS to sync your contacts into iCloud but this only works on the default/base Contacts folder and I maintain more than one.&lt;/p&gt;
-
-&lt;p&gt;#The Miscellaneous&lt;/p&gt;
-
-&lt;p&gt;One of the things that I notice the most is that I’ve gotten a feel for performance on a PC.  You get a sixth sense for if something isn’t right.  Like if Outlook takes longer than 30 seconds to open its probably not going to open at all.  I feel a little lost sometimes on the Mac if something unexpected happens and I find myself starring at the beachball.  I also really miss indicator lights for disk activity, etc, and find myself tapping the caps lock key to make sure my Macbook is alive.&lt;/p&gt;
-
-&lt;p&gt;There are way more boot options for the Mac than Windows and I sort of wish they were all consolidated into one menu.  Although not having the POST and then Windows load that I’m used to is what makes for the variety of options/confusion.&lt;/p&gt;
-
-&lt;p&gt;I immediately loaded Bootcamp on the system but I haven’t really had much reason to use it.  &lt;a href=&quot;http://www.vmware.com/products/fusion&quot;&gt;VMWare Fusion&lt;/a&gt; can use your Bootcamp partition as a virtual machine to run Windows apps within OSX, this is good because you don’t need to devote any more disk space to another virtual hard drive.  Initially I thought I would probably use Fusion to run Outlook 2013 instead of the latest Outlook for Mac but then I discovered that Fusion takes a good chunk of battery and really the latest Outlook for Mac is good enough. I’d still like it to have more feature parity with the Windows version and to stop using Exchange Web Services (Windows connects to Exchange using MAPI).  At work I’ve been going back and forth with Microsoft for months to try to figure out why the latest Outlook for Mac will not send attachments larger than 10 or so MB when using an Exchange 2010 account.&lt;/p&gt;
-
-&lt;p&gt;So far Apple has lived up to its promise to “just work” in every way except for the Contacts bug.  I hope to update this post and add others with more good things as time goes on.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 29 Dec 2014 06:45:57 -0500</pubDate>
-        <link>https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</link>
-        <guid isPermaLink="true">https://www.neontuna.com/blog/2014/12/29/straddling-osx-and-windows/</guid>
       </item>
     
   </channel>
